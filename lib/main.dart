@@ -71,6 +71,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
       ),
       Icon(Icons.account_circle, size: 30),
     ];
+    //yorum satırı
     return Theme(
       data: Theme.of(context).copyWith(
         iconTheme: IconThemeData(
@@ -89,6 +90,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
       ),
     );
   }
+//yorum satırı
 
 }
 
