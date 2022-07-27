@@ -9,7 +9,7 @@ class AnaSayfaCenterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("keşfet sayfası"),
+      child: Text("keşfet  sayfası"),
     );
   }
 }
