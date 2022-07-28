@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../google_maps/order_traking_page.dart';
+
 
 class AnaSayfaCenterWidget extends StatelessWidget {
   const AnaSayfaCenterWidget({
@@ -8,9 +10,25 @@ class AnaSayfaCenterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("keşfet  sayfası"),
+    return  Center(
+      child: Column(
+        children: [
+          TextButton(
+              onPressed:() {
+            haritayaGit(context);
+
+          }, child: Text("harita sayfası")),
+          Text("keşfet  sayfası"),
+        ],
+      ),
     );
   }
 }
-
+void haritayaGit (BuildContext context) async {
+  await Navigator.of(context).push(MaterialPageRoute(
+    builder: (context) {
+      return const OrderTrackingPage();
+    },
+  ));
+  //yorum satırı
+}
