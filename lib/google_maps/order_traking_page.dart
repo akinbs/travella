@@ -23,19 +23,19 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
 
 //----------------------lokasyonların LatLang nesneleri-------------------------
   static const LatLng sourceLocation =
-      LatLng(40.7473082, 31.1020181); //Aydınpınar Şelalesi Tabiat Parkı
+  LatLng(40.7473082, 31.1020181); //Aydınpınar Şelalesi Tabiat Parkı
   static const LatLng destination1 =
-      LatLng(40.7577, 31.0405364); //Efteni Gölü İskele
+  LatLng(40.7577, 31.0405364); //Efteni Gölü İskele
   static const LatLng destination2 =
-      LatLng(40.7234091, 31.0498648); //Güzeldere Şelalesi Tabiat Parkı
+  LatLng(40.7234091, 31.0498648); //Güzeldere Şelalesi Tabiat Parkı
   static const LatLng destination3 =
-      LatLng(40.7814664,31.0194406); //Gölyaka Kültür parkı
+  LatLng(40.7814664,31.0194406); //Gölyaka Kültür parkı
   static const LatLng destination4 =
-      LatLng(40.9036977, 31.153652); //Konuralp Müzesi
+  LatLng(40.9036977, 31.153652); //Konuralp Müzesi
   static const LatLng destination5 =
-      LatLng(40.906143, 31.1480734); //Prusias ad Hypium Antik Kenti
+  LatLng(40.906143, 31.1480734); //Prusias ad Hypium Antik Kenti
   static const LatLng destination6 =
-      LatLng(40.906355, 31.1420684); //KONURALP ROMA KÖPRÜSÜ
+  LatLng(40.906355, 31.1420684); //KONURALP ROMA KÖPRÜSÜ
 
 //polyline' ler arası yol tarifi için gerekli olan ardışık her iki lokasyonun
 // bulunduğu 2 üyelik listeler.-------------------------------------------------
@@ -211,7 +211,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
           label: "Rotanın yol tarifine git",
           onTap: () async {
             String url =
-                """https://www.google.com/maps/dir/Ayd%C4%B1np%C4%B1nar+%C5%9Eelalesi+Tabiat+Park%C4%B1/Efteni+G%C3%B6l%C3%BC+%C4%B0skele/G%C3%BCzeldere+%C5%9Eelalesi+Tabiat+Park%C4%B1/G%C3%B6lyaka+K%C3%BClt%C3%BCr+park/Konuralp+M%C3%BCzesi/Prusias+ad+Hypium+Antik+Kenti/KONURALP+ROMA+K%C3%96PR%C3%9CS%C3%9C/@40.8158227,30.9350803,11z/data=!3m1!4b1!4m44!4m43!1m5!1m1!1s0x409d7707ac85ac59:0xe7c262cd835b53aa!2m2!1d31.1020181!2d40.7473082!1m5!1m1!1s0x409d9d60c66bf297:0x9b5ac2dffbf598e0!2m2!1d31.0405364!2d40.7577!1m5!1m1!1s0x409d783a58896def:0xe38979f13fbcaa5e!2m2!1d31.0498648!2d40.7234091!1m5!1m1!1s0x409d9daa0ceb2ddf:0x2096a6cdd3218cb8!2m2!1d31.0194482!2d40.7814663!1m5!1m1!1s0x409da11950a1b485:0x68e8b46986084ff8!2m2!1d31.1536516!2d40.9036892!1m5!1m1!1s0x409da1cedb5759f1:0x8dd94083f3608bf8!2m2!1d31.1480632!2d40.9061587!1m5!1m1!1s0x409da1b13e6d7c51:0xb8d9988effa21b9d!2m2!1d31.1420456!2d40.9063566!3e0""";
+            """https://www.google.com/maps/dir/Ayd%C4%B1np%C4%B1nar+%C5%9Eelalesi+Tabiat+Park%C4%B1/Efteni+G%C3%B6l%C3%BC+%C4%B0skele/G%C3%BCzeldere+%C5%9Eelalesi+Tabiat+Park%C4%B1/G%C3%B6lyaka+K%C3%BClt%C3%BCr+park/Konuralp+M%C3%BCzesi/Prusias+ad+Hypium+Antik+Kenti/KONURALP+ROMA+K%C3%96PR%C3%9CS%C3%9C/@40.8158227,30.9350803,11z/data=!3m1!4b1!4m44!4m43!1m5!1m1!1s0x409d7707ac85ac59:0xe7c262cd835b53aa!2m2!1d31.1020181!2d40.7473082!1m5!1m1!1s0x409d9d60c66bf297:0x9b5ac2dffbf598e0!2m2!1d31.0405364!2d40.7577!1m5!1m1!1s0x409d783a58896def:0xe38979f13fbcaa5e!2m2!1d31.0498648!2d40.7234091!1m5!1m1!1s0x409d9daa0ceb2ddf:0x2096a6cdd3218cb8!2m2!1d31.0194482!2d40.7814663!1m5!1m1!1s0x409da11950a1b485:0x68e8b46986084ff8!2m2!1d31.1536516!2d40.9036892!1m5!1m1!1s0x409da1cedb5759f1:0x8dd94083f3608bf8!2m2!1d31.1480632!2d40.9061587!1m5!1m1!1s0x409da1b13e6d7c51:0xb8d9988effa21b9d!2m2!1d31.1420456!2d40.9063566!3e0""";
             if (await canLaunch(url)) {
               await launch(
                 url,
@@ -256,8 +256,8 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
 
   void setCustomMarkerCurrentLocationIcon() {
     BitmapDescriptor.fromAssetImage(
-            const ImageConfiguration(size: Size(12, 12)),
-            "assets/images/user-128.png")
+        const ImageConfiguration(size: Size(12, 12)),
+        "assets/images/user-128.png")
         .then((icon) {
       currentLocationIcon = icon;
     });
