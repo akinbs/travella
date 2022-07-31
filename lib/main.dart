@@ -6,8 +6,16 @@ import 'package:travella_01/pages/ProfilKismi.dart';
 import 'package:travella_01/pages/appBar.dart'; //berat'ın yaptığı gölgeli app bar
 import 'package:travella_01/pages/information_page/information_page.dart';
 import 'pages/drawer_part.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -31,7 +39,6 @@ class AnaSayfa extends StatefulWidget {
 }
 
 class _AnaSayfaState extends State<AnaSayfa> {
-
   int index = 0;
   int currentPage = 0;
 
@@ -41,12 +48,12 @@ class _AnaSayfaState extends State<AnaSayfa> {
     Whatif(),
   ];
 
-
   var mainColor = const Color.fromARGB(255, 0, 202, 157);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       //appBar: AppBarLayout(), bu app bar'ı sayfalarda kendi alanlarınıza koyacaksınız
       body: screens[index],
       bottomNavigationBar: bottomNavBar(context),
@@ -56,7 +63,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
       ),
     );
   }
-
 
 //bottomNavBar
   Theme bottomNavBar(BuildContext context) {
@@ -93,6 +99,3 @@ class _AnaSayfaState extends State<AnaSayfa> {
 //yorum satırı
 
 }
-
-
-
