@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167938253702",
+    "project_id": "travella-firebase-5f0cb",
+    "storage_bucket": "travella-firebase-5f0cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167938253702:android:d2a8c4924a074297844207",
+        "android_client_info": {
+          "package_name": "com.example.travella_01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167938253702-3e1pkr2bhc6m529jockanbbjmqk86t8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvjnuObDGJ8Zs2Pac99JLFqDlxtIgeuCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167938253702-3e1pkr2bhc6m529jockanbbjmqk86t8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
