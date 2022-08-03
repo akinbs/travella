@@ -89,7 +89,7 @@ class _InformationPageState extends State<InformationPage> {
               )),
       ),
     ];
-  }
+  } //Task-7
 
 //---------------------------Favorite Spots-------------------------------------
   Future<bool?> showToastFavoriteSpots() {
