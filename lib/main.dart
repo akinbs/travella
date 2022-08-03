@@ -1,11 +1,10 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:travella_01/pages/gecici_kesfet_sayfasi_widgeti.dart';
-import 'package:travella_01/pages/ProfilKismi.dart';
-import 'package:travella_01/pages/appBar.dart'; //berat'ın yaptığı gölgeli app bar
-import 'package:travella_01/pages/information_page/information_page.dart';
-import 'pages/drawer_part.dart';
+
+import 'package:travella_01/home.dart';
+
+
+
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -17,19 +16,35 @@ void main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+ 
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
+ 
+ 
+   var mainColor = Colors.lightGreenAccent.shade700;
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: AnaSayfa(),
+    return MaterialApp( 
+      debugShowCheckedModeBanner: false,
+      home:AnaSayfa(),
+      
     );
+        
+    
+  
+  
   }
+  
 }
+/*
+<<<<<<< HEAD
+=======
 
 class AnaSayfa extends StatefulWidget {
   const AnaSayfa({Key? key}) : super(key: key);
@@ -99,3 +114,5 @@ class _AnaSayfaState extends State<AnaSayfa> {
 //yorum satırı
 
 }
+>>>>>>> 9823540fdef6bd674febe43590c85aa609e0ee92
+*/
