@@ -8,8 +8,9 @@ import '../../constants.dart';
 class ReviewUI extends StatefulWidget {
   final String image, name, date, comment;
   final double rating;
+  int likesNumber;
   bool isLess;
-  bool isFavorite;
+  bool isFavorite; //firebase de her yorum için kendi global değişkeni olmalı
 
 
   ReviewUI({
@@ -21,6 +22,7 @@ class ReviewUI extends StatefulWidget {
     required this.rating,
     required this.isLess,
     required this.isFavorite,
+    required this.likesNumber
   }) : super(key: key);
 
   @override
@@ -138,19 +140,33 @@ class _ReviewUIState extends State<ReviewUI> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                  alignment: Alignment.center,
-                  onPressed:  () {
-                    setState(() {
-                      widget.isFavorite = !widget.isFavorite;
-                    });
-                  },
-                  icon: widget.isFavorite ?
-                      Icon(Icons.favorite,color: Colors.red,):
-                      Icon(
-                    Icons.favorite,
-                    color: Colors.grey.shade400,
-                  ),
+                Row(
+                  children: [
+                    IconButton(
+                      alignment: Alignment.center,
+                      onPressed:  () {
+                        setState(() {
+                          widget.isFavorite = !widget.isFavorite;
+                          if(widget.isFavorite){
+                            setState(() {
+                              widget.likesNumber++;
+                            });
+                          }else{
+                            setState(() {
+                              widget.likesNumber--;
+                            });
+                          }
+                        });
+                      },
+                      icon: widget.isFavorite ?
+                          Icon(Icons.favorite,color: Colors.red,):
+                          Icon(
+                        Icons.favorite,
+                        color: Colors.grey.shade400,
+                      ),
+                    ),
+                    Text(widget.likesNumber.toString()),
+                  ],
                 ),
                 Text(
                   widget.date,

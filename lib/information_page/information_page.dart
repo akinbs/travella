@@ -23,6 +23,7 @@ class InformationPage extends StatefulWidget {
 class _InformationPageState extends State<InformationPage> {
   var rateValue = 4.2;
   String header = "Saklıkent Şelalesi";
+  int likesNumber_ = 0; //her yorumun kendi global değişkenine göre internetten çağırılmalı
 
    bool burayaGittimMi = false; // kullanıcıya göre kaydedilmesi sağlanmalı
 
@@ -183,6 +184,7 @@ class _InformationPageState extends State<InformationPage> {
       rating: 4,
       isLess: isMore,
       isFavorite: isLiked,
+      likesNumber: likesNumber_,
     );
   }
 

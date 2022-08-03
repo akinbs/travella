@@ -43,6 +43,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1 #oy verme ve oyu gösterme
   photo_view: ^0.14.0 #fotğrafların incelenmesi
   fluttertoast: ^8.0.9 #toast mesaj bildirmek için
+  firebase_core: ^1.20.0
+
 
 
 dev_dependencies:
