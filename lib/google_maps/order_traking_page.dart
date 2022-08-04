@@ -148,7 +148,6 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
   Set<Marker> markers = {
     Marker(
       markerId: const MarkerId("source"),
-
       infoWindow: const InfoWindow(title: "01 - Aydınpınar Şelalesi Tabiat Parkı"),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       position: sourceLocation,
