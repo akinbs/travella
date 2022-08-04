@@ -40,9 +40,10 @@ dependencies:
   url_launcher: ^6.1.5 #linkleri açmak için
   flutter_speed_dial: ^6.0.0 #FAB için
   curved_navigation_bar: ^1.0.3 #navigation bar
-  flutter_rating_bar: ^4.0.1 #oy verme ve oyu gösterme
+  flutter_rating_bar: ^4.0.1 #oy verme
   photo_view: ^0.14.0 #fotğrafların incelenmesi
   fluttertoast: ^8.0.9 #toast mesaj bildirmek için
+  smooth_star_rating_null_safety: ^1.0.4+2 #oyu gösterme
   firebase_core: ^1.20.0
 
 

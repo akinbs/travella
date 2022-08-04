@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
 import '../../constants.dart';
 
@@ -7,7 +7,7 @@ import '../../constants.dart';
 
 class ReviewUI extends StatefulWidget {
   final String image, name, date, comment;
-  final double rating;
+  double rating;
   int likesNumber;
   bool isLess;
   bool isFavorite; //firebase de her yorum için kendi global değişkeni olmalı
@@ -37,7 +37,7 @@ class _ReviewUIState extends State<ReviewUI> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.symmetric(horizontal: BorderSide(color: Colors.grey.shade300))
+        border: Border.symmetric(horizontal: BorderSide(color: Colors.grey.shade300)),
       ),
       padding: EdgeInsets.only(
         bottom: 2.0,
@@ -78,8 +78,25 @@ class _ReviewUIState extends State<ReviewUI> {
                   ),
                   Row(
                     children: [
+                      SmoothStarRating(
+                        allowHalfRating: false,
+                        onRatingChanged: (v) {
+                          //widget.rating = v;
+                          //setState(() {});
+                        },
+                        starCount: 5,
+                        rating: widget.rating,
+                        size: 20.0,
+                        filledIconData: Icons.star_sharp,
+                        halfFilledIconData: Icons.star,
+                        color: mainColor,
+                        borderColor: mainColor,
+                        spacing:0.0
+                      ),
+                      /*
                       RatingBar.builder(
                         glow: false,
+
                         initialRating: widget.rating,
                         minRating: widget.rating,
                         //eğer bunlara initial rating değerini verirsem sabit bir rating bar elde ediyorum.
@@ -95,6 +112,7 @@ class _ReviewUIState extends State<ReviewUI> {
                         ),
                         onRatingUpdate: (rating) {},
                       ),
+                       */
                       SizedBox(
                         width: 7,
                       ),
