@@ -54,8 +54,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 title: Text(ScreenName[index]),
                 //shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)) ,
                 // google haritalar sayfamızda yukarda beyaz alanlar oluşmasına sebep oluyor
-                
-                 
+
                 actions: [ 
                   IconButton(
                     icon:Icon(Icons.notifications_none), 

@@ -9,7 +9,7 @@ class ReviewUI extends StatefulWidget {
   final String image, name, date, comment;
   double rating;
   int likesNumber;
-  bool isLess;
+  bool isLess = false;
   bool isFavorite; //firebase de her yorum için kendi global değişkeni olmalı
 
 
@@ -20,7 +20,6 @@ class ReviewUI extends StatefulWidget {
     required this.date,
     required this.comment,
     required this.rating,
-    required this.isLess,
     required this.isFavorite,
     required this.likesNumber
   }) : super(key: key);

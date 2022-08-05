@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import '../information_page/information_page.dart';
 import '../models/mekan.dart';
 
@@ -31,7 +29,17 @@ class mekanItem extends StatelessWidget {
             subtitle: Text(listelenenMekan.mekan_turu,style: TextStyle(color: Color.fromARGB(255, 182, 223, 142),fontSize: 15),), 
             trailing: Icon(Icons.arrow_forward_ios, color: Color.fromARGB(255, 196, 199, 196),),
             onTap: (){ 
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> InformationPage()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> InformationPage(
+                googleMapsUrl: "https://goo.gl/maps/ERmVvVrKufAL6gkK6",
+                rateValue: 1,
+                header: "Saklıkent Şelalesi",
+                appBarBackgroundImage: "assets/images/saklikent-selalesi_3.jfif",
+                galleryPhoto1: "assets/images/saklikent_selalesi_1.jpg",
+                galleryPhoto2: "assets/images/saklikent_selalesi_2.jpg",
+                galleryPhoto3: "assets/images/saklikent-selalesi_3.jfif",
+                latitude: 40.9407589,
+                longitude: 31.4908345,
+              )));
             },  
           )
       

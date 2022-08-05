@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:travella_01/information_page/contents/reviews/reviews.dart';
 import 'constants.dart';
 import 'contents/app_bar_background_image.dart';
 import 'contents/InformationText.dart';
@@ -13,17 +13,38 @@ import 'contents/reviews/create_new_review.dart';
 import 'contents/reviews/reviewUI.dart';
 
 class InformationPage extends StatefulWidget {
-  const InformationPage({Key? key}) : super(key: key);
+  final String header;
+  final String appBarBackgroundImage;
+  double rateValue; //gezi yerinin yorumlara göre oluşturulan puanı
+  final String galleryPhoto1;
+  final String galleryPhoto2;
+  final String galleryPhoto3;
+  final double latitude;
+  final double longitude;
+  final String googleMapsUrl;
+
+  InformationPage({Key? key,
+    required this.header,
+    required this.rateValue,
+    required this.appBarBackgroundImage,
+    required this.galleryPhoto1,
+    required this.galleryPhoto2,
+    required this.galleryPhoto3,
+
+    required this.latitude,
+    required this.longitude,
+    required this.googleMapsUrl,
+
+    }) : super(key: key);
+
 
   @override
   State<InformationPage> createState() => _InformationPageState();
 }
 
 class _InformationPageState extends State<InformationPage> {
-  var rateValue = 4.2;
-  String header = "Saklıkent Şelalesi";
-  int likesNumber_ =
-      0; //her yorumun kendi global değişkenine göre internetten çağırılmalı
+
+  int likesNumber_ = 0; //her yorumun kendi global değişkenine göre internetten çağırılmalı
 
   bool burayaGittimMi = false; // kullanıcıya göre kaydedilmesi sağlanmalı
 
@@ -96,7 +117,7 @@ class _InformationPageState extends State<InformationPage> {
                 )),
       ),
     ];
-  } //Task-7
+  }
 
 //---------------------------Favorite Spots-------------------------------------
   Future<bool?> showToastFavoriteSpots() {
@@ -154,7 +175,7 @@ class _InformationPageState extends State<InformationPage> {
           child: ListView(
             controller: scrollController,
             children: [
-              const DetailedInformationText(),
+               DetailedInformationText(locationName: widget.header),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -185,22 +206,26 @@ class _InformationPageState extends State<InformationPage> {
     );
   }
 
-//---------------------------Review Builder-------------------------------------
 
+//---------------------------Review Builder-------------------------------------
+/*
   Widget? _dynamicReviewBuilder(BuildContext context, int index) {
-    return ReviewUI(
-      image: "assets/images/melih_emre_guler.jpeg",
-      name: "Username",
-      date: "02 Ağu 2022",
-      comment:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer feugiat scelerisque varius morbi. Enim nec dui nunc mattis enim."
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer feugiat scelerisque varius morbi. Enim nec dui nunc mattis enim.",
-      rating: 4.0,
-      isLess: isMore,
-      isFavorite: isLiked,
-      likesNumber: likesNumber_,
-    );
+    //for(int i = 0; i < reviews.length; i++) {
+      return ReviewUI(
+        image: "assets/images/melih_emre_guler.jpeg",
+        //user.profilImage
+        name: "Username",
+        //user.Username
+        date: "02 Ağu 2022",
+        //reviews ten gelmeli
+        comment: reviews[i].comment,
+        rating: 4.0,
+        isFavorite: isLiked,
+        likesNumber: likesNumber_,
+      );
+    //}
   }
+*/
 
 //---------------------------Build Function-------------------------------------
   @override
@@ -235,7 +260,7 @@ class _InformationPageState extends State<InformationPage> {
                               width: 7,
                             ),
                             Text(
-                              "${rateValue.toString()}/5.0",
+                              "${widget.rateValue.toString()}/5.0",
                               style: TextStyle(fontSize: 17),
                             ),
                             SizedBox(
@@ -261,13 +286,13 @@ class _InformationPageState extends State<InformationPage> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
-                  header,
+                  widget.header,
                   style: TextStyle(fontSize: 23, color: Colors.grey.shade800),
                 ),
               ),
               background: AppBarBackgroundImage(
-                  assetImages:
-                      assetImages), //bu parametrenin yerine firebase nin parametresi gelebilir
+                locationName: widget.header,
+                assetImage: widget.appBarBackgroundImage), //bu parametrenin yerine firebase nin parametresi gelebilir
             ),
             leading: IconButton(
               onPressed: () async {
@@ -290,7 +315,7 @@ class _InformationPageState extends State<InformationPage> {
               [
                 Column(
                   children: [
-                    InformationText(),
+                    InformationText(locationName: widget.header),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -372,7 +397,12 @@ class _InformationPageState extends State<InformationPage> {
                           ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => GetLocationInGoogleMaps(),
+                                builder: (context) => GetLocationInGoogleMaps(
+                                  widget.latitude,
+                                  widget.longitude,
+                                  googleMapsUrl: widget.googleMapsUrl,
+                                  locationName: widget.header,
+                                ),
                               ));
                             },
                             style: ElevatedButton.styleFrom(
@@ -427,7 +457,7 @@ class _InformationPageState extends State<InformationPage> {
                     ),
                     CreateNewReviewUI(),
                     SizedBox(
-                      height: 50,
+                      height: defaultPadding *2,
                     ),
                     Container(
                         alignment: Alignment.centerLeft,
@@ -436,7 +466,7 @@ class _InformationPageState extends State<InformationPage> {
                         child: Row(
                           children: [
                             Text(
-                              "5 ", //yorum sayısını buraya koyacağız
+                              "${reviews.length} ", //yorum sayısını buraya koyacağız
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30,
@@ -447,7 +477,8 @@ class _InformationPageState extends State<InformationPage> {
                               style: TextStyle(fontSize: 20),
                             ),
                           ],
-                        )),
+                        )
+                    ),
                   ],
                 ),
               ],
@@ -455,8 +486,19 @@ class _InformationPageState extends State<InformationPage> {
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-              _dynamicReviewBuilder,
-              childCount: 5,
+             (context, index) {
+               return ReviewUI(
+                 image: "assets/images/melih_emre_guler.jpeg", //user.profilImage gibi bir şey olmalı
+                 name: "Username", //user.Username gibi bir şey olmalı
+                 date: reviews[reviews.length - index - 1].date,
+                 comment: reviews[reviews.length - index - 1].comment,
+                 rating: reviews[reviews.length - index - 1].rating,
+                 isFavorite: isLiked,
+                 likesNumber: likesNumber_,
+               );
+             },
+              //_dynamicReviewBuilder,
+              childCount: reviews.length,
             ),
           ),
         ],
