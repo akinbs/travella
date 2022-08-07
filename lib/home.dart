@@ -32,7 +32,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
    
    final screens = [
    
-    discover(),
+    Discover(),
     GoogleMapsPage(),
     main_page(), 
     temp_route(),

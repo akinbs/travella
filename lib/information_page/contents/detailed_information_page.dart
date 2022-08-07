@@ -7,9 +7,9 @@ import '../constants.dart';
 
 
 class DetailedInformationText extends StatelessWidget {
-  final String locationName;
-  const DetailedInformationText({
-    Key? key, required this.locationName,
+  final String? locationName ;
+   const DetailedInformationText({
+    Key? key,  this.locationName,
   }) : super(key: key);
 
   @override

@@ -4,43 +4,54 @@ import 'package:travella_01/data/strings.dart';
 
 import '../models/mekan.dart';
 
-class discover extends StatelessWidget {
-  late List<mekan> tumMekanlar = [];
+class Discover extends StatelessWidget {
+  late List<Mekan> tumMekanlar = [];
 
-  discover() {
+  Discover() {
     tumMekanlar = veriKaynagi();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              return mekanItem(
-                listelenenMekan: tumMekanlar[index],
-              );
-            },
-            itemCount: tumMekanlar.length,
-          ),
-        ));
+      body: Center(
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return mekanItem(
+              listelenenMekan: tumMekanlar[index],
+            );
+          },
+          itemCount: tumMekanlar.length,
+        ),
+      )
+    );
   }
 
-  List<mekan> veriKaynagi() {
-    List<mekan> gecici = [];
+  List<Mekan> veriKaynagi() {
+    List<Mekan> gecici = [];
 
-    mekan.Tur_values.addAll(Strings.Turizm_turu.values);
+    Mekan.Tur_values.addAll(Strings.Turizm_turu.values);
     for (int i = 0; i < 35; i++) {
       var mekanAdi = Strings.mekan_adlari[i];
-      var mekanDetay = Strings.Mekan_Detayi[0];
-      var mekanTuru = mekan.Tur_values[i];
-      var mekanKucukResim = Strings.kucukResim[i] + ".png";
-      var mekanBuyukResim = Strings.BuyukResim[i] + ".png";
+      var mekanTuru = Mekan.Tur_values[i];
+      var mekanKucukResim = "assets/images/${Strings.kucukResim[i]}.png";
+      var googleMapsUrl = Strings.googleMapsUrls[i];
+      var rateValue = Strings.rateValues[i];
+      var latitude = Strings.latitudes[i];
+      var longitude = Strings.longitudes[i];
 
-      mekan eklenecekMekan = mekan(
-          mekanAdi, mekanDetay, mekanTuru, mekanKucukResim, mekanBuyukResim);
+      Mekan eklenecekMekan = Mekan(
+        mekanAdi,
+        mekanTuru,
+        mekanKucukResim,
+        googleMapsUrl,
+        rateValue,
+        latitude,
+        longitude,
+      );
       gecici.add(eklenecekMekan);
     }
     return gecici;
   }
 }
+

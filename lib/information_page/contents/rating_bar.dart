@@ -6,7 +6,7 @@ import '../constants.dart';
 
 //---------------------------------Rating Bar-----------------------------------
 
- SmoothStarRating buildRatingBar() {
+ SmoothStarRating buildRatingBar(rateValue) {
 
   return SmoothStarRating(
       allowHalfRating: true,
@@ -16,7 +16,7 @@ import '../constants.dart';
         //setState(() {});
       },
       starCount: 5,
-      rating: 4.0, //bu değer çekilecek
+      rating: rateValue, //bu değer çekilecek
       size: 20.0,
       filledIconData: Icons.star_sharp,
       halfFilledIconData: Icons.star,

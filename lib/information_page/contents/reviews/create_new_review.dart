@@ -1,13 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:travella_01/information_page/contents/reviews/reviewUI.dart';
 import 'package:travella_01/information_page/contents/reviews/reviews.dart';
 import 'package:travella_01/information_page/information_page.dart';
+import '../../../models/mekan.dart';
 import '../../constants.dart';
 
 class CreateNewReviewUI extends StatefulWidget {
-  const CreateNewReviewUI({
+  Mekan selectedPlace;
+  CreateNewReviewUI(this.selectedPlace, {
     Key? key,
   }) : super(key: key);
 
@@ -16,7 +17,6 @@ class CreateNewReviewUI extends StatefulWidget {
 }
 
 class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
-
   final formKey = GlobalKey<FormState>();
   double rating = 0;
   final TextEditingController _textEditingController = TextEditingController();
@@ -24,12 +24,12 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
 
 //------------------------------------------------------------------------------
 
-  isReviewPostableCheck(){
-    if(_textEditingController.text == "" || rating == 0){
+  isReviewPostableCheck() {
+    if (_textEditingController.text == "" || rating == 0) {
       setState(() {
         isReviewPostable = false;
       });
-    }else{
+    } else {
       setState(() {
         isReviewPostable = true;
       });
@@ -37,16 +37,15 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
   }
 
 //------------------------------------------------------------------------------
-  void postTheReview(){
-
+  void postTheReview(Mekan selectedPlace) {
     ReviewUI review = ReviewUI(
-      image: "assets/images/melih_emre_guler.jpeg",
-      name: "Username",
-      date: "05/08/2022",
-      comment: _textEditingController.text,
-      rating: rating,
-      isFavorite: false,
-      likesNumber: 0);
+        image: "assets/images/melih_emre_guler.jpeg",
+        name: "Username",
+        date: "05/08/2022",
+        comment: _textEditingController.text,
+        rating: rating,
+        isFavorite: false,
+        likesNumber: 0);
 
     setState(() {
       reviews.add(review);
@@ -69,17 +68,11 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
     FocusScope.of(context).unfocus(); //klavyenin kapanması için
 
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  InformationPage(
-      googleMapsUrl: "https://goo.gl/maps/ERmVvVrKufAL6gkK6",
-      rateValue: 1,
-      header: "Saklıkent Şelalesi",
-      appBarBackgroundImage: "assets/images/saklikent-selalesi_3.jfif",
-      galleryPhoto1: "assets/images/saklikent_selalesi_1.jpg",
-      galleryPhoto2: "assets/images/saklikent_selalesi_2.jpg",
-      galleryPhoto3: "assets/images/saklikent-selalesi_3.jfif",
-      latitude: 40.9407589,
-      longitude: 31.4908345,
-    ),));
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => InformationPage(
+        selectedPlace: selectedPlace,
+      ),
+    ));
   }
 
 //------------------------------------------------------------------------------
@@ -89,8 +82,7 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
     return Container(
       decoration: BoxDecoration(
         border: Border.symmetric(
-            horizontal:
-            BorderSide(color: Colors.grey.shade300)),
+            horizontal: BorderSide(color: Colors.grey.shade300)),
       ),
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.only(
@@ -102,12 +94,11 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
         children: [
           Text(
             "Burayı aşağıdan puanlayabilir ve yorum yazabilirsin",
-            style: TextStyle(
-                fontSize: 17,
-                height: 1.3,
-                color: Colors.black),
+            style: TextStyle(fontSize: 17, height: 1.3, color: Colors.black),
           ),
-          SizedBox(height: defaultPadding,),
+          SizedBox(
+            height: defaultPadding,
+          ),
           RatingBar.builder(
             updateOnDrag: true,
             glow: true,
@@ -131,17 +122,18 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
               });
             },
           ),
-          SizedBox(height: defaultPadding/3,),
+          SizedBox(
+            height: defaultPadding / 3,
+          ),
           Text(
             "Puan: ${rating}",
-            style: TextStyle(
-                fontSize: 17,
-                height: 1.3,
-                color: Colors.black),
+            style: TextStyle(fontSize: 17, height: 1.3, color: Colors.black),
           ),
-          SizedBox(height: defaultPadding,),
+          SizedBox(
+            height: defaultPadding,
+          ),
           TextFormField(
-            onChanged:(value) {
+            onChanged: (value) {
               isReviewPostableCheck();
             },
             key: formKey,
@@ -153,17 +145,26 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
               hintText: "Burayı beğendiniz mi?",
               hintStyle: defaultTextStyle(),
               border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
-                borderSide: BorderSide(color: mainColor,),
+                borderRadius:
+                    BorderRadius.all(Radius.circular(defaultBorderRadius)),
+                borderSide: BorderSide(
+                  color: mainColor,
+                ),
               ),
             ),
           ),
-          SizedBox(height: defaultPadding,),
+          SizedBox(
+            height: defaultPadding,
+          ),
           ElevatedButton(
-            onPressed: isReviewPostable ? postTheReview : null,
+            onPressed:() {
+              if(isReviewPostable)
+                return postTheReview(widget.selectedPlace);
+              else
+                return null;
+            }, //isReviewPostable ? postTheReview : null,
             style: ElevatedButton.styleFrom(
-              primary: isReviewPostable ?
-              mainColor : Colors.grey.shade400,
+              primary: isReviewPostable ? mainColor : Colors.grey.shade400,
               shape: StadiumBorder(),
             ),
             child: Text(

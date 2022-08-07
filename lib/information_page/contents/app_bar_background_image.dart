@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travella_01/data/strings.dart';
 
 class AppBarBackgroundImage extends StatelessWidget {
   final String locationName;
@@ -12,7 +13,7 @@ class AppBarBackgroundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "assets/images/saklikent-selalesi_3.jfif",
+      Strings.appBarBackgroundImages[locationName]!,
       width: double.maxFinite,
       fit: BoxFit.cover,
     );

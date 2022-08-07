@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:travella_01/data/strings.dart';
 import 'package:travella_01/information_page/contents/reviews/reviews.dart';
+import 'package:travella_01/models/mekan.dart';
 import 'constants.dart';
 import 'contents/app_bar_background_image.dart';
 import 'contents/InformationText.dart';
 import 'contents/detailed_information_page.dart';
 import 'contents/get_location_in_google_maps.dart';
-import 'contents/information_pictures.dart';
 import 'contents/pictures_gallery.dart';
 import 'contents/rating_bar.dart';
 import 'contents/reviews/create_new_review.dart';
 import 'contents/reviews/reviewUI.dart';
 
 class InformationPage extends StatefulWidget {
-  final String header;
-  final String appBarBackgroundImage;
-  double rateValue; //gezi yerinin yorumlara göre oluşturulan puanı
-  final String galleryPhoto1;
-  final String galleryPhoto2;
-  final String galleryPhoto3;
-  final double latitude;
-  final double longitude;
-  final String googleMapsUrl;
+  final Mekan selectedPlace;
 
   InformationPage({Key? key,
+    required this.selectedPlace,
+    /*
     required this.header,
     required this.rateValue,
     required this.appBarBackgroundImage,
+
     required this.galleryPhoto1,
     required this.galleryPhoto2,
     required this.galleryPhoto3,
@@ -34,6 +30,7 @@ class InformationPage extends StatefulWidget {
     required this.latitude,
     required this.longitude,
     required this.googleMapsUrl,
+     */
 
     }) : super(key: key);
 
@@ -175,7 +172,7 @@ class _InformationPageState extends State<InformationPage> {
           child: ListView(
             controller: scrollController,
             children: [
-               DetailedInformationText(locationName: widget.header),
+               DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -198,9 +195,8 @@ class _InformationPageState extends State<InformationPage> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => GalleryWidget(
-          assetImages: assetImages,
+          selectedLocation: widget.selectedPlace.mekanIsmi,
           //firebase eklendiğinde asset images parametresi yerine urlImages parametresi getirilebilir
-          index: 0,
         ),
       ),
     );
@@ -255,12 +251,12 @@ class _InformationPageState extends State<InformationPage> {
                             SizedBox(
                               width: 11,
                             ),
-                            buildRatingBar(),
+                            buildRatingBar(widget.selectedPlace.rateValue),
                             SizedBox(
                               width: 7,
                             ),
                             Text(
-                              "${widget.rateValue.toString()}/5.0",
+                              "${widget.selectedPlace.rateValue.toString()}/5.0",
                               style: TextStyle(fontSize: 17),
                             ),
                             SizedBox(
@@ -286,13 +282,14 @@ class _InformationPageState extends State<InformationPage> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
-                  widget.header,
+                  widget.selectedPlace.mekanIsmi,
                   style: TextStyle(fontSize: 23, color: Colors.grey.shade800),
                 ),
               ),
               background: AppBarBackgroundImage(
-                locationName: widget.header,
-                assetImage: widget.appBarBackgroundImage), //bu parametrenin yerine firebase nin parametresi gelebilir
+                locationName: widget.selectedPlace.mekanIsmi,
+                assetImage: Strings.appBarBackgroundImages[widget.selectedPlace.mekanIsmi]!
+              ), //bu parametrenin yerine firebase nin parametresi gelebilir
             ),
             leading: IconButton(
               onPressed: () async {
@@ -315,7 +312,7 @@ class _InformationPageState extends State<InformationPage> {
               [
                 Column(
                   children: [
-                    InformationText(locationName: widget.header),
+                    InformationText(locationName: widget.selectedPlace.mekanIsmi),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -358,7 +355,7 @@ class _InformationPageState extends State<InformationPage> {
                                 width: double.maxFinite,
                                 fit: BoxFit.cover,
                                 image: AssetImage(
-                                  assetImages[1],
+                                  Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.first,
                                 ),
                                 child: Container(
                                   alignment: Alignment.bottomLeft,
@@ -373,7 +370,7 @@ class _InformationPageState extends State<InformationPage> {
                                           defaultBorderRadius),
                                     ),
                                     child: Text(
-                                      "${assetImages.length} Fotoğraf",
+                                      "${Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.length} Fotoğraf",
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 25,
@@ -398,10 +395,10 @@ class _InformationPageState extends State<InformationPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => GetLocationInGoogleMaps(
-                                  widget.latitude,
-                                  widget.longitude,
-                                  googleMapsUrl: widget.googleMapsUrl,
-                                  locationName: widget.header,
+                                  widget.selectedPlace.latitude,
+                                  widget.selectedPlace.longitude,
+                                  googleMapsUrl: widget.selectedPlace.googleMapsUrl,
+                                  locationName: widget.selectedPlace.mekanIsmi,
                                 ),
                               ));
                             },
@@ -455,7 +452,7 @@ class _InformationPageState extends State<InformationPage> {
                         ],
                       ),
                     ),
-                    CreateNewReviewUI(),
+                    CreateNewReviewUI(widget.selectedPlace),
                     SizedBox(
                       height: defaultPadding *2,
                     ),
