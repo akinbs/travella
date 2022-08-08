@@ -6,22 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:travella_01/data/strings.dart';
 import 'package:travella_01/information_page/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
 class GetLocationInGoogleMaps extends StatefulWidget {
   String locationName;
-  final double latitude;
-  final double longitude;
-  final String googleMapsUrl;
 
    GetLocationInGoogleMaps(
-    this.latitude, this.longitude,
       {
         Key? key,
         required this.locationName,
-        required this.googleMapsUrl,
 
       }) : super(key: key);
   @override
@@ -57,7 +53,7 @@ class _GetLocationInGoogleMapsState extends State<GetLocationInGoogleMaps> {
         SpeedDialChild(
           label: "Bu yerin yol tarifine git",
           onTap: () async {
-            String url = widget.googleMapsUrl;
+            String url = Strings.googleMapsUrls[widget.locationName]!;
             if (await canLaunch(url)) {
               await launch(
                 url,
@@ -165,7 +161,7 @@ class _GetLocationInGoogleMapsState extends State<GetLocationInGoogleMaps> {
           googleMapController = controller;
         },
         initialCameraPosition: CameraPosition(
-            target: LatLng(widget.latitude, widget.longitude),
+            target: LatLng(Strings.latitudesLongitudes[widget.locationName]!.first, Strings.latitudesLongitudes[widget.locationName]!.last),
             zoom: 10.5),
         markers: {
           ...markers,
@@ -173,7 +169,7 @@ class _GetLocationInGoogleMapsState extends State<GetLocationInGoogleMaps> {
             markerId: const MarkerId("source"),
             infoWindow:  InfoWindow(title: widget.locationName),
             icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-            position: LatLng(widget.latitude, widget.longitude),
+            position: LatLng(Strings.latitudesLongitudes[widget.locationName]!.first, Strings.latitudesLongitudes[widget.locationName]!.last),
           ),
         },
       ),

@@ -21,7 +21,7 @@ class ReviewUI extends StatefulWidget {
     required this.comment,
     required this.rating,
     required this.isFavorite,
-    required this.likesNumber
+    required this.likesNumber,
   }) : super(key: key);
 
   @override

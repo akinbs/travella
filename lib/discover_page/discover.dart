@@ -35,19 +35,11 @@ class Discover extends StatelessWidget {
       var mekanAdi = Strings.mekan_adlari[i];
       var mekanTuru = Mekan.Tur_values[i];
       var mekanKucukResim = "assets/images/${Strings.kucukResim[i]}.png";
-      var googleMapsUrl = Strings.googleMapsUrls[i];
-      var rateValue = Strings.rateValues[i];
-      var latitude = Strings.latitudes[i];
-      var longitude = Strings.longitudes[i];
 
       Mekan eklenecekMekan = Mekan(
         mekanAdi,
         mekanTuru,
         mekanKucukResim,
-        googleMapsUrl,
-        rateValue,
-        latitude,
-        longitude,
       );
       gecici.add(eklenecekMekan);
     }

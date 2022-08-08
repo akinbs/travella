@@ -251,12 +251,12 @@ class _InformationPageState extends State<InformationPage> {
                             SizedBox(
                               width: 11,
                             ),
-                            buildRatingBar(widget.selectedPlace.rateValue),
+                            buildRatingBar(Strings.rateValues[widget.selectedPlace.mekanIsmi]!),
                             SizedBox(
                               width: 7,
                             ),
                             Text(
-                              "${widget.selectedPlace.rateValue.toString()}/5.0",
+                              "${Strings.rateValues[widget.selectedPlace.mekanIsmi].toString()}/5.0",
                               style: TextStyle(fontSize: 17),
                             ),
                             SizedBox(
@@ -292,11 +292,9 @@ class _InformationPageState extends State<InformationPage> {
               ), //bu parametrenin yerine firebase nin parametresi gelebilir
             ),
             leading: IconButton(
-              onPressed: () async {
-                /*
-                    await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => AnaSayfaCenterWidget()));
-                     */
+              onPressed: () {
+                Navigator.of(context).pop();
+
               },
               icon: const CircleAvatar(
                   backgroundColor: mainColor,
@@ -395,9 +393,6 @@ class _InformationPageState extends State<InformationPage> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => GetLocationInGoogleMaps(
-                                  widget.selectedPlace.latitude,
-                                  widget.selectedPlace.longitude,
-                                  googleMapsUrl: widget.selectedPlace.googleMapsUrl,
                                   locationName: widget.selectedPlace.mekanIsmi,
                                 ),
                               ));
@@ -463,7 +458,7 @@ class _InformationPageState extends State<InformationPage> {
                         child: Row(
                           children: [
                             Text(
-                              "${reviews.length} ", //yorum sayısını buraya koyacağız
+                              "${Strings.reviews[widget.selectedPlace.mekanIsmi]!.length} ", //yorum sayısını buraya koyacağız
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30,
@@ -487,15 +482,15 @@ class _InformationPageState extends State<InformationPage> {
                return ReviewUI(
                  image: "assets/images/melih_emre_guler.jpeg", //user.profilImage gibi bir şey olmalı
                  name: "Username", //user.Username gibi bir şey olmalı
-                 date: reviews[reviews.length - index - 1].date,
-                 comment: reviews[reviews.length - index - 1].comment,
-                 rating: reviews[reviews.length - index - 1].rating,
+                 date: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].date,
+                 comment: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].comment,
+                 rating: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].rating,
                  isFavorite: isLiked,
                  likesNumber: likesNumber_,
                );
              },
               //_dynamicReviewBuilder,
-              childCount: reviews.length,
+              childCount: Strings.reviews[widget.selectedPlace.mekanIsmi]!.length,
             ),
           ),
         ],

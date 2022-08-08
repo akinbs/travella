@@ -16,21 +16,6 @@ class Mekan {
 
   get turvalues => Tur_values;
 
-  final String _googleMapsUrl;
-
-  get googleMapsUrl => _googleMapsUrl;
-
-  final double _rateValue;
-
-  get rateValue => _rateValue;
-
-  final double _latitude;
-
-  get latitude => _latitude;
-
-  final double _longitude;
-
-  get longitude => _longitude;
 
 
   //final String header; zaten var
@@ -49,9 +34,6 @@ class Mekan {
     this._mekanIsmi,
     this._mekanturu,
     this._kucukResim,
-    this._googleMapsUrl,
-    this._rateValue,
-    this._latitude,
-    this._longitude,
+
   );
 }

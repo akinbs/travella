@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
@@ -6,7 +8,7 @@ import '../constants.dart';
 
 //---------------------------------Rating Bar-----------------------------------
 
- SmoothStarRating buildRatingBar(rateValue) {
+ SmoothStarRating buildRatingBar(double rateValue) {
 
   return SmoothStarRating(
       allowHalfRating: true,

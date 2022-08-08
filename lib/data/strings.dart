@@ -1,3 +1,5 @@
+import 'package:travella_01/information_page/contents/reviews/reviewUI.dart';
+
 class Strings {
   static const String App_name = "KEŞFET";
 
@@ -117,84 +119,83 @@ class Strings {
     "Torkul Yaylası": "Doğa Turizmi"
   };
 
-  static const List<double> rateValues = [ //bunlar yorumların oylarına göre internetten çekilmeli
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-    5,
-  ];
+  static const Map<String,double> rateValues = {
+    //bunlar yorumların oylarına göre internetten çekilmeli
+    "Kurugöl Kanyonu": 5,
+    "Efteni Gölü": 5,
+    "Kurugöl Tabiat Parkı": 5,
+    "Topuk Yaylası" : 5,
+    "Ahmet Dede Türbesi" : 5,
+    "Hasan Dede Türbesi" : 5,
+    "Konuralp Türbesi" : 5,
+    "Yabal Dede Türbesi" : 5,
+    "Akçakoca Merkez Cami" : 5,
+    "Cumayeri Yeni Cami" : 5,
+    "Hemşin Köyü Cami" : 5,
+    "Karaçalı Orhangazi Cuma Cami" : 5,
+    "Organ Gazi Cami" : 5,
+    "Yeni Meze Cami" : 5,
+    "Ceneviz Kalesi" : 5,
+    "Fakıllı Mağrası" : 5,
+    "Sarıkaya Mağrası" : 5,
+    "Toptepe Seyir Terası" : 5,
+    "Çuhallı Plajı" : 5,
+    "Aktaş Şelalesi" : 5,
+    "Aydınpınar Şelalesi" : 5,
+    "Güzeldere Şelalesi" : 5,
+    "Harmankaya Şelalesi" : 5,
+    "Saklıkent Şelalesi" : 5,
+    "Samandere Şelalesi" : 5,
+    "Yoğunpelit Mengen Şelalesi" : 5,
+    "Konuralp Antik Tiyatro" : 5,
+    "Mehmet Akif Bey Köşkü" : 5,
+    "Roma Köprüsü" : 5,
+    "Balıklı Yaylası" : 5,
+    "Derebalık Yaylası" : 5,
+    "Kardüz Yaylası" : 5,
+    "Odayeri Yaylası" : 5,
+    "Pürenli Yaylası" : 5,
+    "Torkul Yaylası" : 5,
+  };
 
 
-
-  static const List<String> googleMapsUrls = [
-    "https://goo.gl/maps/XZ1tJ6M4Czqb59Tx5",//Kurugöl Kanyonu
-    "https://goo.gl/maps/L46heFExQiiJFG8v7",//Efteni Gölü
-    "https://goo.gl/maps/rG6njJm9qam2ED7o9",//Kurugöl Tabiat Parkı
-    "https://goo.gl/maps/qC2FqrHyfxaCCn2z7",//Topuk Yaylası
-    "https://goo.gl/maps/h24mAizM29kfikL57",//Ahmet Dede Türbesi
-    "https://goo.gl/maps/ESBTpM98VGzT4Fma6",//Hasan Dede Türbesi tam konumu yok
-    "https://goo.gl/maps/QseiazrgKAmt7J2B8",//Konuralp Türbesi
-    "https://goo.gl/maps/BCFtUQbihWXVE7yU8",//Yabal Dede Türbesi
-    "https://goo.gl/maps/wvNzwRVVUkNkK54b7",//Akçakoca Merkez Cami
-    "https://goo.gl/maps/R35L68Y3QtnG7RcQA",//Cumayeri Yeni Cami
-    "https://goo.gl/maps/FL54iNjBmQ49U2TG8",//Tarihi Hemşin Köyü ahşap Camii
-    "https://goo.gl/maps/HrnsWJhUyGJswpxs9",//Karaçalı Orhangazi Cuma Cami
-    "https://goo.gl/maps/8aSYdwwqSVUCsctn7",//Orhan Gazi Camii
-    "https://goo.gl/maps/pshEWASxkoszNbJm7",//Tarihi Uğurlu Köyü Yeni Meze Camii
-    "https://goo.gl/maps/fEvdcu1v1LpPvN4k9",//Ceneviz Kalesi Ve Sahil Plajı
-    "https://goo.gl/maps/idGdmcCS4RzhSEtG8",//Fakıllı Mağrası
-    "https://goo.gl/maps/VBFXQnsvwps5TpUk6",//Sarıkaya Mağrası
-    "https://goo.gl/maps/E5iE4kirABYpMLgq9",//Toptepe Seyir Terası
-    "https://goo.gl/maps/trEXhwWtPorrbh1S8",//Çuhallı Plajı
-    "https://goo.gl/maps/yij1QEySdk4XzLjK9",//Aktaş Şelalesi
-    "https://goo.gl/maps/q1WbKp8MxvqQbtAP8",//Aydınpınar Şelalesi
-    "https://goo.gl/maps/nwX6CKbTU2dR21fB7",//Güzeldere Şelalesi
-    "https://goo.gl/maps/sZ3aErxdmr1AMmhF7",//Harmankaya Şelalesi
-    "https://goo.gl/maps/ERmVvVrKufAL6gkK6",//Saklıkent Şelalesi
-    "https://goo.gl/maps/ZNKiWN3v9avABZWXA",//Samandere Şelalesi
-    "https://goo.gl/maps/e6NS9vVtK81CFERF7",//Yoğunpelit Mengen Şelalesi
-    "https://goo.gl/maps/hrqzNwkp5nF3tjYy9",//Konuralp Antik Tiyatro
-    "https://goo.gl/maps/QDzxH9y7DvSr3i2F6",//Mehmet Akif Bey Köşkü
-    "https://goo.gl/maps/sxEMdFU5mjXZKH8T7",//Roma Köprüsü
-    "https://goo.gl/maps/6VriJ2VB6EstqWo8A",//Balıklı Yaylası
-    "https://goo.gl/maps/S775KZMgN4N4m88XA",//Derebalık Yaylası
-    "https://goo.gl/maps/sVfGc9bQ8L1DcA1K9",//Karduz Yaylası
-    "https://goo.gl/maps/ZKT4gPJ1VHYGHymP9",//Odayeri Yaylası
-    "https://goo.gl/maps/Pxm9AMPCNrw82GYB9",//Pürenli Yaylası
-    "https://goo.gl/maps/pDNGwvZf38SN1EwX9",//Torkul Yaylası
-
-  ];
+  static const Map<String,String> googleMapsUrls = {
+    "Kurugöl Kanyonu" :"https://goo.gl/maps/XZ1tJ6M4Czqb59Tx5",
+    "Efteni Gölü":"https://goo.gl/maps/L46heFExQiiJFG8v7" ,
+    "Kurugöl Tabiat Parkı" :"https://goo.gl/maps/rG6njJm9qam2ED7o9",
+    "Topuk Yaylası":"https://goo.gl/maps/qC2FqrHyfxaCCn2z7",
+    "Ahmet Dede Türbesi":"https://goo.gl/maps/h24mAizM29kfikL57",
+    "Hasan Dede Türbesi":"https://goo.gl/maps/ESBTpM98VGzT4Fma6",
+    "Konuralp Türbesi":"https://goo.gl/maps/QseiazrgKAmt7J2B8",
+    "Yabal Dede Türbesi":"https://goo.gl/maps/BCFtUQbihWXVE7yU8",
+    "Akçakoca Merkez Cami":"https://goo.gl/maps/wvNzwRVVUkNkK54b7",
+    "Cumayeri Yeni Cami":"https://goo.gl/maps/R35L68Y3QtnG7RcQA",
+    "Hemşin Köyü Cami":"https://goo.gl/maps/FL54iNjBmQ49U2TG8",
+    "Karaçalı Orhangazi Cuma Cami":"https://goo.gl/maps/HrnsWJhUyGJswpxs9",
+    "Organ Gazi Cami":"https://goo.gl/maps/8aSYdwwqSVUCsctn7",
+    "Yeni Meze Cami":"https://goo.gl/maps/pshEWASxkoszNbJm7",
+    "Ceneviz Kalesi":"https://goo.gl/maps/fEvdcu1v1LpPvN4k9",
+    "Fakıllı Mağrası":"https://goo.gl/maps/idGdmcCS4RzhSEtG8",
+    "Sarıkaya Mağrası":"https://goo.gl/maps/VBFXQnsvwps5TpUk6",
+    "Toptepe Seyir Terası":"https://goo.gl/maps/E5iE4kirABYpMLgq9",
+    "Çuhallı Plajı":"https://goo.gl/maps/trEXhwWtPorrbh1S8",
+    "Aktaş Şelalesi":"https://goo.gl/maps/yij1QEySdk4XzLjK9",
+    "Aydınpınar Şelalesi":"https://goo.gl/maps/q1WbKp8MxvqQbtAP8",
+    "Güzeldere Şelalesi":"https://goo.gl/maps/nwX6CKbTU2dR21fB7",
+    "Harmankaya Şelalesi":"https://goo.gl/maps/sZ3aErxdmr1AMmhF7",
+    "Saklıkent Şelalesi":"https://goo.gl/maps/ERmVvVrKufAL6gkK6",
+    "Samandere Şelalesi":"https://goo.gl/maps/ZNKiWN3v9avABZWXA",
+    "Yoğunpelit Mengen Şelalesi":"https://goo.gl/maps/e6NS9vVtK81CFERF7",
+    "Konuralp Antik Tiyatro":"https://goo.gl/maps/hrqzNwkp5nF3tjYy9",
+    "Mehmet Akif Bey Köşkü":"https://goo.gl/maps/QDzxH9y7DvSr3i2F6",
+    "Roma Köprüsü":"https://goo.gl/maps/sxEMdFU5mjXZKH8T7",
+    "Balıklı Yaylası":"https://goo.gl/maps/6VriJ2VB6EstqWo8A",
+    "Derebalık Yaylası":"https://goo.gl/maps/S775KZMgN4N4m88XA",
+    "Kardüz Yaylası":"https://goo.gl/maps/sVfGc9bQ8L1DcA1K9",
+    "Odayeri Yaylası":"https://goo.gl/maps/ZKT4gPJ1VHYGHymP9",
+    "Pürenli Yaylası":"https://goo.gl/maps/Pxm9AMPCNrw82GYB9",
+    "Torkul Yaylası":"https://goo.gl/maps/pDNGwvZf38SN1EwX9",
+  };
 
   static Map<String, String> informationTexts = {
     "Kurugöl Kanyonu" : "Düzce ili, Akçakoca ilçesi, Kurugöl köyünde bulunan Şelale ve Kanyon, ilçe merkezine 14 km uzaklıktadır. Kolay ve zor derecelerden oluşan, akarsu kenarı boyunca yürüyüş parkuru ile doğa ve macera severler için stresten uzak, eşsiz doğasıyla, Akçakoca’nın görülmesi gereken güzelliklerinden biridir.",
@@ -568,8 +569,8 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       "assets/images/Mehmet_Akif_Bey_Kosku_2.jpg",
     ],
     "Roma Köprüsü" : [
-      "assets/images/Roma_Köprüsü.png",
       "assets/images/Roma_Koprusu_1.jpg",
+      "assets/images/Roma_Köprüsü.png",
       "assets/images/Roma_Koprusu_2.jpg",
     ],
     "Balıklı Yaylası" : [
@@ -603,10 +604,129 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Torkul Yaylası" : [
       "assets/images/Torkul_Yaylası.png",
       "assets/images/Torkul_Yaylasi_ve_Goleti_1.jpg",
-      "assets/images/Torkul_Yaylasi_ve_Goleti_1.jpg",
+      "assets/images/Torkul_Yaylasi_2.png",
       "assets/images/Torkul_Yaylasi_3.png"
     ],
   };
+
+  static Map<String, List<double>> latitudesLongitudes = {
+    "Kurugöl Kanyonu" : [41.0028246,31.1018119],
+    "Efteni Gölü": [40.7577134,31.0405692],
+    "Kurugöl Tabiat Parkı": [40.8062479,31.2933115],
+    "Topuk Yaylası": [40.693243,31.3634749],
+    "Ahmet Dede Türbesi": [41.068365,31.1009307],
+    "Hasan Dede Türbesi": [40.8831496,31.004825],
+    "Konuralp Türbesi": [40.9051578,31.1477261],
+    "Yabal Dede Türbesi": [40.8234389,31.1622443],
+    "Akçakoca Merkez Cami": [41.0887607,31.1247474],
+    "Cumayeri Yeni Cami": [40.8765903,30.9498662],
+    "Hemşin Köyü Cami": [41.0252558,31.023718],
+    "Karaçalı Orhangazi Cuma Cami": [40.7803542,31.3049612],
+    "Organ Gazi Cami": [41.0860983,31.2287972],
+    "Yeni Meze Cami": [41.0226128,30.9885605],
+    "Ceneviz Kalesi": [41.0856783,31.093136],
+    "Fakıllı Mağrası": [41.0523269,31.1775448],
+    "Sarıkaya Mağrası": [40.9350247,31.3988123],
+    "Toptepe Seyir Terası": [40.7499991,31.0547741],
+    "Çuhallı Plajı": [41.0899076,31.1424704],
+    "Aktaş Şelalesi": [41.0147817,31.043241],
+    "Aydınpınar Şelalesi": [40.7473044,31.1020174],
+    "Güzeldere Şelalesi": [40.723412,31.0498806],
+    "Harmankaya Şelalesi": [40.9498311,30.9260569],
+    "Saklıkent Şelalesi": [40.9407589,31.4908345],
+    "Samandere Şelalesi": [40.691294,31.2612781,],
+    "Yoğunpelit Mengen Şelalesi": [40.9751981,31.6060877],
+    "Konuralp Antik Tiyatro": [40.9054525,31.1481106],
+    "Mehmet Akif Bey Köşkü": [41.0887006,31.1233363],
+    "Roma Köprüsü": [40.9063545,31.1420666],
+    "Balıklı Yaylası": [40.6558711,31.033864,],
+    "Derebalık Yaylası": [40.6777826,31.0918441],
+    "Kardüz Yaylası": [40.6737315,30.9774546,],
+    "Odayeri Yaylası": [40.6792288,31.152603,],
+    "Pürenli Yaylası": [40.6487952,31.0506212],
+    "Torkul Yaylası": [40.679501,31.1734988,],
+  };
+
+  static Map<String,List<ReviewUI>> reviews = {
+    "Kurugöl Kanyonu" : [],
+    "Efteni Gölü": [],
+    "Kurugöl Tabiat Parkı" : [],
+    "Topuk Yaylası" : [],
+    "Ahmet Dede Türbesi" : [],
+    "Hasan Dede Türbesi" : [],
+    "Konuralp Türbesi" : [],
+    "Yabal Dede Türbesi" : [],
+    "Akçakoca Merkez Cami" : [],
+    "Cumayeri Yeni Cami" : [],
+    "Hemşin Köyü Cami" : [],
+    "Karaçalı Orhangazi Cuma Cami" : [],
+    "Organ Gazi Cami" : [],
+    "Yeni Meze Cami" : [],
+    "Ceneviz Kalesi" : [],
+    "Fakıllı Mağrası" : [],
+    "Sarıkaya Mağrası" : [],
+    "Toptepe Seyir Terası" : [],
+    "Çuhallı Plajı" : [],
+    "Aktaş Şelalesi" : [],
+    "Aydınpınar Şelalesi" : [],
+    "Güzeldere Şelalesi" : [],
+    "Harmankaya Şelalesi" : [],
+    "Saklıkent Şelalesi" : [],
+    "Samandere Şelalesi" : [],
+    "Yoğunpelit Mengen Şelalesi" : [],
+    "Konuralp Antik Tiyatro" : [],
+    "Mehmet Akif Bey Köşkü" : [],
+    "Roma Köprüsü" : [],
+    "Balıklı Yaylası" : [],
+    "Derebalık Yaylası" : [],
+    "Kardüz Yaylası" : [],
+    "Odayeri Yaylası" : [],
+    "Pürenli Yaylası" : [],
+    "Torkul Yaylası" : [],
+  };
+
+/*
+
+  static const List<String> googleMapsUrls = [
+    "https://goo.gl/maps/XZ1tJ6M4Czqb59Tx5",//Kurugöl Kanyonu
+    "https://goo.gl/maps/L46heFExQiiJFG8v7",//Efteni Gölü
+    "https://goo.gl/maps/rG6njJm9qam2ED7o9",//Kurugöl Tabiat Parkı
+    "https://goo.gl/maps/qC2FqrHyfxaCCn2z7",//Topuk Yaylası
+    "https://goo.gl/maps/h24mAizM29kfikL57",//Ahmet Dede Türbesi
+    "https://goo.gl/maps/ESBTpM98VGzT4Fma6",//Hasan Dede Türbesi tam konumu yok
+    "https://goo.gl/maps/QseiazrgKAmt7J2B8",//Konuralp Türbesi
+    "https://goo.gl/maps/BCFtUQbihWXVE7yU8",//Yabal Dede Türbesi
+    "https://goo.gl/maps/wvNzwRVVUkNkK54b7",//Akçakoca Merkez Cami
+    "https://goo.gl/maps/R35L68Y3QtnG7RcQA",//Cumayeri Yeni Cami
+    "https://goo.gl/maps/FL54iNjBmQ49U2TG8",//Tarihi Hemşin Köyü ahşap Camii
+    "https://goo.gl/maps/HrnsWJhUyGJswpxs9",//Karaçalı Orhangazi Cuma Cami
+    "https://goo.gl/maps/8aSYdwwqSVUCsctn7",//Orhan Gazi Camii
+    "https://goo.gl/maps/pshEWASxkoszNbJm7",//Tarihi Uğurlu Köyü Yeni Meze Camii
+    "https://goo.gl/maps/fEvdcu1v1LpPvN4k9",//Ceneviz Kalesi Ve Sahil Plajı
+    "https://goo.gl/maps/idGdmcCS4RzhSEtG8",//Fakıllı Mağrası
+    "https://goo.gl/maps/VBFXQnsvwps5TpUk6",//Sarıkaya Mağrası
+    "https://goo.gl/maps/E5iE4kirABYpMLgq9",//Toptepe Seyir Terası
+    "https://goo.gl/maps/trEXhwWtPorrbh1S8",//Çuhallı Plajı
+    "https://goo.gl/maps/yij1QEySdk4XzLjK9",//Aktaş Şelalesi
+    "https://goo.gl/maps/q1WbKp8MxvqQbtAP8",//Aydınpınar Şelalesi
+    "https://goo.gl/maps/nwX6CKbTU2dR21fB7",//Güzeldere Şelalesi
+    "https://goo.gl/maps/sZ3aErxdmr1AMmhF7",//Harmankaya Şelalesi
+    "https://goo.gl/maps/ERmVvVrKufAL6gkK6",//Saklıkent Şelalesi
+    "https://goo.gl/maps/ZNKiWN3v9avABZWXA",//Samandere Şelalesi
+    "https://goo.gl/maps/e6NS9vVtK81CFERF7",//Yoğunpelit Mengen Şelalesi
+    "https://goo.gl/maps/hrqzNwkp5nF3tjYy9",//Konuralp Antik Tiyatro
+    "https://goo.gl/maps/QDzxH9y7DvSr3i2F6",//Mehmet Akif Bey Köşkü
+    "https://goo.gl/maps/sxEMdFU5mjXZKH8T7",//Roma Köprüsü
+    "https://goo.gl/maps/6VriJ2VB6EstqWo8A",//Balıklı Yaylası
+    "https://goo.gl/maps/S775KZMgN4N4m88XA",//Derebalık Yaylası
+    "https://goo.gl/maps/sVfGc9bQ8L1DcA1K9",//Karduz Yaylası
+    "https://goo.gl/maps/ZKT4gPJ1VHYGHymP9",//Odayeri Yaylası
+    "https://goo.gl/maps/Pxm9AMPCNrw82GYB9",//Pürenli Yaylası
+    "https://goo.gl/maps/pDNGwvZf38SN1EwX9",//Torkul Yaylası
+  ];
+ */
+
+/*
 
   static const List<double> latitudes = [
     41.0028246,//Kurugöl Kanyonu
@@ -644,6 +764,7 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     40.6792288,//Odayeri Yaylası
     40.6487952,//Pürenli Yaylası
     40.679501,//Torkul Yaylası
+
   ];
 
   static const List<double> longitudes = [
@@ -682,5 +803,8 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     31.152603,//Odayeri Yaylası
     31.0506212,//Pürenli Yaylası
     31.1734988,//Torkul Yaylası
+
   ];
+ */
+
 }

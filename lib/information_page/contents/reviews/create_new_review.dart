@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:intl/intl.dart';
+import 'package:travella_01/data/strings.dart';
 import 'package:travella_01/information_page/contents/reviews/reviewUI.dart';
-import 'package:travella_01/information_page/contents/reviews/reviews.dart';
 import 'package:travella_01/information_page/information_page.dart';
 import '../../../models/mekan.dart';
 import '../../constants.dart';
@@ -38,17 +39,20 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
 
 //------------------------------------------------------------------------------
   void postTheReview(Mekan selectedPlace) {
+    final now = DateTime.now();
+    final String time = DateFormat("dd-MM-yyyy - kk:mm").format(now);
+
     ReviewUI review = ReviewUI(
         image: "assets/images/melih_emre_guler.jpeg",
         name: "Username",
-        date: "05/08/2022",
+        date: time,
         comment: _textEditingController.text,
         rating: rating,
         isFavorite: false,
         likesNumber: 0);
 
     setState(() {
-      reviews.add(review);
+      Strings.reviews[selectedPlace.mekanIsmi]!.add(review);
     });
 
     setState(() {
