@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travella_01/information_page/constants.dart';
 class DrawerIcerigi extends StatelessWidget {
   const DrawerIcerigi({
     Key? key,
@@ -15,7 +16,7 @@ class DrawerIcerigi extends StatelessWidget {
             child: Text("MG"),
           ), //yuvarlak bir kullanıcı fotosu yapmaya çalıştım ama olmadı.
           decoration: BoxDecoration(
-            color: Colors.lightGreen.shade300,
+            color: mainColor,
           ),
         ),
     
@@ -53,7 +54,6 @@ class DrawerIcerigi extends StatelessWidget {
               ],
             ),
           ),
-        
       ],
     );
   }
