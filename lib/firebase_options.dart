@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:167938253702:android:d2a8c4924a074297844207',
     messagingSenderId: '167938253702',
     projectId: 'travella-firebase-5f0cb',
+    databaseURL: 'https://travella-firebase-5f0cb-default-rtdb.firebaseio.com',
     storageBucket: 'travella-firebase-5f0cb.appspot.com',
   );
 
@@ -62,7 +63,9 @@ class DefaultFirebaseOptions {
     appId: '1:167938253702:ios:7137029552f7894d844207',
     messagingSenderId: '167938253702',
     projectId: 'travella-firebase-5f0cb',
+    databaseURL: 'https://travella-firebase-5f0cb-default-rtdb.firebaseio.com',
     storageBucket: 'travella-firebase-5f0cb.appspot.com',
+    androidClientId: '167938253702-2ju15a5sifvk4q2jr60gnc6n58dv7tda.apps.googleusercontent.com',
     iosClientId: '167938253702-nnlv48uhk8dqg1d31rntfakndkamu6lk.apps.googleusercontent.com',
     iosBundleId: 'com.example.travella01',
   );
