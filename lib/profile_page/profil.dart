@@ -48,32 +48,28 @@ class _ProfilPage extends State<ProfilPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextButton(
-    child: Text('Gittiğim Yerler: 15'),
-    style: TextButton.styleFrom(
-      primary: Colors.white,
-      shadowColor: Colors.green,
-      backgroundColor: Colors.teal,
-      onSurface: Colors.grey,
-    ),
-    onPressed: () { 
-    },
-  ),
-                     SizedBox(width: 50,),
-                    TextButton(
-    child: Text('Kalan Yerler: 27'),
-    style: TextButton.styleFrom(
-      primary: Colors.white,
-      shadowColor: Colors.green,
-      backgroundColor: Colors.teal,
-      onSurface: Colors.grey,
-    ),
-    onPressed: () { 
-    },
-  )
-                     
-                
-
-                 
+                    child: Text('Gittiğim Yerler: 15'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      shadowColor: Colors.green,
+                      backgroundColor: Colors.teal,
+                      onSurface: Colors.grey,
+                    ),
+                    onPressed: () {},
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  TextButton(
+                    child: Text('Kalan Yerler: 27'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      shadowColor: Colors.green,
+                      backgroundColor: Colors.teal,
+                      onSurface: Colors.grey,
+                    ),
+                    onPressed: () {},
+                  )
                 ],
               ),
               SizedBox(height: 15),
@@ -83,10 +79,8 @@ class _ProfilPage extends State<ProfilPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SingleChildScrollView(
-                      child: 
-                      tabbar(),
-                      
-                      ),
+                      child: tabbar(),
+                    ),
                   ],
                 ),
               ),

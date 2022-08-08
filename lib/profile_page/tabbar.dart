@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:travella_01/profile_page/favoriler.dart';
 
@@ -29,24 +26,28 @@ class tabbar extends StatelessWidget {
                     bottom: const TabBar(
                       labelColor: Colors.green,
                       unselectedLabelColor: Colors.black,
-                      isScrollable: false,//TABBAR GÖRÜNÜMÜ
-                        
-                      tabs: [
+                      isScrollable: false, //TABBAR GÖRÜNÜMÜ
 
+                      tabs: [
                         Tab(
-                          icon: Icon(Icons.star,color: Colors.amber,),
+                          icon: Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
                           text: ("FAVORİLER"),
                         ),
-                        Tab(icon: Icon(Icons.comment,color: Colors.blue,), text: ("YORUMLARIM")),
+                        Tab(
+                            icon: Icon(
+                              Icons.comment,
+                              color: Colors.blue,
+                            ),
+                            text: ("YORUMLARIM")),
                       ],
                     ),
                   ),
                   body: Expanded(
                     child: Container(
-                      
-                     
                       child: TabBarView(
-                      
                         children: [
                           favoriler(),
                           yorumlar(),
