@@ -6,40 +6,42 @@ class foto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Stack(children: <Widget>[
-        CircleAvatar(
-          backgroundColor: Colors.green,
-          radius: 65,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(90), 
-                color: Colors.green),
-            child: InkWell(
-              onTap: () {},
-              child: CircleAvatar(foregroundColor: Colors.red,
-                radius: 60,
-                backgroundImage:
-                    AssetImage("assets/images/fehmi.jpg"),
-                backgroundColor: Colors.green,
+    return Expanded(
+      child: Center(
+        child: Stack(children: <Widget>[
+          CircleAvatar(
+            backgroundColor: Colors.green,
+            radius: 65,
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(90), 
+                  color: Colors.green),
+              child: InkWell(
+                onTap: () {},
+                child: CircleAvatar(foregroundColor: Colors.red,
+                  radius: 60,
+                  backgroundImage:
+                      AssetImage("assets/images/fehmi.jpg"),
+                  backgroundColor: Colors.green,
+                ),
               ),
             ),
           ),
-        ),
-        Positioned(
-            bottom: 1,
-            right: 1,
-            child: InkWell(
-              onTap: () {},
-              focusColor: Colors.red,
-              child: Icon(
-                Icons.photo_camera,shadows: [Shadow(color: Colors.green)],
-                size: 37,
-                color: Colors.green,
-              ),
-            )
-            ,)
-      ]),
+          Positioned(
+              bottom: 1,
+              right: 1,
+              child: InkWell(
+                onTap: () {},
+                focusColor: Colors.red,
+                child: Icon(
+                  Icons.photo_camera,shadows: [Shadow(color: Colors.green)],
+                  size: 37,
+                  color: Colors.green,
+                ),
+              )
+              ,)
+        ]),
+      ),
     );
   }
 }

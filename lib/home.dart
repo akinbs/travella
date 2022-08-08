@@ -51,36 +51,39 @@ class _AnaSayfaState extends State<AnaSayfa> {
   var  mainColor =  Color.fromARGB(255, 0, 202, 157);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,  
-      extendBody: true,
-      drawer: Drawer( 
-                child:DrawerIcerigi(),
-              ),
-              appBar: AppBar(
-                centerTitle: true,
-                title: Text(ScreenName[index]),
-                //shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)) ,
-                // google haritalar sayfamızda yukarda beyaz alanlar oluşmasına sebep oluyor
-                
-                 
-                actions: [ 
-                  IconButton(
-                    icon:Icon(Icons.notifications_none), 
-                    onPressed: () {
-                      
-                    },
-                    iconSize: 30,
-                  ),
+    return Container(
+      height: 500,
+      child: Scaffold(
+        extendBodyBehindAppBar: true,  
+        extendBody: true,
+        drawer: Drawer( 
+                  child:DrawerIcerigi(),
+                ),
+                appBar: AppBar(
+                  centerTitle: true,
+                  title: Text(ScreenName[index]),
+                  //shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)) ,
+                  // google haritalar sayfamızda yukarda beyaz alanlar oluşmasına sebep oluyor
                   
-                ],
-              backgroundColor: mainColor,            
-            ),
-      //appBar: AppBarLayout(), bu app bar'ı sayfalarda kendi alanlarınıza koyacaksınız
-      body: screens[index],
-      bottomNavigationBar: bottomNavBar(context),
-      //AnaSayfaCenterWidget(),
-      
+                   
+                  actions: [ 
+                    IconButton(
+                      icon:Icon(Icons.notifications_none), 
+                      onPressed: () {
+                        
+                      },
+                      iconSize: 30,
+                    ),
+                    
+                  ],
+                backgroundColor: mainColor,            
+              ),
+        //appBar: AppBarLayout(), bu app bar'ı sayfalarda kendi alanlarınıza koyacaksınız
+        body: screens[index],
+        bottomNavigationBar: bottomNavBar(context),
+        //AnaSayfaCenterWidget(),
+        
+      ),
     );
   }
 
