@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travella_01/discover_page/discover.dart';
 import 'package:travella_01/drawer_part.dart';
+import 'package:travella_01/profile_page/profil.dart';
+
 import 'package:travella_01/temporary_pages/profile.dart';
 
 import 'package:travella_01/temporary_pages/route_page.dart';
@@ -40,8 +42,9 @@ class _AnaSayfaState extends State<AnaSayfa> {
     discover(),
     GoogleMapsPage(),
     main_page(), 
-    route_page(),
-    profile(),
+    route_page(), 
+    ProfilPage(),
+
   ];
   
 
