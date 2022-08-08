@@ -1,7 +1,10 @@
 import 'package:travella_01/information_page/contents/reviews/reviewUI.dart';
 
 class Strings {
+
   static const String App_name = "KEŞFET";
+
+
 
   static const List<String> mekan_adlari = [
     "Kurugöl Kanyonu",
@@ -78,6 +81,57 @@ class Strings {
     "Odayeri_Yaylası",
     "Pürenli_Yaylası",
     "Torkul_Yaylası"
+
+   ];  
+  static const List<String> BuyukResim = [
+     "Kurugöl_Kanyonu", 
+    "Efteni_Gölü",
+    "Kurugöl_Tabiat_Parkı", 
+    "Topuk_Yaylası", 
+    "Ahmet_Dede_Türbesi", 
+    "Hasan_Dede_Türbesi", 
+    "Konuralp_Türbesi", 
+    "Yabal_Dede_Türbesi", 
+    "Akçakoca_Merkez_Cami", 
+    "Cumayeri_Yeni_Cami", 
+    "Hemşin_Köyü_Cami", 
+    "Karaçalı_Orhangazi_Cuma_Cami", 
+    "Organgazi_Cuma_Cami", 
+    "Yeni_Meze_Cami", 
+    "Ceneviz_Kalesi", 
+    "Fakıllı_Mağrası", 
+    "Sarıkaya_Mağrası", 
+    "Toptepe_Seyir_Terası", 
+    "Çuhallı_Plajı", 
+    "Aktaş_Şelalesi",
+    "Aydınpınar_Şelalesi", 
+    "Güzeldere_Şelalesi", 
+    "Harmankaya_Şelalesi", 
+    "Saklıkent_Şelalesi", 
+    "Samandere_Şelalesi", 
+    "Yoğunpelit_Mengen_Şelalesi", 
+    "Konuralp_Antik_Tiyatro", 
+    "Mehmet_Akif_Bey_Köşkü", 
+    "Roma_Köprüsü", 
+    "Balıklı_Yaylası", 
+    "Derebalık_Yaylası", 
+    "Karduz_Yaylası", 
+    "Odayeri_Yaylası", 
+    "Pürenli_Yaylası", 
+    "Torkul_Yaylası"
+  ];
+  static const List <List>Rotalar = [ 
+    ["doğa","tarih"],
+    ["doğa_2","yayla"], 
+    ["tarih_2","inanç"], 
+    ["tarih_3", "plaj"], 
+    ["tarih_4","yayla_2"], 
+    ["yayla_3","inanç_2"], 
+    ["yayla_4","deniz"],
+    ["deniz_2","inanç_3"], 
+    ["doğa_3", "deniz_3"],
+    ["doğa_4", "tarih_5"]
+
   ];
 
 

@@ -21,17 +21,15 @@ class InformationPage extends StatefulWidget {
     required this.header,
     required this.rateValue,
     required this.appBarBackgroundImage,
-
     required this.galleryPhoto1,
     required this.galleryPhoto2,
     required this.galleryPhoto3,
-
     required this.latitude,
     required this.longitude,
     required this.googleMapsUrl,
      */
 
-    }) : super(key: key);
+  }) : super(key: key);
 
 
   @override
@@ -96,21 +94,21 @@ class _InformationPageState extends State<InformationPage> {
         },
         icon: favoriNoktamMi
             ? CircleAvatar(
-                backgroundColor: mainColor,
-                child: Icon(
-                  //CONST YAPARSAN HATA VERİR!
-                  Icons.star,
-                  size: 28,
-                  color: Colors.white,
-                ))
+            backgroundColor: mainColor,
+            child: Icon(
+              //CONST YAPARSAN HATA VERİR!
+              Icons.star,
+              size: 28,
+              color: Colors.white,
+            ))
             : CircleAvatar(
-                backgroundColor: mainColor,
-                child: Icon(
-                  //CONST YAPARSAN HATA VERİR!
-                  Icons.star_border,
-                  size: 28,
-                  color: Colors.white,
-                )),
+            backgroundColor: mainColor,
+            child: Icon(
+              //CONST YAPARSAN HATA VERİR!
+              Icons.star_border,
+              size: 28,
+              color: Colors.white,
+            )),
       ),
     ];
   }
@@ -145,13 +143,13 @@ class _InformationPageState extends State<InformationPage> {
 //------------------------Detailed Information Page-----------------------------
 
   Widget makeDismissable({required Widget child}) => GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => Navigator.of(context).pop(),
-        child: GestureDetector(
-          onTap: () {},
-          child: child,
-        ),
-      );
+    behavior: HitTestBehavior.opaque,
+    onTap: () => Navigator.of(context).pop(),
+    child: GestureDetector(
+      onTap: () {},
+      child: child,
+    ),
+  );
 
   Widget buildSheet() {
     return makeDismissable(
@@ -171,7 +169,7 @@ class _InformationPageState extends State<InformationPage> {
           child: ListView(
             controller: scrollController,
             children: [
-               DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
+              DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -227,274 +225,274 @@ class _InformationPageState extends State<InformationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            //toolbarHeight: 45,
-            bottom: PreferredSize(
-                preferredSize: Size.fromHeight(37),
-                child: Column(
-                  children: [
-                    Container(
-                        width: double.maxFinite,
-                        padding: const EdgeInsets.only(top: 3, bottom: 2),
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(defaultBorderRadius),
-                            topRight: Radius.circular(defaultBorderRadius),
-                          ),
-                        ),
-                        child: Row(
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                //toolbarHeight: 45,
+                bottom: PreferredSize(
+                    preferredSize: Size.fromHeight(37),
+                    child: Column(
+                      children: [
+                        Container(
+                            width: double.maxFinite,
+                            padding: const EdgeInsets.only(top: 3, bottom: 2),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(defaultBorderRadius),
+                                topRight: Radius.circular(defaultBorderRadius),
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 11,
+                                ),
+                                buildRatingBar(Strings.rateValues[widget.selectedPlace.mekanIsmi]!),
+                                SizedBox(
+                                  width: 7,
+                                ),
+                                Text(
+                                  "${Strings.rateValues[widget.selectedPlace.mekanIsmi].toString()}/5.0",
+                                  style: TextStyle(fontSize: 17),
+                                ),
+                                SizedBox(
+                                  width: 7,
+                                ),
+                                Text(
+                                  "   ●   1.3 KM YAKININDA",
+                                  style: TextStyle(color: Colors.grey.shade700),
+                                ),
+                              ],
+                            )),
+                      ],
+                    )),
+                pinned: true,
+                expandedHeight: 270.0,
+                backgroundColor: mainColor,
+                flexibleSpace: FlexibleSpaceBar(
+                  titlePadding: const EdgeInsets.only(bottom: 43, left: 45),
+                  title: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 3),
+                    decoration: BoxDecoration(
+                      color: mainColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      widget.selectedPlace.mekanIsmi,
+                      style: TextStyle(fontSize: 23, color: Colors.grey.shade800),
+                    ),
+                  ),
+                  background: AppBarBackgroundImage(
+                      locationName: widget.selectedPlace.mekanIsmi,
+                      assetImage: Strings.appBarBackgroundImages[widget.selectedPlace.mekanIsmi]!
+                  ), //bu parametrenin yerine firebase nin parametresi gelebilir
+                ),
+                leading: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+
+                  },
+                  icon: const CircleAvatar(
+                      backgroundColor: mainColor,
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      )),
+                ),
+                actions: actions(),
+              ),
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                    Column(
+                      children: [
+                        InformationText(locationName: widget.selectedPlace.mekanIsmi),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            SizedBox(
-                              width: 11,
-                            ),
-                            buildRatingBar(Strings.rateValues[widget.selectedPlace.mekanIsmi]!),
-                            SizedBox(
-                              width: 7,
-                            ),
-                            Text(
-                              "${Strings.rateValues[widget.selectedPlace.mekanIsmi].toString()}/5.0",
-                              style: TextStyle(fontSize: 17),
-                            ),
-                            SizedBox(
-                              width: 7,
-                            ),
-                            Text(
-                              "   ●   1.3 KM YAKININDA",
-                              style: TextStyle(color: Colors.grey.shade700),
+                            TextButton(
+                              child: Text(
+                                //const Verirsen Hata Alırsın
+                                "Ayrıntılı Bilgi ➪",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: mainColor,
+                                ),
+                              ),
+                              onPressed: () => showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) => buildSheet(),
+                              ),
                             ),
                           ],
-                        )),
-                  ],
-                )),
-            pinned: true,
-            expandedHeight: 270.0,
-            backgroundColor: mainColor,
-            flexibleSpace: FlexibleSpaceBar(
-              titlePadding: const EdgeInsets.only(bottom: 43, left: 45),
-              title: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 3),
-                decoration: BoxDecoration(
-                  color: mainColor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  widget.selectedPlace.mekanIsmi,
-                  style: TextStyle(fontSize: 23, color: Colors.grey.shade800),
-                ),
-              ),
-              background: AppBarBackgroundImage(
-                locationName: widget.selectedPlace.mekanIsmi,
-                assetImage: Strings.appBarBackgroundImages[widget.selectedPlace.mekanIsmi]!
-              ), //bu parametrenin yerine firebase nin parametresi gelebilir
-            ),
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-
-              },
-              icon: const CircleAvatar(
-                  backgroundColor: mainColor,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  )),
-            ),
-            actions: actions(),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                Column(
-                  children: [
-                    InformationText(locationName: widget.selectedPlace.mekanIsmi),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          child: Text(
-                            //const Verirsen Hata Alırsın
-                            "Ayrıntılı Bilgi ➪",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: mainColor,
-                            ),
-                          ),
-                          onPressed: () => showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            context: context,
-                            builder: (context) => buildSheet(),
-                          ),
                         ),
-                      ],
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(
-                          left: 3,
-                          top: defaultPadding,
-                          right: 3,
-                          bottom: defaultPadding),
-                      child: Card(
-                        clipBehavior: Clip.antiAlias,
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: 3,
+                              top: defaultPadding,
+                              right: 3,
+                              bottom: defaultPadding),
+                          child: Card(
+                            clipBehavior: Clip.antiAlias,
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
                               BorderRadius.circular(defaultBorderRadius),
-                        ),
-                        child: Stack(children: [
-                          Container(
-                            child: InkWell(
-                              onTap: openGallery,
-                              child: Ink.image(
-                                height: 210,
-                                width: double.maxFinite,
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.first,
-                                ),
-                                child: Container(
-                                  alignment: Alignment.bottomLeft,
-                                  padding: const EdgeInsets.fromLTRB(
-                                      defaultPadding, 0, 0, defaultPadding),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 5),
-                                    decoration: BoxDecoration(
-                                      color: mainColor,
-                                      borderRadius: BorderRadius.circular(
-                                          defaultBorderRadius),
+                            ),
+                            child: Stack(children: [
+                              Container(
+                                child: InkWell(
+                                  onTap: openGallery,
+                                  child: Ink.image(
+                                    height: 210,
+                                    width: double.maxFinite,
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.first,
                                     ),
-                                    child: Text(
-                                      "${Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.length} Fotoğraf",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 25,
-                                        color: Colors.grey.shade800,
+                                    child: Container(
+                                      alignment: Alignment.bottomLeft,
+                                      padding: const EdgeInsets.fromLTRB(
+                                          defaultPadding, 0, 0, defaultPadding),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 5),
+                                        decoration: BoxDecoration(
+                                          color: mainColor,
+                                          borderRadius: BorderRadius.circular(
+                                              defaultBorderRadius),
+                                        ),
+                                        child: Text(
+                                          "${Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.length} Fotoğraf",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 25,
+                                            color: Colors.grey.shade800,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
+                            ]),
                           ),
-                        ]),
-                      ),
-                    ),
-                    Container(
-                      padding:
+                        ),
+                        Container(
+                          padding:
                           EdgeInsets.only(top: 5, bottom: defaultPadding * 2),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => GetLocationInGoogleMaps(
-                                  locationName: widget.selectedPlace.mekanIsmi,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => GetLocationInGoogleMaps(
+                                      locationName: widget.selectedPlace.mekanIsmi,
+                                    ),
+                                  ));
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: mainColor,
+                                  shape: StadiumBorder(),
                                 ),
-                              ));
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: mainColor,
-                              shape: StadiumBorder(),
-                            ),
-                            child: Text(
-                              "Haritada Aç",
-                              style: TextStyle(
-                                fontSize: 23,
-                                color: Colors.grey.shade800,
-                              ),
-                            ),
-                          ),
-                          ElevatedButton.icon(
-                            icon: burayaGittimMi
-                                ? Icon(
-                                    Icons.beenhere,
-                                    color: Colors.grey.shade800,
-                                  )
-                                : Icon(
-                                    Icons.square_outlined,
+                                child: Text(
+                                  "Haritada Aç",
+                                  style: TextStyle(
+                                    fontSize: 23,
                                     color: Colors.grey.shade800,
                                   ),
-                            onPressed: () async {
-                              if (burayaGittimMi) {
-                                setState(() {
-                                  burayaGittimMi = false;
-                                });
-                                await showToastBurayaGittim();
-                              } else {
-                                setState(() {
-                                  burayaGittimMi = true;
-                                });
-                                await showToastBurayaGittim();
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: mainColor,
-                              shape: StadiumBorder(),
-                            ),
-                            label: Text(
-                              "Buraya Gittim",
-                              style: TextStyle(
-                                fontSize: 23,
-                                color: Colors.grey.shade800,
+                                ),
                               ),
-                            ),
+                              ElevatedButton.icon(
+                                icon: burayaGittimMi
+                                    ? Icon(
+                                  Icons.beenhere,
+                                  color: Colors.grey.shade800,
+                                )
+                                    : Icon(
+                                  Icons.square_outlined,
+                                  color: Colors.grey.shade800,
+                                ),
+                                onPressed: () async {
+                                  if (burayaGittimMi) {
+                                    setState(() {
+                                      burayaGittimMi = false;
+                                    });
+                                    await showToastBurayaGittim();
+                                  } else {
+                                    setState(() {
+                                      burayaGittimMi = true;
+                                    });
+                                    await showToastBurayaGittim();
+                                  }
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: mainColor,
+                                  shape: StadiumBorder(),
+                                ),
+                                label: Text(
+                                  "Buraya Gittim",
+                                  style: TextStyle(
+                                    fontSize: 23,
+                                    color: Colors.grey.shade800,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                    CreateNewReviewUI(widget.selectedPlace),
-                    SizedBox(
-                      height: defaultPadding *2,
-                    ),
-                    Container(
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.only(
-                            left: defaultPadding, bottom: defaultPadding / 2),
-                        child: Row(
-                          children: [
-                            Text(
-                              "${Strings.reviews[widget.selectedPlace.mekanIsmi]!.length} ", //yorum sayısını buraya koyacağız
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 30,
-                              ),
-                            ),
-                            Text(
-                              "Yorum",
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        )
+                        ),
+                        CreateNewReviewUI(widget.selectedPlace),
+                        SizedBox(
+                          height: defaultPadding *2,
+                        ),
+                        Container(
+                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.only(
+                                left: defaultPadding, bottom: defaultPadding / 2),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "${Strings.reviews[widget.selectedPlace.mekanIsmi]!.length} ", //yorum sayısını buraya koyacağız
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                  ),
+                                ),
+                                Text(
+                                  "Yorum",
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ],
+                            )
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                    return ReviewUI(
+                      image: "assets/images/melih_emre_guler.jpeg", //user.profilImage gibi bir şey olmalı
+                      name: "Username", //user.Username gibi bir şey olmalı
+                      date: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].date,
+                      comment: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].comment,
+                      rating: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].rating,
+                      isFavorite: isLiked,
+                      likesNumber: likesNumber_,
+                    );
+                  },
+                  //_dynamicReviewBuilder,
+                  childCount: Strings.reviews[widget.selectedPlace.mekanIsmi]!.length,
+                ),
+              ),
+            ],
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-             (context, index) {
-               return ReviewUI(
-                 image: "assets/images/melih_emre_guler.jpeg", //user.profilImage gibi bir şey olmalı
-                 name: "Username", //user.Username gibi bir şey olmalı
-                 date: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].date,
-                 comment: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].comment,
-                 rating: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].rating,
-                 isFavorite: isLiked,
-                 likesNumber: likesNumber_,
-               );
-             },
-              //_dynamicReviewBuilder,
-              childCount: Strings.reviews[widget.selectedPlace.mekanIsmi]!.length,
-            ),
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }
 
