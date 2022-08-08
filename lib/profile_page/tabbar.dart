@@ -17,10 +17,10 @@ class tabbar extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 500,
+              height: 900,
               width: 411,
               child: Container(
-              
+                height: 500,
                 child: Scaffold(
                   extendBody: true,
                   appBar: AppBar(
@@ -41,15 +41,17 @@ class tabbar extends StatelessWidget {
                       ],
                     ),
                   ),
-                  body: Container(
-                    
-                   
-                    child: TabBarView(
-                    
-                      children: [
-                        favoriler(),
-                        yorumlar(),
-                      ],
+                  body: Expanded(
+                    child: Container(
+                      
+                     
+                      child: TabBarView(
+                      
+                        children: [
+                          favoriler(),
+                          yorumlar(),
+                        ],
+                      ),
                     ),
                   ),
                 ),

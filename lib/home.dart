@@ -45,6 +45,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   var mainColor = Color.fromARGB(255, 0, 202, 157);
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
 
       extendBodyBehindAppBar: true,  
@@ -73,6 +74,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
       body: screens[index],
       bottomNavigationBar: bottomNavBar(context),
       //AnaSayfaCenterWidget(),
+
     );
   }
 
