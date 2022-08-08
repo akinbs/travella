@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:swipe_deck/swipe_deck.dart';
+
 import 'package:travella_01/data/rota_item.dart';
 import 'package:travella_01/data/strings.dart';
 import 'package:travella_01/information_page/contents/information_pictures.dart';

@@ -45,7 +45,15 @@ dependencies:
   photo_view: ^0.14.0 #fotğrafların incelenmesi
   fluttertoast: ^8.0.9 #toast mesaj bildirmek için
   firebase_core: ^1.20.0
+  google_fonts: ^3.0.1
+  firebase_auth: ^3.6.2
+  cloud_firestore: ^3.4.3
+  provider: ^6.0.3
+  google_sign_in: ^5.4.0
+
+
   swipe_deck: ^1.1.0 #rotalarda ikili resim
+
 
 
 dev_dependencies:
@@ -73,7 +81,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/images/
-
+     - assets/components/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
