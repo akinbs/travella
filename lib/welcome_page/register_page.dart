@@ -13,6 +13,10 @@ class RegisterPage extends StatefulWidget {
 }
 
 class RegisterPageState extends State<RegisterPage> {
+  String firstName_ = "";
+  String lastName_ = "";
+  String email_ = "";
+  int age_ = 0;
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -51,11 +55,17 @@ class RegisterPageState extends State<RegisterPage> {
 
   Future addUserDetails(
       String firstName, String lastName, String email, int age) async {
-    await FirebaseFirestore.instance.collection('users').add({
+    await FirebaseFirestore.instance.collection('person').add({
       'first name': firstName,
       'last name': lastName,
       'email': email,
       'age': age,
+    });
+    setState(() {
+      firstName_ = firstName;
+      lastName_ = lastName;
+      email_ = email;
+      age_ = age;
     });
   }
 

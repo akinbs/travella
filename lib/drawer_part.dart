@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -14,15 +15,14 @@ class DrawerIcerigi extends StatefulWidget {
 class _DrawerIcerigiState extends State<DrawerIcerigi> {
   @override
   Widget build(BuildContext context) {
-    RegisterPageState registerPage = new RegisterPageState();
     final user = FirebaseAuth.instance.currentUser!;
     return Column(
       children: [
         UserAccountsDrawerHeader(
-          accountName: Text(""),
+          accountName: Text(user.displayName!),
           accountEmail: Text(user.email!),
           currentAccountPicture: CircleAvatar(
-            child: Text("MG"),
+            backgroundImage: NetworkImage(user.photoURL!),
           ), //yuvarlak bir kullanıcı fotosu yapmaya çalıştım ama olmadı.
           decoration: BoxDecoration(
             color: mainColor,
