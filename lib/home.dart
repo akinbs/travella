@@ -2,17 +2,10 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:travella_01/discover_page/discover.dart';
 import 'package:travella_01/drawer_part.dart';
 import 'package:travella_01/profile_page/profil.dart';
-
-import 'package:travella_01/temporary_pages/profile.dart';
-
 import 'package:travella_01/temporary_pages/route_page.dart';
-
-
-
 import 'google_maps/google_maps_page.dart';
 
 import 'temporary_pages/mainpage.dart';
@@ -33,10 +26,10 @@ class _AnaSayfaState extends State<AnaSayfa> {
   final ScreenName = ["KEŞFET", "HARİTA", "", "ROTALAR", "PROFİL"];
 
   final screens = [
-    discover(),
+    Discover(),
     GoogleMapsPage(),
     main_page(),
-    route_page(), 
+    route_page(),
     ProfilPage(),
 
 
@@ -48,7 +41,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
 
     return Scaffold(
 
-      extendBodyBehindAppBar: true,  
+      extendBodyBehindAppBar: true,
 
       extendBody: true,
       drawer: Drawer(

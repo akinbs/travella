@@ -1,31 +1,46 @@
-
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:travella_01/data/strings.dart';
+import 'package:travella_01/models/mekan.dart';
 import 'constants.dart';
 import 'contents/app_bar_background_image.dart';
 import 'contents/InformationText.dart';
 import 'contents/detailed_information_page.dart';
 import 'contents/get_location_in_google_maps.dart';
-import 'contents/information_pictures.dart';
 import 'contents/pictures_gallery.dart';
 import 'contents/rating_bar.dart';
+import 'contents/reviews/create_new_review.dart';
 import 'contents/reviews/reviewUI.dart';
 
-
-
 class InformationPage extends StatefulWidget {
-  const InformationPage({Key? key}) : super(key: key);
+  final Mekan selectedPlace;
+
+  InformationPage({Key? key,
+    required this.selectedPlace,
+    /*
+    required this.header,
+    required this.rateValue,
+    required this.appBarBackgroundImage,
+    required this.galleryPhoto1,
+    required this.galleryPhoto2,
+    required this.galleryPhoto3,
+    required this.latitude,
+    required this.longitude,
+    required this.googleMapsUrl,
+     */
+
+  }) : super(key: key);
+
 
   @override
   State<InformationPage> createState() => _InformationPageState();
 }
 
 class _InformationPageState extends State<InformationPage> {
-  var rateValue = 4.2;
-  String header = "Saklıkent Şelalesi";
+
   int likesNumber_ = 0; //her yorumun kendi global değişkenine göre internetten çağırılmalı
 
-   bool burayaGittimMi = false; // kullanıcıya göre kaydedilmesi sağlanmalı
+  bool burayaGittimMi = false; // kullanıcıya göre kaydedilmesi sağlanmalı
 
   bool favoriNoktamMi = false; // kullanıcıya göre kaydedilmesi sağlanmalı
 
@@ -34,79 +49,90 @@ class _InformationPageState extends State<InformationPage> {
 
 //---------------------------Chack In-------------------------------------------
   Future<bool?> showToastBurayaGittim() {
-    if(burayaGittimMi){
+    if (burayaGittimMi) {
       return Fluttertoast.showToast(
         msg: "Gittiğim Yerler Listesine Eklendi.",
-        toastLength: Toast.LENGTH_SHORT, // length
-        gravity: ToastGravity.BOTTOM,    // location
+        toastLength: Toast.LENGTH_SHORT,
+        // length
+        gravity: ToastGravity.BOTTOM,
+        // location
         fontSize: 18,
         backgroundColor: Colors.grey.shade800,
         textColor: Colors.white,
       );
-    }else {
+    } else {
       return Fluttertoast.showToast(
         msg: "Gittiğim Yerler Listesinden Kaldırıldı.",
-        toastLength: Toast.LENGTH_LONG, // length
-        gravity: ToastGravity.BOTTOM,    // location
+        toastLength: Toast.LENGTH_LONG,
+        // length
+        gravity: ToastGravity.BOTTOM,
+        // location
         fontSize: 18,
         backgroundColor: Colors.grey.shade800,
         textColor: Colors.white,
       );
     }
   }
+
 //--------------------------App Bar Actions Icons-------------------------------
 
   List<Widget> actions() {
     return [
       IconButton(
         onPressed: () {
-          if(favoriNoktamMi){
+          if (favoriNoktamMi) {
             setState(() {
               favoriNoktamMi = false;
             });
-              showToastFavoriteSpots();
-          }else{
+            showToastFavoriteSpots();
+          } else {
             setState(() {
               favoriNoktamMi = true;
             });
             showToastFavoriteSpots();
           }
         },
-        icon: favoriNoktamMi ?
-          CircleAvatar(
+        icon: favoriNoktamMi
+            ? CircleAvatar(
             backgroundColor: mainColor,
-            child: Icon( //CONST YAPARSAN HATA VERİR!
-                Icons.star,
-                size: 28,
-                color: Colors.white,
-                ))
-        : CircleAvatar(
+            child: Icon(
+              //CONST YAPARSAN HATA VERİR!
+              Icons.star,
+              size: 28,
+              color: Colors.white,
+            ))
+            : CircleAvatar(
             backgroundColor: mainColor,
-            child: Icon( //CONST YAPARSAN HATA VERİR!
+            child: Icon(
+              //CONST YAPARSAN HATA VERİR!
               Icons.star_border,
               size: 28,
               color: Colors.white,
-              )),
+            )),
       ),
     ];
   }
 
 //---------------------------Favorite Spots-------------------------------------
   Future<bool?> showToastFavoriteSpots() {
-    if(favoriNoktamMi){
+    if (favoriNoktamMi) {
       return Fluttertoast.showToast(
         msg: "Favori Noktalarım Listesine Eklendi.",
-        toastLength: Toast.LENGTH_SHORT, // length
-        gravity: ToastGravity.BOTTOM,    // location
+        toastLength: Toast.LENGTH_SHORT,
+        // length
+        gravity: ToastGravity.BOTTOM,
+        // location
         fontSize: 18,
         backgroundColor: Colors.grey.shade800,
         textColor: Colors.white,
       );
-    }else {
+    } else {
       return Fluttertoast.showToast(
         msg: "Favori Noktalarım Listesinden Kaldırıldı.",
-        toastLength: Toast.LENGTH_LONG, // length
-        gravity: ToastGravity.BOTTOM,    // location
+        toastLength: Toast.LENGTH_LONG,
+        // length
+        gravity: ToastGravity.BOTTOM,
+        // location
         fontSize: 18,
         backgroundColor: Colors.grey.shade800,
         textColor: Colors.white,
@@ -118,36 +144,39 @@ class _InformationPageState extends State<InformationPage> {
 
   Widget makeDismissable({required Widget child}) => GestureDetector(
     behavior: HitTestBehavior.opaque,
-    onTap:() => Navigator.of(context).pop(),
-    child: GestureDetector(onTap:() {}, child: child,),
+    onTap: () => Navigator.of(context).pop(),
+    child: GestureDetector(
+      onTap: () {},
+      child: child,
+    ),
   );
-   Widget buildSheet() {
+
+  Widget buildSheet() {
     return makeDismissable(
       child: DraggableScrollableSheet(
         minChildSize: 0.5,
         maxChildSize: 0.9,
         initialChildSize: 0.7,
-        builder:(context, scrollController) => Container(
+        builder: (context, scrollController) => Container(
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(defaultBorderRadius),
-
             ),
           ),
-          padding: const EdgeInsets.fromLTRB(
-              defaultPadding, defaultPadding * 1.5, defaultPadding, defaultPadding),
+          padding: const EdgeInsets.fromLTRB(defaultPadding,
+              defaultPadding * 1.5, defaultPadding, defaultPadding),
           child: ListView(
             controller: scrollController,
             children: [
-              const DetailedInformationText(),
+              DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: mainColor),
-                    onPressed:() => Navigator.of(context).pop(),
-                    child: const Text("Kapat")),
+                      style: ElevatedButton.styleFrom(primary: mainColor),
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text("Kapat")),
                 ],
               ),
             ],
@@ -157,78 +186,85 @@ class _InformationPageState extends State<InformationPage> {
     );
   }
 
-
-
 //-----------------------------Open Gallery-------------------------------------
 
   void openGallery() {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder:(context) => GalleryWidget(
-        assetImages: assetImages, //firebase eklendiğinde asset images parametresi yerine urlImages parametresi getirilebilir
-        index: 0,
-      ),
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => GalleryWidget(
+          selectedLocation: widget.selectedPlace.mekanIsmi,
+          //firebase eklendiğinde asset images parametresi yerine urlImages parametresi getirilebilir
+        ),
       ),
     );
   }
+
 
 //---------------------------Review Builder-------------------------------------
-
+/*
   Widget? _dynamicReviewBuilder(BuildContext context, int index) {
-    return ReviewUI(
-      image: "assets/images/melih_emre_guler.jpeg",
-      name: "Username",
-      date: "02 Ağu 2022",
-      comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer feugiat scelerisque varius morbi. Enim nec dui nunc mattis enim."
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer feugiat scelerisque varius morbi. Enim nec dui nunc mattis enim.",
-      rating: 4,
-      isLess: isMore,
-      isFavorite: isLiked,
-      likesNumber: likesNumber_,
-    );
+    //for(int i = 0; i < reviews.length; i++) {
+      return ReviewUI(
+        image: "assets/images/melih_emre_guler.jpeg",
+        //user.profilImage
+        name: "Username",
+        //user.Username
+        date: "02 Ağu 2022",
+        //reviews ten gelmeli
+        comment: reviews[i].comment,
+        rating: 4.0,
+        isFavorite: isLiked,
+        likesNumber: likesNumber_,
+      );
+    //}
   }
+*/
 
 //---------------------------Build Function-------------------------------------
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         body: SafeArea(
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
-              //toolbarHeight: 45,
+                //toolbarHeight: 45,
                 bottom: PreferredSize(
                     preferredSize: Size.fromHeight(37),
                     child: Column(
                       children: [
                         Container(
-                          width: double.maxFinite,
-                          padding: const EdgeInsets.only(top: 3, bottom: 2),
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(defaultBorderRadius),
-                              topRight: Radius.circular(defaultBorderRadius),
+                            width: double.maxFinite,
+                            padding: const EdgeInsets.only(top: 3, bottom: 2),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(defaultBorderRadius),
+                                topRight: Radius.circular(defaultBorderRadius),
+                              ),
                             ),
-                          ),
-                          child: Row(
-                            children: [
-                              SizedBox(width: 11,),
-                              buildRatingBar(),
-                              SizedBox(width: 7,),
-                              Text(
-                                "${rateValue.toString()}/5.0",
-                                style: TextStyle(fontSize: 17),
-                              ),
-                              SizedBox(width: 7,),
-                              Text(
-                                "   ●   1.3 KM YAKININDA",
-                                style: TextStyle(color: Colors.grey.shade700),
-                              ),
-                            ],
-                          )
-                        ),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 11,
+                                ),
+                                buildRatingBar(Strings.rateValues[widget.selectedPlace.mekanIsmi]!),
+                                SizedBox(
+                                  width: 7,
+                                ),
+                                Text(
+                                  "${Strings.rateValues[widget.selectedPlace.mekanIsmi].toString()}/5.0",
+                                  style: TextStyle(fontSize: 17),
+                                ),
+                                SizedBox(
+                                  width: 7,
+                                ),
+                                Text(
+                                  "   ●   1.3 KM YAKININDA",
+                                  style: TextStyle(color: Colors.grey.shade700),
+                                ),
+                              ],
+                            )),
                       ],
                     )),
                 pinned: true,
@@ -241,24 +277,27 @@ class _InformationPageState extends State<InformationPage> {
                     decoration: BoxDecoration(
                       color: mainColor,
                       borderRadius: BorderRadius.circular(10),
-                      ),
+                    ),
                     child: Text(
-                      header,
+                      widget.selectedPlace.mekanIsmi,
                       style: TextStyle(fontSize: 23, color: Colors.grey.shade800),
                     ),
                   ),
-                  background: AppBarBackgroundImage(assetImages: assetImages), //bu parametrenin yerine firebase nin parametresi gelebilir
+                  background: AppBarBackgroundImage(
+                      locationName: widget.selectedPlace.mekanIsmi,
+                      assetImage: Strings.appBarBackgroundImages[widget.selectedPlace.mekanIsmi]!
+                  ), //bu parametrenin yerine firebase nin parametresi gelebilir
                 ),
                 leading: IconButton(
-                  onPressed: ()  {
-                     Navigator.of(context).pop();
+                  onPressed: () {
+                    Navigator.of(context).pop();
+
                   },
                   icon: const CircleAvatar(
-              
-                    backgroundColor: mainColor,
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
+                      backgroundColor: mainColor,
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
                       )),
                 ),
                 actions: actions(),
@@ -268,19 +307,20 @@ class _InformationPageState extends State<InformationPage> {
                   [
                     Column(
                       children: [
-                         InformationText(),
+                        InformationText(locationName: widget.selectedPlace.mekanIsmi),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
-                              child: Text( //const Verirsen Hata Alırsın
+                              child: Text(
+                                //const Verirsen Hata Alırsın
                                 "Ayrıntılı Bilgi ➪",
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: mainColor,
                                 ),
-                                ),
-                              onPressed:() => showModalBottomSheet(
+                              ),
+                              onPressed: () => showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Colors.transparent,
                                 context: context,
@@ -290,65 +330,75 @@ class _InformationPageState extends State<InformationPage> {
                           ],
                         ),
                         Container(
-                          padding: EdgeInsets.only(left: 3, top: defaultPadding, right: 3, bottom: defaultPadding),
+                          padding: EdgeInsets.only(
+                              left: 3,
+                              top: defaultPadding,
+                              right: 3,
+                              bottom: defaultPadding),
                           child: Card(
                             clipBehavior: Clip.antiAlias,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(defaultBorderRadius),
+                              borderRadius:
+                              BorderRadius.circular(defaultBorderRadius),
                             ),
-                            child: Stack(
-                              children:[
-                                Container(
-                                  child: InkWell(
-                                    onTap: openGallery,
-                                    child: Ink.image(
-                                      height: 210,
-                                      width: double.maxFinite,
-                                      fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        assetImages[1],
-                                      ),
+                            child: Stack(children: [
+                              Container(
+                                child: InkWell(
+                                  onTap: openGallery,
+                                  child: Ink.image(
+                                    height: 210,
+                                    width: double.maxFinite,
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.first,
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.bottomLeft,
+                                      padding: const EdgeInsets.fromLTRB(
+                                          defaultPadding, 0, 0, defaultPadding),
                                       child: Container(
-                                        alignment: Alignment.bottomLeft,
-                                        padding: const EdgeInsets.fromLTRB(defaultPadding, 0, 0, defaultPadding),
-                                        child: Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 5),
-                                          decoration: BoxDecoration(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 5),
+                                        decoration: BoxDecoration(
                                           color: mainColor,
-                                          borderRadius: BorderRadius.circular(defaultBorderRadius),
-                                          ),
-                                          child: Text(
-                                            "${assetImages.length} Fotoğraf",
-                                            style: TextStyle(
+                                          borderRadius: BorderRadius.circular(
+                                              defaultBorderRadius),
+                                        ),
+                                        child: Text(
+                                          "${Strings.informationPictures[widget.selectedPlace.mekanIsmi]!.length} Fotoğraf",
+                                          style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 25,
                                             color: Colors.grey.shade800,
-                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ]
-                            ),
+                              ),
+                            ]),
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.only(top: 5, bottom: defaultPadding*2),
+                          padding:
+                          EdgeInsets.only(top: 5, bottom: defaultPadding * 2),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-
                               ElevatedButton(
-                                onPressed:() {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => GetLocationInGoogleMaps(),));
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => GetLocationInGoogleMaps(
+                                      locationName: widget.selectedPlace.mekanIsmi,
+                                    ),
+                                  ));
                                 },
                                 style: ElevatedButton.styleFrom(
                                   primary: mainColor,
                                   shape: StadiumBorder(),
                                 ),
-                                child:Text(
+                                child: Text(
                                   "Haritada Aç",
                                   style: TextStyle(
                                     fontSize: 23,
@@ -357,20 +407,22 @@ class _InformationPageState extends State<InformationPage> {
                                 ),
                               ),
                               ElevatedButton.icon(
-                                icon: burayaGittimMi ? Icon(
+                                icon: burayaGittimMi
+                                    ? Icon(
                                   Icons.beenhere,
                                   color: Colors.grey.shade800,
-                                ) :Icon(
+                                )
+                                    : Icon(
                                   Icons.square_outlined,
                                   color: Colors.grey.shade800,
                                 ),
-                                onPressed:() async {
-                                  if(burayaGittimMi){
+                                onPressed: () async {
+                                  if (burayaGittimMi) {
                                     setState(() {
                                       burayaGittimMi = false;
                                     });
                                     await showToastBurayaGittim();
-                                  }else{
+                                  } else {
                                     setState(() {
                                       burayaGittimMi = true;
                                     });
@@ -392,24 +444,29 @@ class _InformationPageState extends State<InformationPage> {
                             ],
                           ),
                         ),
+                        CreateNewReviewUI(widget.selectedPlace),
+                        SizedBox(
+                          height: defaultPadding *2,
+                        ),
                         Container(
-                          alignment: Alignment.centerLeft,
-                          padding: EdgeInsets.only(left: defaultPadding, bottom: defaultPadding/2),
-                          child: Row(
-                            children: [
-                              Text("5 ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 30,
+                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.only(
+                                left: defaultPadding, bottom: defaultPadding / 2),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "${Strings.reviews[widget.selectedPlace.mekanIsmi]!.length} ", //yorum sayısını buraya koyacağız
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                  ),
                                 ),
-                              ),
-                              Text("Yorum",
-                                style: TextStyle(
-                                  fontSize: 20
+                                Text(
+                                  "Yorum",
+                                  style: TextStyle(fontSize: 20),
                                 ),
-                              ),
-                            ],
-                          )
+                              ],
+                            )
                         ),
                       ],
                     ),
@@ -418,20 +475,26 @@ class _InformationPageState extends State<InformationPage> {
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  _dynamicReviewBuilder,
-                  childCount: 5,
+                      (context, index) {
+                    return ReviewUI(
+                      image: "assets/images/melih_emre_guler.jpeg", //user.profilImage gibi bir şey olmalı
+                      name: "Username", //user.Username gibi bir şey olmalı
+                      date: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].date,
+                      comment: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].comment,
+                      rating: Strings.reviews[widget.selectedPlace.mekanIsmi]![Strings.reviews[widget.selectedPlace.mekanIsmi]!.length - index - 1].rating,
+                      isFavorite: isLiked,
+                      likesNumber: likesNumber_,
+                    );
+                  },
+                  //_dynamicReviewBuilder,
+                  childCount: Strings.reviews[widget.selectedPlace.mekanIsmi]!.length,
                 ),
               ),
             ],
           ),
-        )
-    );
+        ));
   }
 }
-
-
-
-
 
 
 /*
