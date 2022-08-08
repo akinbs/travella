@@ -9,27 +9,14 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPage extends State<ProfilPage> {
-  String avatarUrl =
-      "https://media-exp1.licdn.com/dms/image/C4D03AQFxOyS6Tubpdw/profile-displayphoto-shrink_400_400/0/1649718241840?e=1665014400&v=beta&t=M0x-zLCXTqYxaBLPjabYvE0ExW4ZlJqqYS8qGzbXPfw";
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        extendBody: true,
-        backgroundColor: Colors.white,
-        body: Center(
+        length: 2,
+        child: Center(
           child: Column(
             children: [
               foto(),
-
-              /*Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  radius: 65,
-                  backgroundImage: NetworkImage(avatarUrl),
-                ),
-              ),   */
               SizedBox(
                 height: 12,
               ),
@@ -57,32 +44,28 @@ class _ProfilPage extends State<ProfilPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextButton(
-    child: Text('Gittiğim Yerler: 15'),
-    style: TextButton.styleFrom(
-      primary: Colors.white,
-      shadowColor: Colors.green,
-      backgroundColor: Colors.teal,
-      onSurface: Colors.grey,
-    ),
-    onPressed: () { 
-    },
-  ),
-                     SizedBox(width: 50,),
-                    TextButton(
-    child: Text('Kalan Yerler: 27'),
-    style: TextButton.styleFrom(
-      primary: Colors.white,
-      shadowColor: Colors.green,
-      backgroundColor: Colors.teal,
-      onSurface: Colors.grey,
-    ),
-    onPressed: () { 
-    },
-  )
-                     
-                
-
-                 
+                    child: Text('Gittiğim Yerler: 15'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      shadowColor: Colors.green,
+                      backgroundColor: Colors.teal,
+                      onSurface: Colors.grey,
+                    ),
+                    onPressed: () {},
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  TextButton(
+                    child: Text('Kalan Yerler: 27'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      shadowColor: Colors.green,
+                      backgroundColor: Colors.teal,
+                      onSurface: Colors.grey,
+                    ),
+                    onPressed: () {},
+                  )
                 ],
               ),
               SizedBox(height: 15),
@@ -109,8 +92,6 @@ class _ProfilPage extends State<ProfilPage> {
               ),   */
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -1,25 +1,19 @@
-
-
-
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travella_01/discover_page/discover.dart';
 import 'package:travella_01/drawer_part.dart';
 import 'package:travella_01/profile_page/profil.dart';
-import 'package:travella_01/profile_page/tabbar.dart';
-
 
 import 'package:travella_01/temporary_pages/profile.dart';
-import 'package:travella_01/temporary_pages/temp_route.dart';
+
+import 'package:travella_01/temporary_pages/route_page.dart';
+
+
+
+import 'google_maps/google_maps_page.dart';
 
 import 'temporary_pages/mainpage.dart';
-import 'temporary_pages/temp_nav_page.dart';
-
-
-
-
-
 
 
 class AnaSayfa extends StatefulWidget {
@@ -46,21 +40,19 @@ class _AnaSayfaState extends State<AnaSayfa> {
    final screens = [
    
     discover(),
-    temp_nav(),
+    GoogleMapsPage(),
     main_page(), 
-    temp_route(),
+    route_page(), 
     ProfilPage(),
+
   ];
   
-  
-
-
 
   var  mainColor =  Color.fromARGB(255, 0, 202, 157);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      extendBodyBehindAppBar: true,  
       extendBody: true,
       drawer: Drawer( 
                 child:DrawerIcerigi(),
@@ -68,7 +60,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
               appBar: AppBar(
                 centerTitle: true,
                 title: Text(ScreenName[index]),
-                shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)) ,
+                //shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)) ,
+                // google haritalar sayfamızda yukarda beyaz alanlar oluşmasına sebep oluyor
                 
                  
                 actions: [ 
@@ -111,10 +104,9 @@ class _AnaSayfaState extends State<AnaSayfa> {
       
       Icon(Icons.account_circle, 
         size: 30),
-    
-      
     ];
-    //yorum satırı
+
+
     return Theme(
       data: Theme.of(context).copyWith(
         iconTheme: IconThemeData(
@@ -134,6 +126,4 @@ class _AnaSayfaState extends State<AnaSayfa> {
       ),
     );
   }
-//yorum satırı
-  
 }

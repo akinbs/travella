@@ -1,16 +1,32 @@
 import 'package:flutter/material.dart';
 
-class main_page extends StatelessWidget {
-  const main_page({Key? key}) : super(key: key);
+import '../models/mekan.dart';
 
+class main_page extends StatelessWidget {
+  
+  const main_page({Key? key}) : super(key: key);
+  
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
-      debugShowCheckedModeBanner: false,
-      home:Center( 
-        child:Scaffold( 
-          body: Text("main page is opened")
-        ),)
+    return GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2 , ),
+    itemCount: 100,
+    itemBuilder: (BuildContext context, index){ 
+      return Container( 
+        decoration: BoxDecoration( 
+        
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+        child: Card(  
+          child: ListTile( 
+            
+          ),
+
+        ),
+      );
+    }  
     );
+  
+    
   }
 }

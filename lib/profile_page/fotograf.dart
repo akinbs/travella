@@ -9,7 +9,7 @@ class foto extends StatelessWidget {
     return Center(
       child: Stack(children: <Widget>[
         CircleAvatar(
-          backgroundColor: Color.fromARGB(255, 46, 222, 51),
+          backgroundColor: Colors.green,
           radius: 65,
           child: Container(
             decoration: BoxDecoration(
@@ -21,7 +21,7 @@ class foto extends StatelessWidget {
                 radius: 60,
                 backgroundImage:
                     AssetImage("assets/images/fehmi.jpg"),
-                backgroundColor: Color.fromARGB(255, 49, 250, 55),
+                backgroundColor: Colors.green,
               ),
             ),
           ),

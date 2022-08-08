@@ -20,7 +20,7 @@ class tabbar extends StatelessWidget {
               height: 500,
               width: 411,
               child: Container(
-                height: 500,
+              
                 child: Scaffold(
                   extendBody: true,
                   appBar: AppBar(
@@ -41,17 +41,15 @@ class tabbar extends StatelessWidget {
                       ],
                     ),
                   ),
-                  body: Expanded(
-                    child: Container(
-                      
-                     
-                      child: TabBarView(
-                      
-                        children: [
-                          favoriler(),
-                          yorumlar(),
-                        ],
-                      ),
+                  body: Container(
+                    
+                   
+                    child: TabBarView(
+                    
+                      children: [
+                        favoriler(),
+                        yorumlar(),
+                      ],
                     ),
                   ),
                 ),

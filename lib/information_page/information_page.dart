@@ -250,11 +250,8 @@ class _InformationPageState extends State<InformationPage> {
                   background: AppBarBackgroundImage(assetImages: assetImages), //bu parametrenin yerine firebase nin parametresi gelebilir
                 ),
                 leading: IconButton(
-                  onPressed: () async {
-                    /*
-                    await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => AnaSayfaCenterWidget()));
-                     */
+                  onPressed: ()  {
+                     Navigator.of(context).pop();
                   },
                   icon: const CircleAvatar(
               
