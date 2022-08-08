@@ -19,10 +19,10 @@ class _DrawerIcerigiState extends State<DrawerIcerigi> {
     return Column(
       children: [
         UserAccountsDrawerHeader(
-          accountName: Text(""),
+          accountName: Text(user.displayName!),
           accountEmail: Text(user.email!),
           currentAccountPicture: CircleAvatar(
-            backgroundImage: NetworkImage(""),
+            backgroundImage: NetworkImage(user.photoURL!),
           ), //yuvarlak bir kullanıcı fotosu yapmaya çalıştım ama olmadı.
           decoration: BoxDecoration(
             color: mainColor,

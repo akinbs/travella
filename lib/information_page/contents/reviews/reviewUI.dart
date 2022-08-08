@@ -1,17 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 
 import '../../constants.dart';
 
-
-
 class ReviewUI extends StatefulWidget {
-  final String image, name, date, comment;
+  final String name, date, comment;
+  ImageProvider? image;
   double rating;
   int likesNumber;
   bool isLess = false;
   bool isFavorite; //firebase de her yorum için kendi global değişkeni olmalı
-
 
   ReviewUI({
     Key? key,
@@ -29,14 +28,13 @@ class ReviewUI extends StatefulWidget {
 }
 
 class _ReviewUIState extends State<ReviewUI> {
-
-
-
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Container(
       decoration: BoxDecoration(
-        border: Border.symmetric(horizontal: BorderSide(color: Colors.grey.shade300)),
+        border: Border.symmetric(
+            horizontal: BorderSide(color: Colors.grey.shade300)),
       ),
       padding: EdgeInsets.only(
         bottom: 2.0,
@@ -55,7 +53,7 @@ class _ReviewUIState extends State<ReviewUI> {
                 ),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(widget.image),
+                    image: NetworkImage(user.photoURL!),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(44.0),
@@ -78,20 +76,19 @@ class _ReviewUIState extends State<ReviewUI> {
                   Row(
                     children: [
                       SmoothStarRating(
-                        allowHalfRating: false,
-                        onRatingChanged: (v) {
-                          //widget.rating = v;
-                          //setState(() {});
-                        },
-                        starCount: 5,
-                        rating: widget.rating,
-                        size: 20.0,
-                        filledIconData: Icons.star_sharp,
-                        halfFilledIconData: Icons.star,
-                        color: mainColor,
-                        borderColor: mainColor,
-                        spacing:0.0
-                      ),
+                          allowHalfRating: false,
+                          onRatingChanged: (v) {
+                            //widget.rating = v;
+                            //setState(() {});
+                          },
+                          starCount: 5,
+                          rating: widget.rating,
+                          size: 20.0,
+                          filledIconData: Icons.star_sharp,
+                          halfFilledIconData: Icons.star,
+                          color: mainColor,
+                          borderColor: mainColor,
+                          spacing: 0.0),
                       /*
                       RatingBar.builder(
                         glow: false,
@@ -132,7 +129,9 @@ class _ReviewUIState extends State<ReviewUI> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    return  setState(() {widget.isLess = !widget.isLess;});
+                    return setState(() {
+                      widget.isLess = !widget.isLess;
+                    });
                   },
                   child: widget.isLess
                       ? Text(
@@ -161,26 +160,29 @@ class _ReviewUIState extends State<ReviewUI> {
                   children: [
                     IconButton(
                       alignment: Alignment.center,
-                      onPressed:  () {
+                      onPressed: () {
                         setState(() {
                           widget.isFavorite = !widget.isFavorite;
-                          if(widget.isFavorite){
+                          if (widget.isFavorite) {
                             setState(() {
                               widget.likesNumber++;
                             });
-                          }else{
+                          } else {
                             setState(() {
                               widget.likesNumber--;
                             });
                           }
                         });
                       },
-                      icon: widget.isFavorite ?
-                          Icon(Icons.favorite,color: Colors.red,):
-                          Icon(
-                        Icons.favorite,
-                        color: Colors.grey.shade400,
-                      ),
+                      icon: widget.isFavorite
+                          ? Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            )
+                          : Icon(
+                              Icons.favorite,
+                              color: Colors.grey.shade400,
+                            ),
                     ),
                     Text(widget.likesNumber.toString()),
                   ],

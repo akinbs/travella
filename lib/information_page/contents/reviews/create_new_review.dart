@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
@@ -9,7 +10,8 @@ import '../../constants.dart';
 
 class CreateNewReviewUI extends StatefulWidget {
   Mekan selectedPlace;
-  CreateNewReviewUI(this.selectedPlace, {
+  CreateNewReviewUI(
+    this.selectedPlace, {
     Key? key,
   }) : super(key: key);
 
@@ -41,10 +43,10 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
   void postTheReview(Mekan selectedPlace) {
     final now = DateTime.now();
     final String time = DateFormat("dd-MM-yyyy - kk:mm").format(now);
-
+    final user = FirebaseAuth.instance.currentUser!;
     ReviewUI review = ReviewUI(
-        image: "assets/images/melih_emre_guler.jpeg",
-        name: "Username",
+        image: NetworkImage(user.photoURL!),
+        name: user.displayName!,
         date: time,
         comment: _textEditingController.text,
         rating: rating,
@@ -161,8 +163,8 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
             height: defaultPadding,
           ),
           ElevatedButton(
-            onPressed:() {
-              if(isReviewPostable)
+            onPressed: () {
+              if (isReviewPostable)
                 return postTheReview(widget.selectedPlace);
               else
                 return null;
@@ -175,7 +177,7 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
               "Gönder",
               style: TextStyle(
                 fontSize: 23,
-                color: Colors.grey.shade800,
+                color: Colors.white,
               ),
             ),
           ),
