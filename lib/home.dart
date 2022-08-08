@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travella_01/discover_page/discover.dart';
 import 'package:travella_01/drawer_part.dart';
+import 'package:travella_01/profile_page/profil.dart';
+import 'package:travella_01/profile_page/tabbar.dart';
 
 
 import 'package:travella_01/temporary_pages/profile.dart';
@@ -47,7 +49,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     temp_nav(),
     main_page(), 
     temp_route(),
-    profile(),
+    ProfilPage(),
   ];
   
   
