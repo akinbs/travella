@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:travella_01/data/strings.dart';
-import 'package:travella_01/information_page/contents/reviews/reviews.dart';
 import 'package:travella_01/models/mekan.dart';
 import 'constants.dart';
 import 'contents/app_bar_background_image.dart';

@@ -5,6 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:travella_01/google_maps/constants.dart';
+import 'package:travella_01/information_page/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OrderTrackingPage extends StatefulWidget {
@@ -15,7 +16,7 @@ class OrderTrackingPage extends StatefulWidget {
 }
 
 class _OrderTrackingPageState extends State<OrderTrackingPage> {
-  String rotaAdi = "Doğa ve Tarih Turizmi Rotası";
+  String rotaAdi = "1 . Doğa ve Tarih Turizmi Rotası";
   late GoogleMapController googleMapController; //controller nesnesi
 
   //User Location Icon başlatıyorum,
@@ -194,7 +195,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
 
   SpeedDial buildFloatingActionButton() {
     return SpeedDial(
-      backgroundColor: Colors.lightGreen.shade300,
+      backgroundColor: mainColor,
       animatedIcon: AnimatedIcons.menu_close,
       overlayColor: Colors.black,
       overlayOpacity: 0.4,
@@ -202,12 +203,22 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
       spaceBetweenChildren: 12,
       children: [
         SpeedDialChild(
-          label: "Konumunu göster",
+          label: "Konumun",
           onTap: userLocationOnPressed,
           child: Icon(Icons.my_location),
         ),
         SpeedDialChild(
-          label: "Rotanın yol tarifine git",
+          label: "Rotanın gezi durakları",
+          onTap:() => showModalBottomSheet(
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            context: context,
+            builder: (context) => buildSheet(),
+          ),
+          child: Icon(Icons.format_list_numbered_rounded),
+        ),
+        SpeedDialChild(
+          label: "Rotanın yol tarifi",
           onTap: () async {
             String url =
             """https://www.google.com/maps/dir/Ayd%C4%B1np%C4%B1nar+%C5%9Eelalesi+Tabiat+Park%C4%B1/Efteni+G%C3%B6l%C3%BC+%C4%B0skele/G%C3%BCzeldere+%C5%9Eelalesi+Tabiat+Park%C4%B1/G%C3%B6lyaka+K%C3%BClt%C3%BCr+park/Konuralp+M%C3%BCzesi/Prusias+ad+Hypium+Antik+Kenti/KONURALP+ROMA+K%C3%96PR%C3%9CS%C3%9C/@40.8158227,30.9350803,11z/data=!3m1!4b1!4m44!4m43!1m5!1m1!1s0x409d7707ac85ac59:0xe7c262cd835b53aa!2m2!1d31.1020181!2d40.7473082!1m5!1m1!1s0x409d9d60c66bf297:0x9b5ac2dffbf598e0!2m2!1d31.0405364!2d40.7577!1m5!1m1!1s0x409d783a58896def:0xe38979f13fbcaa5e!2m2!1d31.0498648!2d40.7234091!1m5!1m1!1s0x409d9daa0ceb2ddf:0x2096a6cdd3218cb8!2m2!1d31.0194482!2d40.7814663!1m5!1m1!1s0x409da11950a1b485:0x68e8b46986084ff8!2m2!1d31.1536516!2d40.9036892!1m5!1m1!1s0x409da1cedb5759f1:0x8dd94083f3608bf8!2m2!1d31.1480632!2d40.9061587!1m5!1m1!1s0x409da1b13e6d7c51:0xb8d9988effa21b9d!2m2!1d31.1420456!2d40.9063566!3e0""";
@@ -288,6 +299,84 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
     Position position = await Geolocator.getCurrentPosition();
     return position;
   }
+//----------------------------location list-------------------------------------
+
+  Widget makeDismissable({required Widget child}) => GestureDetector(
+    behavior: HitTestBehavior.opaque,
+    onTap: () => Navigator.of(context).pop(),
+    child: GestureDetector(
+      onTap: () {},
+      child: child,
+    ),
+  );
+
+  Widget buildSheet() {
+    return makeDismissable(
+      child: DraggableScrollableSheet(
+        minChildSize: 0.5,
+        maxChildSize: 0.9,
+        initialChildSize: 0.8,
+        builder: (context, scrollController) => Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(defaultBorderRadius),
+            ),
+          ),
+          padding: const EdgeInsets.fromLTRB(defaultPadding,
+              defaultPadding * 1.5, defaultPadding, defaultPadding),
+          child: Column(
+            children: [
+              Container(
+                height: 500,
+                width: double.maxFinite,
+                child: ListView.builder(
+                  controller: scrollController,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border.symmetric(horizontal: BorderSide(color: Colors.grey.shade300))
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            "${index+1}",
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.grey.shade700,
+                            ),
+                          ),
+                          Text(
+                            "data",
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.grey.shade700,
+                            ),
+                          ),
+                        ],
+                      )
+                    );
+                },
+                  itemCount: 7,
+                    //DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: mainColor),
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text("Kapat")),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
 //----------------------------initState-build-----------------------------------
   @override
@@ -311,7 +400,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
           rotaAdi,
           style: TextStyle(color: Colors.black, fontSize: 20),
         ),
-        backgroundColor: Colors.lightGreen.shade300,
+        backgroundColor: mainColor,
         shadowColor: Colors.grey,
       ),
       body: GoogleMap(
