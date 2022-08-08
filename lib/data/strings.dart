@@ -1,5 +1,5 @@
 class Strings {
-  static const String App_name = "KEŞFET";
+  
   static const List<String> mekan_adlari = [  
     "Kurugöl Kanyonu", 
     "Efteni Gölü",
@@ -153,7 +153,18 @@ class Strings {
       "Pürenli Yaylası":"Doğa Turizmi", 
       "Torkul Yaylası":"Doğa Turizmi" 
     };
-  
+  static const List <List>Rotalar = [ 
+    ["doğa","tarih"],
+    ["doğa_2","yayla"], 
+    ["tarih_2","inanç"], 
+    ["tarih_3", "plaj"], 
+    ["tarih_4","yayla_2"], 
+    ["yayla_3","inanç_2"], 
+    ["yayla_4","deniz"],
+    ["deniz_2","inanç_3"], 
+    ["doğa_3", "deniz_3"],
+    ["doğa_4", "tarih_5"]
+  ];
 
 
   

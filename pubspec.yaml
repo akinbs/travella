@@ -29,10 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+    
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  image_picker: ^0.8.5+3
   cupertino_icons: ^1.0.4
   google_maps_flutter: ^2.1.9 #google maps paketi
   flutter_polyline_points: ^1.0.0 #markerler arası çizgiler için
@@ -44,11 +45,14 @@ dependencies:
   photo_view: ^0.14.0 #fotğrafların incelenmesi
   fluttertoast: ^8.0.9 #toast mesaj bildirmek için
   firebase_core: ^1.20.0
-  google_fonts:
+  google_fonts: ^3.0.1
   firebase_auth: ^3.6.2
   cloud_firestore: ^3.4.3
   provider: ^6.0.3
   google_sign_in: ^5.4.0
+
+
+  swipe_deck: ^1.1.0 #rotalarda ikili resim
 
 
 
@@ -61,7 +65,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  #flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
