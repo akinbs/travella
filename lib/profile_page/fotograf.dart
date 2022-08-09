@@ -14,32 +14,32 @@ class foto extends StatelessWidget {
             radius: 65,
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(90), 
-                  color: Colors.green),
+                  borderRadius: BorderRadius.circular(90), color: Colors.green),
               child: InkWell(
                 onTap: () {},
-                child: CircleAvatar(foregroundColor: Colors.red,
+                child: CircleAvatar(
+                  foregroundColor: Colors.red,
                   radius: 60,
-                  backgroundImage:
-                      AssetImage("assets/images/fehmi.jpg"),
+                  backgroundImage: AssetImage("assets/images/fehmi.jpg"),
                   backgroundColor: Colors.green,
                 ),
               ),
             ),
           ),
           Positioned(
-              bottom: 1,
-              right: 1,
-              child: InkWell(
-                onTap: () {},
-                focusColor: Colors.red,
-                child: Icon(
-                  Icons.photo_camera,shadows: [Shadow(color: Colors.green)],
-                  size: 37,
-                  color: Colors.green,
-                ),
-              )
-              ,)
+            bottom: 1,
+            right: 1,
+            child: InkWell(
+              onTap: () {},
+              focusColor: Colors.red,
+              child: Icon(
+                Icons.photo_camera,
+                shadows: [Shadow(color: Colors.green)],
+                size: 37,
+                color: Colors.green,
+              ),
+            ),
+          )
         ]),
       ),
     );
