@@ -304,6 +304,7 @@ Derebalık Yaylası, şehir merkezine 36 km mesafededir. 1400 m rakımı olan ya
     "Odayeri Yaylası" : "Düzce Merkez Çınardüzü Köyü sınırları içerisinde bulunan Odayeri Yaylası Düzce’ye 28 kilometre mesafededir. Beyköy, Ugur Köyü yolu üzerinden orman yolu takip edilerek gidilen yayla, 8,5 ha ve 1200 m yükseklikte bulunmaktadır. Bakir güzelliklere sahip olan Odayeri Yaylası'nda; asırlık ağaçlar arasında çadır kampı, doğa yürüyüşü, foto-safari yapabilir, olta balıkçılığına müsait derelerinde avlanabilir, ata binebilir, dağ bisikleti gibi alternatif sporlar gerçekleştirebilirsiniz.",
     "Pürenli Yaylası" : "Düzce İli Gölyaka İlçesine bağlı olan Pürenli Yaylası, Düzce’ye 28 km mesafede olup rakımı 1.400 m’dir. Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli Yaylası, doğanın coşkusunun renk cümbüşüyle kaynaştığı, su seslerinin kuş sesleriyle karıştığı bir yaylalar bütünüdür. Mudurnu ile sınır olan yayladan Abant’a, Odayeri Yaylası’na, Samandere Şelalesi’ne ve Kardüz Yaylası’na ulaşmak mümkündür.",
     "Torkul Yaylası" : "Düzce Merkez Uğur köyü sınırları içinde bulunan Torkul Göleti ve Yaylası İl merkezine 34 km mesafededir. Torkul Göleti, 1.250 m yükseklikte bulunan Torkul Yaylası içerisinde volkanik çöküntüden oluşmuş 5.000 m² alana sahip tabii bir gölettir. Alanın tamamı ise 78.801 m²'dir. Gölet çevresinde bulunan, kayın, köknar, gürgen, kestane, akçaağaç ve karaçam gibi ağaçların panoramik görüntüsü eşliğinde, piknik, olta balıkçılığı, foto-safari, çadır kampı vb. aktiviteler yapılırken, Torkul ve Odayeri Yaylaları arasındaki 6 km’lik mesafede trekking turları gerçekleştirebilirsiniz.",
+
   };
 
   static Map<String, String> detailedInformationTexts = {
@@ -661,6 +662,7 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       "assets/images/Torkul_Yaylasi_2.png",
       "assets/images/Torkul_Yaylasi_3.png"
     ],
+
   };
 
   static Map<String, List<double>> latitudesLongitudes = {
