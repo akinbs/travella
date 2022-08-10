@@ -766,6 +766,13 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       31.1734988,
     ],
     "Gölyaka Kültür Parkı" : [40.7824661,31.0212372],
+    "Konuralp Müzesi" : [40.9036901,31.1536507],
+    "Kemos Aile Plajı" : [41.0940839,31.1869675],
+    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri" : [40.8854354,31.0029278],
+    "Kalkın Plajı" : [41.0760322,31.0439879],
+    "Paşalar Plajı" : [41.0757825,31.025341],
+    "Melenağzı Plajı" : [41.0730036,30.9701503],
+    "Ceneviz Kalesi Plajı" : [41.085687,31.0931108],
   };
 
   static Map<String, List<ReviewUI>> reviews = {

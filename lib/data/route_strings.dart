@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:travella_01/google_maps/routes/doga_ve_tarih_rotasi_1_page.dart';
 
+import '../google_maps/routes/deniz_ve_inanc_rotasi_1_page.dart';
+import '../google_maps/routes/deniz_ve_inanc_rotasi_2_page.dart';
+import '../google_maps/routes/deniz_ve_inanc_rotasi_3_page.dart';
+import '../google_maps/routes/doga_ve_deniz_rotasi_1_page.dart';
+import '../google_maps/routes/doga_ve_deniz_rotasi_2_page.dart';
+import '../google_maps/routes/doga_ve_deniz_rotasi_3_page.dart';
+import '../google_maps/routes/doga_ve_tarih_rotasi_2_page.dart';
+import '../google_maps/routes/doga_ve_tarih_rotasi_3_page.dart';
 import '../google_maps/routes/doga_ve_yayla_rotasi_1_page.dart';
+import '../google_maps/routes/doga_ve_yayla_rotasi_2_page.dart';
+import '../google_maps/routes/doga_ve_yayla_rotasi_3_page.dart';
+import '../google_maps/routes/tarih_ve_inanc_rotasi_1_page.dart';
+import '../google_maps/routes/tarih_ve_inanc_rotasi_2_page.dart';
+import '../google_maps/routes/tarih_ve_inanc_rotasi_3_page.dart';
+import '../google_maps/routes/tarih_ve_plaj_rotasi_1_page.dart';
+import '../google_maps/routes/tarih_ve_plaj_rotasi_2_page.dart';
+import '../google_maps/routes/tarih_ve_yayla_rotasi_1_page.dart';
+import '../google_maps/routes/tarih_ve_yayla_rotasi_2_page.dart';
+import '../google_maps/routes/tarih_ve_yayla_rotasi_3_page.dart';
+import '../google_maps/routes/yayla_ve_deniz_rotasi_1_page.dart';
+import '../google_maps/routes/yayla_ve_deniz_rotasi_2_page.dart';
+import '../google_maps/routes/yayla_ve_deniz_rotasi_3_page.dart';
+import '../google_maps/routes/yayla_ve_inanc_rotasi_1_page.dart';
+import '../google_maps/routes/yayla_ve_inanc_rotasi_2_page.dart';
+import '../google_maps/routes/yayla_ve_inanc_rotasi_3_page.dart';
 
 class RouteStrings {
 
@@ -38,7 +62,7 @@ class RouteStrings {
     "Yayla ve Deniz Rotaları" : [
       "1. Yayla ve Deniz Rotası",
       "2. Yayla ve Deniz Rotası",
-      "3. Yayla ve Deniz Rotası",
+      //"3. Yayla ve Deniz Rotası",
     ],
     "Deniz ve İnanç Rotaları" : [
       "1. Deniz ve İnanç Rotası",
@@ -101,31 +125,47 @@ class RouteStrings {
   static const Map<String, List<Widget>> routePages= {
     "Doğa ve Tarih Rotaları" : [
       DogaVeTarihRotasiBirPage(),
-
+      DogaVeTarihRotasiIkiPage(),
+      DogaVeTarihRotasiUcPage(),
     ],
     "Doğa ve Yayla Rotaları" : [
       DogaVeYaylaRotasiBirPage(),
+      DogaVeYaylaRotasiIkiPage(),
+      DogaVeYaylaRotasiUcPage(),
     ],
     "Tarih ve İnanç Rotaları" : [
-
+      TarihVeInancRotasiBirPage(),
+      TarihVeInancRotasiIkiPage(),
+      TarihVeInancRotasiUcPage(),
     ],
     "Tarih ve Plaj Rotaları" : [
-
+      TarihVePlajRotasiBirPage(),
+      TarihVePlajRotasiIkiPage(),
     ],
     "Tarih ve Yayla Rotaları" : [
-
+      TarihVeYaylaRotasiBirPage(),
+      TarihVeYaylaRotasiIkiPage(),
+      TarihVeYaylaRotasiUcPage(),
     ],
     "Yayla ve İnanç Rotaları" : [
-
+      YaylaVeInancRotasiBirPage(),
+      YaylaVeInancRotasiIkiPage(),
+      YaylaVeInancRotasiUcPage(),
     ],
     "Yayla ve Deniz Rotaları" : [
-
+      YaylaVeDenizRotasiBirPage(),
+      YaylaVeDenizRotasiIkiPage(),
+      YaylaVeDenizRotasiUcPage(),
     ],
     "Deniz ve İnanç Rotaları" : [
-
+      DenizVeInancRotasiBirPage(),
+      DenizVeInancRotasiIkiPage(),
+      DenizVeInancRotasiUcPage(),
     ],
     "Doğa ve Deniz Rotaları" : [
-
+      DogaVeDenizRotasiBirPage(),
+      DogaVeDenizRotasiIkiPage(),
+      DogaVeDenizRotasiUcPage(),
     ],
   };
 
@@ -139,10 +179,10 @@ class RouteStrings {
     "Roma Köprüsü",
   ];
   static const List<String> dogatarihrotasi2 = [
+    "Kurugöl Tabiat Parkı",
     "Fakıllı Mağrası",
     "Mehmet Akif Bey Köşkü",
     "Ceneviz Kalesi",
-    "Kurugöl Tabiat Parkı",
     "Aktaş Şelalesi",
     "Harmankaya Şelalesi",
   ];
@@ -327,7 +367,7 @@ class RouteStrings {
     "Paşalar Plajı", //!
     "Melenağzı Plajı", //!
   ];
-  static const List<String> dogadenizrotasi3 = [
+  static const List<String> dogadenizrotasi3 = [//------------------
     "Güzeldere Şelalesi",
     "Aydınpınar Şelalesi",
     "Samandere Şelalesi",

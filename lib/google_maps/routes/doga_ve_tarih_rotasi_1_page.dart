@@ -331,7 +331,7 @@ class _DogaVeTarihRotasiBirPageState extends State<DogaVeTarihRotasiBirPage> {
           child: Column(
             children: [
               Container(
-                height: 450,
+                height: RouteStrings.dogatarihrotasi1.length*55,
                 width: double.maxFinite,
                 child: ListView.builder(
                   controller: scrollController,
@@ -367,7 +367,7 @@ class _DogaVeTarihRotasiBirPageState extends State<DogaVeTarihRotasiBirPage> {
                           ),
                         ));
                   },
-                  itemCount: 8,
+                  itemCount: RouteStrings.dogatarihrotasi1.length,
                   //DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
                 ),
               ),

@@ -10,51 +10,47 @@ import 'package:travella_01/google_maps/constants.dart';
 import 'package:travella_01/information_page/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class DogaVeYaylaRotasiBirPage extends StatefulWidget {
-  const DogaVeYaylaRotasiBirPage({Key? key}) : super(key: key);
+class DogaVeYaylaRotasiIkiPage extends StatefulWidget {
+  const DogaVeYaylaRotasiIkiPage({Key? key}) : super(key: key);
 
   @override
-  State<DogaVeYaylaRotasiBirPage> createState() =>
-      _DogaVeYaylaRotasiBirPageState();
+  State<DogaVeYaylaRotasiIkiPage> createState() =>
+      _DogaVeYaylaRotasiIkiPageState();
 }
 
-class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
-  String rotaAdi = "1 . Doğa ve Yayla Turizmi Rotası";
+class _DogaVeYaylaRotasiIkiPageState extends State<DogaVeYaylaRotasiIkiPage> {
+  String rotaAdi = "2. Doğa ve Yayla Turizmi Rotası";
   late GoogleMapController googleMapController; //controller nesnesi
 
   //User Location Icon başlatıyorum,
   BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
 
 //----------------------lokasyonların LatLang nesneleri-------------------------
-  static LatLng sourceLocation = LatLng(
-      Strings.latitudesLongitudes["Güzeldere Şelalesi"]!.first,
-      Strings.latitudesLongitudes["Güzeldere Şelalesi"]!.last
+  static LatLng sourceLocation =
+  LatLng(
+      Strings.latitudesLongitudes["Torkul Yaylası"]!.first,
+      Strings.latitudesLongitudes["Torkul Yaylası"]!.last
   );
   static LatLng destination1 =
-      LatLng(
-          Strings.latitudesLongitudes["Kardüz Yaylası"]!.first,
-          Strings.latitudesLongitudes["Kardüz Yaylası"]!.last
-      );
+  LatLng(
+      Strings.latitudesLongitudes["Samandere Şelalesi"]!.first,
+      Strings.latitudesLongitudes["Samandere Şelalesi"]!.last
+  );
   static LatLng destination2 =
-      LatLng(
-          Strings.latitudesLongitudes["Efteni Gölü"]!.first,
-          Strings.latitudesLongitudes["Efteni Gölü"]!.last
-      );
+  LatLng(
+      Strings.latitudesLongitudes["Sarıkaya Mağrası"]!.first,
+      Strings.latitudesLongitudes["Sarıkaya Mağrası"]!.last
+  );
   static LatLng destination3 =
-      LatLng(
-          Strings.latitudesLongitudes["Gölyaka Kültür Parkı"]!.first,
-          Strings.latitudesLongitudes["Gölyaka Kültür Parkı"]!.last
-      );
+  LatLng(
+      Strings.latitudesLongitudes["Saklıkent Şelalesi"]!.first,
+      Strings.latitudesLongitudes["Saklıkent Şelalesi"]!.last
+  );
   static LatLng destination4 =
-      LatLng(
-          Strings.latitudesLongitudes["Aydınpınar Şelalesi"]!.first,
-          Strings.latitudesLongitudes["Aydınpınar Şelalesi"]!.last
-      );
-  static LatLng destination5 =
-      LatLng(
-          Strings.latitudesLongitudes["Derebalık Yaylası"]!.first,
-          Strings.latitudesLongitudes["Derebalık Yaylası"]!.last
-      );
+  LatLng(
+      Strings.latitudesLongitudes["Yoğunpelit Mengen Şelalesi"]!.first,
+      Strings.latitudesLongitudes["Yoğunpelit Mengen Şelalesi"]!.last
+  );
 
 //polyline' ler arası yol tarifi için gerekli olan ardışık her iki lokasyonun
 // bulunduğu 2 üyelik listeler.-------------------------------------------------
@@ -63,8 +59,6 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
   List<LatLng> polylineCoordinates2 = [];
   List<LatLng> polylineCoordinates3 = [];
   List<LatLng> polylineCoordinates4 = [];
-  List<LatLng> polylineCoordinates5 = [];
-
 
 //----------------------------1. kısım------------------------------------------
 
@@ -116,36 +110,23 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
   }
 
   //----------------------------4. kısım----------------------------------------
+
   Future<void> getPolyPoints4() async {
     PolylinePoints polylinePoints4 = PolylinePoints();
-    PolylineResult result4 = await polylinePoints4.getRouteBetweenCoordinates(
+    PolylineResult result3 = await polylinePoints4.getRouteBetweenCoordinates(
       google_api_key,
       PointLatLng(destination3.latitude, destination3.longitude),
       PointLatLng(destination4.latitude, destination4.longitude),
     );
 
-    if (result4.points.isNotEmpty) {
-      result4.points.forEach((PointLatLng point) =>
+    if (result3.points.isNotEmpty) {
+      result3.points.forEach((PointLatLng point) =>
           polylineCoordinates4.add(LatLng(point.latitude, point.longitude)));
       setState(() {});
     }
   }
 
   //----------------------------5. kısım----------------------------------------
-  Future<void> getPolyPoints5() async {
-    PolylinePoints polylinePoints5 = PolylinePoints();
-    PolylineResult result5 = await polylinePoints5.getRouteBetweenCoordinates(
-      google_api_key,
-      PointLatLng(destination4.latitude, destination4.longitude),
-      PointLatLng(destination5.latitude, destination5.longitude),
-    );
-
-    if (result5.points.isNotEmpty) {
-      result5.points.forEach((PointLatLng point) =>
-          polylineCoordinates5.add(LatLng(point.latitude, point.longitude)));
-      setState(() {});
-    }
-  }
 
 
 
@@ -154,40 +135,34 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
     Marker(
       markerId: const MarkerId("source"),
       infoWindow:
-          const InfoWindow(title: "01 - Güzeldere Şelalesi"),
+      InfoWindow(title: "01 - ${RouteStrings.dogayaylarotasi2[0]}"),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       position: sourceLocation,
     ),
     Marker(
       markerId: const MarkerId("destination1"),
-      infoWindow: const InfoWindow(title: "02 - Karduz Yaylası"),
+      infoWindow:  InfoWindow(title: "02 - ${RouteStrings.dogayaylarotasi2[1]}"),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       position: destination1,
     ),
     Marker(
       markerId: const MarkerId("destination2"),
       infoWindow:
-          const InfoWindow(title: "03 - Efteni Gölü"),
+      InfoWindow(title: "03 - ${RouteStrings.dogayaylarotasi2[2]}"),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       position: destination2,
     ),
     Marker(
       markerId: const MarkerId("destination3"),
-      infoWindow: const InfoWindow(title: "04 - Gölyaka Kültür Parkı"),
+      infoWindow:  InfoWindow(title: "04 - ${RouteStrings.dogayaylarotasi2[3]}"),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       position: destination3,
     ),
     Marker(
       markerId: const MarkerId("destination4"),
-      infoWindow: const InfoWindow(title: "05 - Aydınpınar Şelalesi"),
+      infoWindow:  InfoWindow(title: "05 - ${RouteStrings.dogayaylarotasi2[4]}"),
       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
       position: destination4,
-    ),
-    Marker(
-      markerId: const MarkerId("destination5"),
-      infoWindow: const InfoWindow(title: "06 - Derebalık Yaylası"),
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-      position: destination5,
     ),
   };
 
@@ -220,7 +195,7 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
         SpeedDialChild(
           label: "Rotanın yol tarifi",
           onTap: () async {
-            String url = """https://www.google.com/maps/dir/Deli+Mehmet,+G%C3%BCzeldere+%C5%9Eelalesi+Tabiat+Park%C4%B1,+G%C3%BCzeldere%2FG%C3%B6lyaka%2FD%C3%BCzce/Kard%C3%BCz+Yaylas%C4%B1,+Unnamed+Road,+81800+G%C3%B6lyaka%2FD%C3%BCzce/Cevizlik,+Efteni+G%C3%B6l%C3%BC+%C4%B0skele,+Hamam%C3%BCst%C3%BC%2FD%C3%BCzce+Merkez%2FD%C3%BCzce/Fatih,+G%C3%B6lyaka+K%C3%BClt%C3%BCr+park,+G%C3%B6lyaka%2FD%C3%BCzce/Y%C4%B1lankaya,+Ayd%C4%B1np%C4%B1nar+%C5%9Eelalesi+Tabiat+Park%C4%B1,+Ayd%C4%B1np%C4%B1nar%2FD%C3%BCzce+Merkez%2FD%C3%BCzce/Derebal%C4%B1k+Yaylas%C4%B1,+Elmac%C4%B1kdere%2FD%C3%BCzce+Merkez%2FD%C3%BCzce/@40.727906,30.9353165,11z/data=!3m1!4b1!4m38!4m37!1m5!1m1!1s0x409d783a58896def:0xe38979f13fbcaa5e!2m2!1d31.0498648!2d40.7234091!1m5!1m1!1s0x409d7f37fa0ad5b7:0xcf7ab3acc127ef05!2m2!1d30.9774337!2d40.673729!1m5!1m1!1s0x409d9d60c66bf297:0x9b5ac2dffbf598e0!2m2!1d31.0405364!2d40.7577!1m5!1m1!1s0x409d9daa0ceb2ddf:0x2096a6cdd3218cb8!2m2!1d31.0194482!2d40.7814663!1m5!1m1!1s0x409d7707ac85ac59:0xe7c262cd835b53aa!2m2!1d31.1020181!2d40.7473082!1m5!1m1!1s0x409d7eb32030235d:0xa08fbf41703be48a!2m2!1d31.0958206!2d40.6808324!3e0""";
+            String url = """https://www.google.com/maps/dir/Topuk+Yaylas%C4%B1,+B%C4%B1%C3%A7k%C4%B1yan%C4%B1%2FKayna%C5%9Fl%C4%B1%2FD%C3%BCzce/Yan%C4%B1k,+Samandere+%C5%9Eelalesi,+Yan%C4%B1k,+Samandere+K%C3%B6y%C3%BC+%C4%B0%C3%A7+Yolu,+Derdin%2FD%C3%BCzce+Merkez%2FD%C3%BCzce/SARIKAYA+MA%C4%9ERASI,+Sar%C4%B1kaya+K%C3%B6y%C3%BC%2FY%C4%B1%C4%9F%C4%B1lca%2FY%C4%B1%C4%9F%C4%B1lca%2FD%C3%BCzce/Sakl%C4%B1kent+%C5%9Eelalesi,+81950+Ya%C4%9Fc%C4%B1lar%2FY%C4%B1%C4%9F%C4%B1lca%2FD%C3%BCzce/Yogunpelit+selalesi,+Yo%C4%9Funpelit%2FY%C4%B1%C4%9F%C4%B1lca%2FD%C3%BCzce/@40.8329302,31.2479323,11z/data=!3m1!4b1!4m32!4m31!1m5!1m1!1s0x409d6939bfc83473:0x90ed2cafe78abe81!2m2!1d31.3634798!2d40.6932314!1m5!1m1!1s0x409d6fbd71f476d9:0x8ca056513e4f0695!2m2!1d31.2612705!2d40.6913069!1m5!1m1!1s0x409d05fb7d041d8d:0x5235cd746d70a303!2m2!1d31.3987913!2d40.9350277!1m5!1m1!1s0x409d04e0c0c31c39:0x6a889d304e606c3!2m2!1d31.490824!2d40.9407592!1m5!1m1!1s0x409d1d4b0d3d9ad3:0xa2741c37ce1ab107!2m2!1d31.6053324!2d40.9746365!3e0""";
             if (await canLaunch(url)) {
               await launch(
                 url,
@@ -265,8 +240,8 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
 
   void setCustomMarkerCurrentLocationIcon() {
     BitmapDescriptor.fromAssetImage(
-            const ImageConfiguration(size: Size(12, 12)),
-            "assets/images/user-128.png")
+        const ImageConfiguration(size: Size(12, 12)),
+        "assets/images/user-128.png")
         .then((icon) {
       currentLocationIcon = icon;
     });
@@ -302,20 +277,20 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
 //----------------------------location list-------------------------------------
 
   Widget makeDismissable({required Widget child}) => GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => Navigator.of(context).pop(),
-        child: GestureDetector(
-          onTap: () {},
-          child: child,
-        ),
-      );
+    behavior: HitTestBehavior.opaque,
+    onTap: () => Navigator.of(context).pop(),
+    child: GestureDetector(
+      onTap: () {},
+      child: child,
+    ),
+  );
 
   Widget buildSheet() {
     return makeDismissable(
       child: DraggableScrollableSheet(
         minChildSize: 0.5,
         maxChildSize: 0.9,
-        initialChildSize: 0.8,
+        initialChildSize: 0.7,
         builder: (context, scrollController) => Container(
           decoration: const BoxDecoration(
             color: Colors.white,
@@ -328,7 +303,7 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
           child: Column(
             children: [
               Container(
-                height: RouteStrings.dogayaylarotasi1.length*55,
+                height: RouteStrings.dogayaylarotasi2.length*55,
                 width: double.maxFinite,
                 child: ListView.builder(
                   controller: scrollController,
@@ -336,12 +311,12 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
                     return Container(
                         decoration: BoxDecoration(
                             border: BorderDirectional(
-                          bottom:
+                              bottom:
                               BorderSide(color: Colors.grey.shade300, width: 1),
-                        )),
+                            )),
                         child: Padding(
                           padding:
-                              EdgeInsets.only(left: 5, top: 15, bottom: 15),
+                          EdgeInsets.only(left: 5, top: 15, bottom: 15),
                           child: Row(
                             children: [
                               Padding(
@@ -355,7 +330,7 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
                                 ),
                               ),
                               Text(
-                                RouteStrings.dogayaylarotasi1[index],
+                                RouteStrings.dogayaylarotasi2[index],
                                 style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.grey.shade900,
@@ -365,11 +340,10 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
                           ),
                         ));
                   },
-                  itemCount: RouteStrings.dogayaylarotasi1.length,
+                  itemCount: RouteStrings.dogayaylarotasi2.length,
                   //DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
                 ),
               ),
-              //SizedBox(height: 100,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -394,7 +368,6 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
     getPolyPoints2();
     getPolyPoints3();
     getPolyPoints4();
-    getPolyPoints5();
 
     super.initState();
   }
@@ -444,12 +417,6 @@ class _DogaVeYaylaRotasiBirPageState extends State<DogaVeYaylaRotasiBirPage> {
           Polyline(
             polylineId: const PolylineId("route4"),
             points: polylineCoordinates4,
-            color: pirimaryColor,
-            width: 6,
-          ),
-          Polyline(
-            polylineId: const PolylineId("route5"),
-            points: polylineCoordinates5,
             color: pirimaryColor,
             width: 6,
           ),
