@@ -34,6 +34,5 @@ class Mekan {
     this._mekanIsmi,
     this._mekanturu,
     this._kucukResim,
-
   );
 }

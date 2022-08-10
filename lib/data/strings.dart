@@ -40,230 +40,6 @@ class Strings {
     "Pürenli Yaylası",
     "Torkul Yaylası"
   ];
-  static const List<String> dogatarihrotasi1 = [
-    "Aydınpınar_Şelalesi",
-    "Efteni_Gölü",
-    "Güzeldere_Şelalesi",
-    "Gölyaka_Kültür_Parkı",    //!
-    "Konuralp_Müzesi",   //!
-    "Prusias_Hypium_Antik_Kenti", //!
-    "Roma Köprüsü",
-  ];
-  static const List<String> dogatarihrotasi2 = [
-    "Fakıllı Mağrası",
-    "Mehmet_Akif_Bey_Köşkü",
-    "Ceneviz Kalesi",
-    "Kurugöl Tabiat Parkı",
-    "Aktaş Şelalesi",
-    "Harmankaya Şelalesi",
-  ];
-  static const List<String> dogatarihrotasi3 = [
-  "Samandere Şelalesi",
-  "Prusias_Hypium_Antik_Kenti", //!
-  "Konuralp_Müzesi",   //!
-  "Roma Köprüsü",
-  "Yoğunpelit Mengen Şelalesi",
-  "Saklıkent Şelalesi",
-  "Sarıkaya Mağrası",
-  ];
-  static const List<String> dogayaylarotasi1 = [
-    "Güzeldere_Şelalesi",
-    "Karduz_Yaylası",
-    "Efteni Gölü",
-    "Gölyaka_Kültür_Parkı",    //!
-    "Aydınpınar_Şelalesi",
-    "Derebalık Yaylası",
-  ];
- 
-  static const List<String> dogayaylarotasi2 = [
-    "Torkul Yaylası",
-    "Samandere Şelalesi",
-    "Sarıkaya Mağrası",
-    "Saklıkent Şelalesi",
-    "Yoğunpelit Mengen Şelalesi",
-  ];
-  static const List<String> dogayaylarotasi3 = [
-    "Topuk_Yaylası",
-    "Kurugöl Tabiat Parkı",
-    "Fakıllı Mağrası",
-    "Aktaş_Şelalesi",
-    "Harmankaya_Şelalesi",
-    ];
-  static const List<String> tarihinancrotasi1 = [
-    "Yabal Dede Türbesi",
-    "Karaçalı Orhangazi Cuma Cami",
-    "Konuralp_Türbesi",
-    "Prusias_Hypium_Antik_Kenti", //!
-    "Roma Köprüsü",
-  ];
-  static const List<String> tarihinancrotasi2 = [
-    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri", //!
-    "Cumayeri Yeni Cami",
-    "Yeni_Meze_Cami",
-    "Hemşin_Köyü_Cami",
-  ];
-  static const List<String> tarihinancrotasi3 = [
-    "Mehmet_Akif_Bey_Köşkü",
-    "Akçakoca Merkez Cami",
-    "Ceneviz Kalesi",
-    "Ahmet_Dede_Türbesi",
-
-  ];
-  static const List<String> tarihplajrotasi1 = [
-    "Konuralp_Müzesi",   //!
-    "Prusias_Hypium_Antik_Kenti", //!
-    "Roma Köprüsü",
-    "Kemos_aile_plajı"   //!
-    "Çuhallı Plajı",
-  ];
-  static const List<String> tarihplajrotasi2 = [
-    "Mehmet_Akif_Bey_Köşkü",
-    "Ceneviz Kalesi",
-    "Kalkın_Plajı",        //!
-    "Paşalar_Plajı",         //!
-    "Melenağzı_Plajı",      //!
-  ];
-  
-
-  
-
-  static const List<String> tarihyaylarotasi1 = [
-    "Pürenli Yaylası",
-    "Odayeri Yaylası",
-    "Derebalık Yaylası",
-    "Konuralp_Müzesi",   //!
-    "Prusias_Hypium_Antik_Kenti", //!
-    "Roma Köprüsü",
-
-  ];
-  static const List<String> tarihyaylarotasi2 = [
-   "Topuk_Yaylası",
-   "Torkul Yaylası",
-   "Konuralp_Müzesi",   //!
-   "Prusias_Hypium_Antik_Kenti", //!
-   "Roma Köprüsü",
-  ];
-  static const List<String> tarihyaylarotasi3 = [
-   "Kardüz Yaylası",
-   "Mehmet_Akif_Bey_Köşkü",
-   "Ceneviz Kalesi",
-
-  ];
-  static const List<String> yaylainancrotasi1 = [
-    "Kardüz Yaylası",
-    "Pürenli_Yaylası",
-    "Cumayeri Yeni Cami",
-    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri", //!
-    
-];
-  static const List<String> yaylainancrotasi2 = [
-    
-    "Derebalık Yaylası",
-    "Odayeri Yaylası",
-    "Torkul Yaylası",
-    "Yabal Dede Türbesi",
-    "Konuralp Türbesi",
-    "Organ Gazi Cami",
-];
-
-static const List<String> yaylainancrotasi3 = [
-    "Topuk_Yaylası",
-    "Akçakoca_Merkez_Cami",
-    "Ahmet_Dede_Türbesi",
-    "Hemşin_Köyü_Cami",
-    "Yeni_Meze_Cami",
-   
-];
-
-  static const List<String> yayladenizrotasi1 = [
-    "Kardüz Yaylası",
-    "Pürenli_Yaylası",
-    "Çuhallı Plajı",
-    "Ceneviz_Kalesi_Plajı",  //!
-    "Kalkın_Plajı",        //!
-    "Paşalar_Plajı",         //!
-    "Melenağzı_Plajı",      //!
-  ];
-  
-  static const List<String> yayladenizrotasi2 = [
-   "Derebalık_Yaylası",
-   "Torkul_Yaylası",
-   "Odayeri_Yaylası",
-   "Çuhallı Plajı",
-   "Ceneviz_Kalesi_Plajı",  //!
-   "Kalkın_Plajı",        //!
-   "Paşalar_Plajı",         //!
-   "Melenağzı_Plajı",      //!
-  ];
-
-  static const List<String> yayladenizrotasi3 = [
-    "Topuk_Yaylası",
-    "Çuhallı Plajı",
-    "Ceneviz_Kalesi_Plajı",  //!
-    "Kalkın_Plajı",        //!
-    "Paşalar_Plajı",         //!
-    "Melenağzı_Plajı",      //!
-
-
-  ];
-  static const List<String> denizinancrotasi1 = [
-    "Cumayeri_Yeni_Cami",
-    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri",  //!
-    "Yeni_Meze_Cami",
-    "Hemşin_Köyü_Cami",
-    "Melenağzı_Plajı",      //!
-    "Paşalar_Plajı",         //!
-
-  ];
-  static const List<String> denizinancrotasi2 = [
-    
-    "Yabal_Dede_Türbesi",
-    "Organ Gazi Cami",
-    "Konuralp Türbesi",
-    "Kemos_aile_plajı",   //!
-    "Çuhallı Plajı",
- 
-
-  ];
-  static const List<String> denizinancrotasi3 = [
-    "Ahmet_Dede_Türbesi",
-    "Çuhallı Plajı",
-    "Akçakoca_Merkez_Cami",
-    "Ceneviz_Kalesi_Plajı",  //!
-    "Kalkın_Plajı",        //!
-
- 
-
-  ];
-  static const List<String> dogadenizrotasi1 = [
-    "Yoğunpelit_Mengen_Şelalesi",
-    "Saklıkent_Şelalesi",
-    "Sarıkaya_Mağrası",
-    "Fakıllı_Mağrası",
-    "Kemos_aile_plajı",   //!
-    "Çuhallı Plajı",
-
-  ];
-
-  static const List<String> dogadenizrotasi2 = [
-   "Efteni Gölü",
-   "Gölyaka_Kültür_Parkı",    //!
-   "Harmankaya_Şelalesi",
-   "Aktaş_Şelalesi",
-   "Kurugöl Kanyonu",
-   "Kalkın_Plajı",        //!
-   "Paşalar_Plajı",         //!
-   "Melenağzı_Plajı",      //!
-
-  ];
-  static const List<String> dogadenizrotasi3 = [
-   "Güzeldere_Şelalesi",
-   "Aydınpınar_Şelalesi",
-   "Samandere_Şelalesi",
-   "Ceneviz_Kalesi_Plajı",  //!
-
-  ];
-
 
   static const List<String> kucukResim = [
     "Kurugöl_Kanyonu",
@@ -549,14 +325,12 @@ Derebalık Yaylası, şehir merkezine 36 km mesafededir. 1400 m rakımı olan ya
         """Kardüz Yaylası; Düzce’nin Gölkaya İlçesi sınırları içerisinde yer almaktadır. Düzce İl Merkezi’ne 48 km, Gölkaya İlçe Merkezine 28 km mesafededir. 
 İlimiz Gölyaka İlçesinde bulunan Kardüz Yaylası, deniz seviyesinden yüksekliği 1830 m olan yaylanın alanı 180 hektardır. Kardüz Yaylası Bakanlar Kurulu'nun 2013 yılında aldığı kararla "Kültür ve Turizm Koruma ve Gelişim Bölgesi" olarak ilan edilmiştir.
 """,
-
     "Odayeri Yaylası":
         "Düzce Merkez Çınardüzü Köyü sınırları içerisinde bulunan Odayeri Yaylası Düzce’ye 28 kilometre mesafededir. Beyköy, Ugur Köyü yolu üzerinden orman yolu takip edilerek gidilen yayla, 8,5 ha ve 1200 m yükseklikte bulunmaktadır. Bakir güzelliklere sahip olan Odayeri Yaylası'nda; asırlık ağaçlar arasında çadır kampı, doğa yürüyüşü, foto-safari yapabilir, olta balıkçılığına müsait derelerinde avlanabilir, ata binebilir, dağ bisikleti gibi alternatif sporlar gerçekleştirebilirsiniz.",
     "Pürenli Yaylası":
         "Düzce İli Gölyaka İlçesine bağlı olan Pürenli Yaylası, Düzce’ye 28 km mesafede olup rakımı 1.400 m’dir. Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli Yaylası, doğanın coşkusunun renk cümbüşüyle kaynaştığı, su seslerinin kuş sesleriyle karıştığı bir yaylalar bütünüdür. Mudurnu ile sınır olan yayladan Abant’a, Odayeri Yaylası’na, Samandere Şelalesi’ne ve Kardüz Yaylası’na ulaşmak mümkündür.",
     "Torkul Yaylası":
         "Düzce Merkez Uğur köyü sınırları içinde bulunan Torkul Göleti ve Yaylası İl merkezine 34 km mesafededir. Torkul Göleti, 1.250 m yükseklikte bulunan Torkul Yaylası içerisinde volkanik çöküntüden oluşmuş 5.000 m² alana sahip tabii bir gölettir. Alanın tamamı ise 78.801 m²'dir. Gölet çevresinde bulunan, kayın, köknar, gürgen, kestane, akçaağaç ve karaçam gibi ağaçların panoramik görüntüsü eşliğinde, piknik, olta balıkçılığı, foto-safari, çadır kampı vb. aktiviteler yapılırken, Torkul ve Odayeri Yaylaları arasındaki 6 km’lik mesafede trekking turları gerçekleştirebilirsiniz.",
-
   };
 
   static Map<String, String> detailedInformationTexts = {
@@ -944,7 +718,6 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       "assets/images/Torkul_Yaylasi_2.png",
       "assets/images/Torkul_Yaylasi_3.png"
     ],
-
   };
 
   static Map<String, List<double>> latitudesLongitudes = {
@@ -972,18 +745,12 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Güzeldere Şelalesi": [40.723412, 31.0498806],
     "Harmankaya Şelalesi": [40.9498311, 30.9260569],
     "Saklıkent Şelalesi": [40.9407589, 31.4908345],
-    "Samandere Şelalesi": [
-      40.691294,
-      31.2612781,
-    ],
+    "Samandere Şelalesi": [40.691294, 31.2612781,],
     "Yoğunpelit Mengen Şelalesi": [40.9751981, 31.6060877],
     "Konuralp Antik Tiyatro": [40.9054525, 31.1481106],
     "Mehmet Akif Bey Köşkü": [41.0887006, 31.1233363],
     "Roma Köprüsü": [40.9063545, 31.1420666],
-    "Balıklı Yaylası": [
-      40.6558711,
-      31.033864,
-    ],
+    "Balıklı Yaylası": [40.6558711, 31.033864,],
     "Derebalık Yaylası": [40.6777826, 31.0918441],
     "Kardüz Yaylası": [
       40.6737315,
@@ -998,6 +765,7 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       40.679501,
       31.1734988,
     ],
+    "Gölyaka Kültür Parkı" : [40.7824661,31.0212372],
   };
 
   static Map<String, List<ReviewUI>> reviews = {

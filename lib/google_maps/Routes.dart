@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:travella_01/data/rote_strings.dart';
+import 'package:travella_01/data/route_strings.dart';
 import 'package:travella_01/data/route_item.dart';
 import 'package:travella_01/information_page/constants.dart';
 
@@ -21,19 +21,27 @@ class _RoutesState extends State<Routes> {
       appBar: AppBar(
         title: Text(
           widget.routeCategory,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: 22),
         ),
         backgroundColor: mainColor,
       ),
-      body: Center(
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return RouteItem(
-              routeCategory: widget.routeCategory,
-              index: index,
-            );
-          },
-          itemCount: RouteStrings.routeNames[widget.routeCategory]!.length,
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                opacity: 0.4,
+                image: AssetImage("assets/images/duzce_5.jpg"))
+        ),
+        child: Center(
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return RouteItem(
+                routeCategory: widget.routeCategory,
+                index: index,
+              );
+            },
+            itemCount: RouteStrings.routeNames[widget.routeCategory]!.length,
+          ),
         ),
       )
     );

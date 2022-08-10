@@ -4,18 +4,19 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:travella_01/data/route_strings.dart';
 import 'package:travella_01/google_maps/constants.dart';
 import 'package:travella_01/information_page/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class OrderTrackingPage extends StatefulWidget {
-  const OrderTrackingPage({Key? key}) : super(key: key);
+class DogaVeTarihRotasiBirPage extends StatefulWidget {
+  const DogaVeTarihRotasiBirPage({Key? key}) : super(key: key);
 
   @override
-  State<OrderTrackingPage> createState() => _OrderTrackingPageState();
+  State<DogaVeTarihRotasiBirPage> createState() => _DogaVeTarihRotasiBirPageState();
 }
 
-class _OrderTrackingPageState extends State<OrderTrackingPage> {
+class _DogaVeTarihRotasiBirPageState extends State<DogaVeTarihRotasiBirPage> {
   String rotaAdi = "1 . Doğa ve Tarih Turizmi Rotası";
   late GoogleMapController googleMapController; //controller nesnesi
 
@@ -317,7 +318,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
       child: DraggableScrollableSheet(
         minChildSize: 0.5,
         maxChildSize: 0.9,
-        initialChildSize: 0.8,
+        initialChildSize: 0.7,
         builder: (context, scrollController) => Container(
           decoration: const BoxDecoration(
             color: Colors.white,
@@ -330,66 +331,53 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
           child: Column(
             children: [
               Container(
-                height: 500,
+                height: 450,
                 width: double.maxFinite,
                 child: ListView.builder(
                   controller: scrollController,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
                         decoration: BoxDecoration(
-                            border: Border.symmetric(
-                                horizontal: BorderSide(
-                                    color: Color.fromARGB(255, 89, 245, 136)))),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Text(
-                                "${index + 1}",
-                                style: TextStyle(
-                                  fontSize: 27,
-                                  color: Colors.grey.shade700,
+                            border: BorderDirectional(
+                              bottom: BorderSide(color: Colors.grey.shade300,width: 1),
+
+                        )),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 5, top: 15, bottom: 15),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Text(
+                                  "${index + 1}.",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.grey.shade700,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "GüzelDere Şelalesi",
+                              Text(
+                                RouteStrings.dogatarihrotasi1[index],
                                 style: TextStyle(
-                                  fontSize: 30,
-                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: 18,
+                                  color: Colors.grey.shade900,
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ));
                   },
-                  itemCount: 7,
+                  itemCount: 8,
                   //DetailedInformationText(locationName: widget.selectedPlace.mekanIsmi),
                 ),
-              ),
-              SizedBox(
-                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton.icon(
-                    onPressed: () => Navigator.of(context).pop(),
-                    icon: Icon(
-                      Icons.cancel_presentation,
-                      size: 35,
-                      color: Colors.green,
-                    ),
-                    label: Text(
-                      "KAPAT",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.green,
-                          backgroundColor: Colors.white54),
-                    ),
-                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: mainColor),
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text("Kapat")),
                 ],
               ),
             ],
@@ -419,7 +407,7 @@ class _OrderTrackingPageState extends State<OrderTrackingPage> {
       appBar: AppBar(
         title: Text(
           rotaAdi,
-          style: TextStyle(color: Colors.black, fontSize: 20),
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         backgroundColor: mainColor,
         shadowColor: Colors.grey,
