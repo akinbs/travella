@@ -17,6 +17,7 @@ class _ProfilPage extends State<ProfilPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        
         extendBody: true,
         backgroundColor: Colors.white,
         body: Center(

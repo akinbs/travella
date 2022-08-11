@@ -10,7 +10,7 @@ class foto extends StatelessWidget {
       child: Center(
         child: Stack(children: <Widget>[
           CircleAvatar(
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.teal,
             radius: 65,
             child: Container(
               decoration: BoxDecoration(
@@ -21,7 +21,7 @@ class foto extends StatelessWidget {
                   foregroundColor: Colors.red,
                   radius: 60,
                   backgroundImage: AssetImage("assets/images/fehmi.jpg"),
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.teal,
                 ),
               ),
             ),
@@ -36,11 +36,12 @@ class foto extends StatelessWidget {
                 Icons.photo_camera,
                 shadows: [Shadow(color: Colors.green)],
                 size: 37,
-                color: Colors.green,
+                color: Colors.teal,
               ),
             ),
           )
-        ]),
+        ]
+        ),
       ),
     );
   }
