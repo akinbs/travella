@@ -89,6 +89,9 @@ class Strings {
     "Pürenli_Yaylası",
     "Torkul_Yaylası",
   ];
+
+
+
   static const List<String> BuyukResim = [
     "Kurugöl_Kanyonu",
     "Efteni_Gölü",
@@ -186,6 +189,9 @@ class Strings {
     "Boğaziçi Restaurant":"Tatil Turizmi",
     "Kamelya Restaurant":"Tatil Turizmi",
     "Bahrinin Yeri ": "Tatil Turizmi",
+    "Ahmet Dede Türbesi" : "İnanç Turizmi",
+    "Hasan Dede Türbesi" : "İnanç Turizmi",
+    "Yabal Dede Türbesi" : "İnanç Turizmi",
   };
 
   static const Map<String, double> rateValues = {
