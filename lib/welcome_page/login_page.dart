@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travella_01/information_page/constants.dart';
+import 'package:travella_01/utils/utils.dart';
+import 'package:travella_01/welcome_page/auth/authmethods.dart';
 import 'package:travella_01/welcome_page/auth/forgot_password_page.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -23,6 +25,16 @@ class _LoginPageState extends State<LoginPage> {
       email: _emailController.text.trim(),
       password: _passwordController.text.trim(),
     );
+  }
+
+  void loginUser() async {
+    String res = await AuthMethods().loginUser(
+        email: _emailController.text, password: _passwordController.text);
+
+    if (res == "success") {
+    } else {
+      //showSnackBar(res, context);
+    }
   }
 
   @override
@@ -148,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25),
                   child: GestureDetector(
-                    onTap: signIn,
+                    onTap: loginUser,
                     child: Container(
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
