@@ -50,229 +50,6 @@ class Strings {
     "Kamelya Restaurant",
     "Bahrinin Yeri ",
   ];
-  static const List<String> dogatarihrotasi1 = [
-    "Aydınpınar Şelalesi",
-    "Efteni Gölü",
-    "Güzeldere Şelalesi",
-    "Gölyaka_Kültür_Parkı",    //!
-    "Konuralp_Müzesi",   //!
-    "Konuralp Antik Tiyatro", //!
-    "Roma Köprüsü",
-  ];
-  static const List<String> dogatarihrotasi2 = [
-    "Fakıllı Mağrası",
-    "Mehmet Akif Bey Köşkü",
-    "Ceneviz Kalesi",
-    "Kurugöl Tabiat Parkı",
-    "Aktaş Şelalesi",
-    "Harmankaya Şelalesi",
-  ];
-  static const List<String> dogatarihrotasi3 = [
-  "Samandere Şelalesi",
-  "Konuralp Antik Tiyatro",
-  "Konuralp_Müzesi",   //!
-  "Roma Köprüsü",
-  "Yoğunpelit Mengen Şelalesi",
-  "Saklıkent Şelalesi",
-  "Sarıkaya Mağrası",
-  ];
-  static const List<String> dogayaylarotasi1 = [
-    "Güzeldere Şelalesi",
-    "Karduz Yaylası",
-    "Efteni Gölü",
-    "Gölyaka_Kültür_Parkı",    //!
-    "Aydınpınar Şelalesi",
-    "Derebalık Yaylası",
-  ];
- 
-  static const List<String> dogayaylarotasi2 = [
-    "Torkul Yaylası",
-    "Samandere Şelalesi",
-    "Sarıkaya Mağrası",
-    "Saklıkent Şelalesi",
-    "Yoğunpelit Mengen Şelalesi",
-  ];
-  static const List<String> dogayaylarotasi3 = [
-    "Topuk Yaylası",
-    "Kurugöl Tabiat Parkı",
-    "Fakıllı Mağrası",
-    "Aktaş_Şelalesi",
-    "Harmankaya_Şelalesi",
-    ];
-  static const List<String> tarihinancrotasi1 = [
-    "Yabal Dede Türbesi",
-    "Karaçalı Orhangazi Cuma Cami",
-    "Konuralp Türbesi",
-    "Konuralp Antik Tiyatro",
-    "Roma Köprüsü",
-  ];
-  static const List<String> tarihinancrotasi2 = [
-    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri", //!
-    "Cumayeri Yeni Cami",
-    "Yeni Meze Cami",
-    "Hemşin Köyü Cami",
-  ];
-  static const List<String> tarihinancrotasi3 = [
-    "Mehmet Akif Bey Köşkü",
-    "Akçakoca Merkez Cami",
-    "Ceneviz Kalesi",
-    "Ahmet Dede Türbesi",
-
-  ];
-  static const List<String> tarihplajrotasi1 = [
-    "Konuralp_Müzesi",   //!
-    "Konuralp Antik Tiyatro",
-    "Roma Köprüsü",
-    "Kemos_aile_plajı"   //!
-    "Çuhallı Plajı",
-  ];
-  static const List<String> tarihplajrotasi2 = [
-    "Mehmet AkifBey Köşkü",
-    "Ceneviz Kalesi",
-    "Kalkın Plajı",       
-    "Paşalar_Plajı",         //!
-    "Melenağzı Plajı",
-  ];
-  
-
-  
-
-  static const List<String> tarihyaylarotasi1 = [
-    "Pürenli Yaylası",
-    "Odayeri Yaylası",
-    "Derebalık Yaylası",
-    "Konuralp_Müzesi",   //!
-    "Konuralp Antik Tiyatro",
-    "Roma Köprüsü",
-
-  ];
-  static const List<String> tarihyaylarotasi2 = [
-   "Topuk Yaylası",
-   "Torkul Yaylası",
-   "Konuralp_Müzesi",   //!
-   "Konuralp Antik Tiyatro",
-   "Roma Köprüsü",
-  ];
-  static const List<String> tarihyaylarotasi3 = [
-   "Kardüz Yaylası",
-   "Mehmet Akif Bey Köşkü",
-   "Ceneviz Kalesi",
-
-  ];
-  static const List<String> yaylainancrotasi1 = [
-    "Kardüz Yaylası",
-    "Pürenli Yaylası",
-    "Cumayeri Yeni Cami",
-    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri", //!
-    
-];
-  static const List<String> yaylainancrotasi2 = [
-    
-    "Derebalık Yaylası",
-    "Odayeri Yaylası",
-    "Torkul Yaylası",
-    "Yabal Dede Türbesi",
-    "Konuralp Türbesi",
-    "Organ Gazi Cami",
-];
-
-static const List<String> yaylainancrotasi3 = [
-    "Topuk Yaylası",
-    "Akçakoca Merkez Cami",
-    "Ahmet Dede Türbesi",
-    "Hemşin Köyü Cami",
-    "Yeni Meze Cami",
-   
-];
-
-  static const List<String> yayladenizrotasi1 = [
-    "Kardüz Yaylası",
-    "Pürenli Yaylası",
-    "Çuhallı Plajı",
-    "Ceneviz Kalesi Plajı",  
-    "Kalkın Plajı",        
-    "Paşalar_Plajı",         //!
-    "Melenağzı Plajı",
-  ];
-  
-  static const List<String> yayladenizrotasi2 = [
-   "Derebalık Yaylası",
-   "Torkul Yaylası",
-   "Odayeri Yaylası",
-   "Çuhallı Plajı",
-   "Ceneviz Kalesi Plajı",  
-   "Kalkın Plajı",       
-   "Paşalar_Plajı",         //!
-   "Melenağzı Plajı",
-  ];
-
-  static const List<String> yayladenizrotasi3 = [
-    "Topuk_Yaylası",
-    "Çuhallı Plajı",
-    "Ceneviz Kalesi Plajı",  
-    "Kalkın Plajı",        
-    "Paşalar_Plajı",         //!
-    "Melenağzı Plajı",      
-
-
-  ];
-  static const List<String> denizinancrotasi1 = [
-    "Cumayeri Yeni Cami",
-    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri",  //!
-    "Yeni Meze Cami",
-    "Hemşin Köyü Cami",
-    "Melenağzı Plajı",
-    "Paşalar_Plajı",         //!
-
-  ];
-  static const List<String> denizinancrotasi2 = [
-    
-    "Yabal Dede Türbesi",
-    "Organ Gazi Cami",
-    "Konuralp Türbesi",
-    "Kemos_aile_plajı",   //!
-    "Çuhallı Plajı",
- 
-
-  ];
-  static const List<String> denizinancrotasi3 = [
-    "Ahmet Dede Türbesi",
-    "Çuhallı Plajı",
-    "Akçakoca Merkez Cami",
-    "Ceneviz Kalesi Plajı",  
-    "Kalkın Plajı",       
-
- 
-
-  ];
-  static const List<String> dogadenizrotasi1 = [
-    "Yoğunpelit Mengen Şelalesi",
-    "Saklıkent Şelalesi",
-    "Sarıkaya Mağrası",
-    "Fakıllı Mağrası",
-    "Kemos_aile_plajı",   //!
-    "Çuhallı Plajı",
-
-  ];
-
-  static const List<String> dogadenizrotasi2 = [
-   "Efteni Gölü",
-   "Gölyaka_Kültür_Parkı",    //!
-   "Harmankaya Şelalesi",
-   "Aktaş Şelalesi",
-   "Kurugöl Kanyonu",
-   "Kalkın Plajı",       
-   "Paşalar_Plajı",         //!
-   "Melenağzı Plajı",
-
-  ];
-  static const List<String> dogadenizrotasi3 = [
-   "Güzeldere Şelalesi",
-   "Aydınpınar Şelalesi",
-   "Samandere Şelalesi",
-   "Ceneviz Kalesi Plajı",  
-
-  ];
 
 
   static const List<String> kucukResim = [
@@ -1141,18 +918,12 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Güzeldere Şelalesi": [40.723412, 31.0498806],
     "Harmankaya Şelalesi": [40.9498311, 30.9260569],
     "Saklıkent Şelalesi": [40.9407589, 31.4908345],
-    "Samandere Şelalesi": [
-      40.691294,
-      31.2612781,
-    ],
+    "Samandere Şelalesi": [40.691294, 31.2612781,],
     "Yoğunpelit Mengen Şelalesi": [40.9751981, 31.6060877],
     "Konuralp Antik Tiyatro": [40.9054525, 31.1481106],
     "Mehmet Akif Bey Köşkü": [41.0887006, 31.1233363],
     "Roma Köprüsü": [40.9063545, 31.1420666],
-    "Balıklı Yaylası": [
-      40.6558711,
-      31.033864,
-    ],
+    "Balıklı Yaylası": [40.6558711, 31.033864,],
     "Derebalık Yaylası": [40.6777826, 31.0918441],
     "Kardüz Yaylası": [
       40.6737315,
@@ -1167,16 +938,27 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       40.679501,
       31.1734988,
     ],
+
     //yeni eklenenler
-    "Ceneviz Kalesi Plajı":[41.0856701,31.0931208],
-    "Kalkın Plajı":[41.0760167,31.0439217],
-    "Melenağzı Plajı":[41.0730244,30.9700307],
+    
+    
+    
     "Livadi  Hotel & Restaurant":[41.0910511,31.1468289],
     "Turkuaz Beach Otel":[41.0900344,31.1399421],
     "Kuzine Restaurant":[41.0899411,31.1362045],
     "Boğaziçi Restaurant":[41.0895672,31.1452079],
     "Kamelya Restaurant":[41.0899732,31.1363268,21],
     "Bahrinin Yeri ":[40.8387174,31.158955 ],
+
+    "Gölyaka Kültür Parkı" : [40.7824661,31.0212372],
+    "Konuralp Müzesi" : [40.9036901,31.1536507],
+    "Kemos Aile Plajı" : [41.0940839,31.1869675],
+    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri" : [40.8854354,31.0029278],
+    "Kalkın Plajı" : [41.0760322,31.0439879],
+    "Paşalar Plajı" : [41.0757825,31.025341],
+    "Melenağzı Plajı" : [41.0730036,30.9701503],
+    "Ceneviz Kalesi Plajı" : [41.085687,31.0931108],
+
   };
 
   static Map<String, List<ReviewUI>> reviews = {

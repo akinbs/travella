@@ -29,7 +29,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
     Discover(),
     GoogleMapsPage(),
     main_page(),
-    route_page(),
+    RoutePage(),
     ProfilPage(),
 
 
