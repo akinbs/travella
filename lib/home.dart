@@ -23,7 +23,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
   int index = 2;
   int currentPage = 0;
 
-  final ScreenName = ["KEŞFET", "HARİTA", "", "ROTALAR", "PROFİL"];
+  final ScreenName = ["KEŞFET", "HARİTA", "ANA SAYFA", "ROTALAR", "PROFİL"];
 
   final screens = [
     Discover(),
