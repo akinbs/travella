@@ -1,8 +1,13 @@
+import 'dart:typed_data';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:travella_01/information_page/constants.dart';
+import 'package:travella_01/utils/utils.dart';
+import 'package:travella_01/welcome_page/auth/authmethods.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -13,6 +18,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class RegisterPageState extends State<RegisterPage> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   String firstName_ = "";
   String lastName_ = "";
   String email_ = "";
@@ -23,6 +29,7 @@ class RegisterPageState extends State<RegisterPage> {
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _ageController = TextEditingController();
+  //Uint8List? _image;
 
   @override
   void dispose() {
@@ -38,10 +45,30 @@ class RegisterPageState extends State<RegisterPage> {
   Future signUp() async {
     //authenticate user
     if (passwordConfirmed()) {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential cred =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+      Future addUserDetails(
+          String firstName, String lastName, String email, int age) async {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(cred.user!.uid)
+            .set({
+          'firstName': firstName,
+          'lastName': lastName,
+          'uid': cred.user!.uid,
+          'email': email,
+          'age': age,
+        });
+        setState(() {
+          firstName_ = firstName;
+          lastName_ = lastName;
+          email_ = email;
+          age_ = age;
+        });
+      }
 
       // kullanıcı detayları ekleme
       addUserDetails(
@@ -53,9 +80,9 @@ class RegisterPageState extends State<RegisterPage> {
     }
   }
 
-  Future addUserDetails(
+  /*Future addUserDetails(
       String firstName, String lastName, String email, int age) async {
-    await FirebaseFirestore.instance.collection('person').add({
+    await FirebaseFirestore.instance.collection('users').add({
       'first name': firstName,
       'last name': lastName,
       'email': email,
@@ -67,7 +94,7 @@ class RegisterPageState extends State<RegisterPage> {
       email_ = email;
       age_ = age;
     });
-  }
+  }*/
 
   bool passwordConfirmed() {
     if (_passwordController.text.trim() ==
@@ -77,6 +104,13 @@ class RegisterPageState extends State<RegisterPage> {
       return false;
     }
   }
+
+  /*void selectImage() async {
+    Uint8List im = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = im;
+    });
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +143,38 @@ class RegisterPageState extends State<RegisterPage> {
                 SizedBox(
                   height: 20,
                 ),
+                /*_image != null
+                    ? CircleAvatar(
+                        radius: 64,
+                        backgroundImage: MemoryImage(_image!),
+                        backgroundColor: mainColor,
+                      )
+                    : CircleAvatar(
+                        radius: 65,
+                        backgroundColor: mainColor,
+                        child: CircleAvatar(
+                          radius: 60,
+                          backgroundColor: mainColor,
+                          backgroundImage:
+                              AssetImage("assets/components/profilephoto.jpg"),
+                          child: Stack(children: [
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: IconButton(
+                                onPressed: (){},
+                                //selectImage,
+                                icon: Icon(
+                                  Icons.camera,
+                                  color: Colors.black87,
+                                  size: 40,
+                                ),
+                              ),
+                            ),
+                          ]),
+                        ),
+                      ),
+                SizedBox(height: 10),*/
+
                 //first name textfield
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25.0),
@@ -252,7 +318,16 @@ class RegisterPageState extends State<RegisterPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25),
                   child: GestureDetector(
-                    onTap: signUp,
+                    onTap: () => {
+                      AuthMethods().signUpUser(
+                        age: _ageController.text,
+                        email: _emailController.text,
+                        firstName: _firstNameController.text,
+                        lastName: _lastNameController.text,
+                        password: _passwordController.text,
+                        //file: _image!,
+                      )
+                    },
                     child: Container(
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(

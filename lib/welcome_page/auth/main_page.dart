@@ -4,7 +4,6 @@ import 'package:travella_01/home.dart';
 import 'package:travella_01/welcome_page/auth/auth_page.dart';
 import 'package:travella_01/welcome_page/login_page.dart';
 
-
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
