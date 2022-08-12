@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                             builder: (context) {
                               return ForgotPasswordPage();
                             },
-                          ));
+                          ),);
                         },
                         child: Text(
                           'Parolamı unuttum',
