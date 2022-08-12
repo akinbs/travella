@@ -17,76 +17,75 @@ class _ProfilPage extends State<ProfilPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        
         extendBody: true,
         backgroundColor: Colors.white,
         body: Center(
-          child: SafeArea(
-            child: Column(
-              children: [
-                SizedBox(height: 15),
-                foto(),
-                Text(
-                  "Fehmi Tahsin Demirkan",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+          child: Column(
+            children: [
+              SizedBox(height: 75),
+              foto(),
+              Text(
+                "Fehmi Tahsin Demirkan",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              Text(
+                "Düzce/Türkiye",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                ),
+              ),
+              SizedBox(
+                height: 12.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextButton(
+                    child: Text('Gittiğim Yerler: 15'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      shadowColor: Colors.green,
+                      backgroundColor: Colors.teal,
+                      onSurface: Colors.grey,
+                    ),
+                    onPressed: () {},
                   ),
-                ),
-                Text(
-                  "Düzce/Türkiye",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18,
+                  SizedBox(
+                    width: 50,
                   ),
-                ),
-                SizedBox(
-                  height: 12.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  TextButton(
+                    child: Text('Kalan Yerler: 27'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      shadowColor: Colors.green,
+                      backgroundColor: Colors.teal,
+                      onSurface: Colors.grey,
+                    ),
+                    onPressed: () {},
+                  )
+                ],
+              ),
+              SizedBox(height: 15),
+              Container(
+                height: 500,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextButton(
-                      child: Text('Gittiğim Yerler: 15'),
-                      style: TextButton.styleFrom(
-                        primary: Colors.white,
-                        shadowColor: Colors.green,
-                        backgroundColor: Colors.teal,
-                        onSurface: Colors.grey,
-                      ),
-                      onPressed: () {},
+                    SingleChildScrollView(
+                      child: tabbar(),
                     ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    TextButton(
-                      child: Text('Kalan Yerler: 27'),
-                      style: TextButton.styleFrom(
-                        primary: Colors.white,
-                        shadowColor: Colors.green,
-                        backgroundColor: Colors.teal,
-                        onSurface: Colors.grey,
-                      ),
-                      onPressed: () {},
-                    )
                   ],
                 ),
-                SizedBox(height: 15),
-                Container(
-                  height: 500,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SingleChildScrollView(
-                        child: tabbar(),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

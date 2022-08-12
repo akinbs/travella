@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travella_01/AnasayfaIconPage/Icons.dart';
 import 'package:travella_01/information_page/constants.dart';
+import 'package:travella_01/information_page/information_page.dart';
 
 import '../discover_page/discover.dart';
 import '../fliters/inanç_listesi.dart';
@@ -112,9 +113,10 @@ class main_page extends StatelessWidget {
                     padding: const EdgeInsets.only(top:30,left:10),
                     child:Row(
                       children: [
-                        _HorizontalBar(title: "Ceneviz Kalesi", subtitle: "Akçakoca"),
-                        _HorizontalBar(title: "Yedigöller Milli Parkı", subtitle: "Bolu"),
-                        _HorizontalBar(title: "Fakıllı Mağrası", subtitle: "Akçakoca"),
+                        GestureDetector( onTap:() => Navigator.of(context).push(MaterialPageRoute(builder: (context) => InformationPage(selectedPlace: Mekan("Ceneviz Kalesi", "asd", "asdf")),)), child: _HorizontalBar(title: "Ceneviz Kalesi", subtitle: "Akçakoca")),
+                        GestureDetector(onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => InformationPage(selectedPlace: Mekan("Pürenli Yaylası", "asd", "asdf")),)), child: _HorizontalBar(title: "Pürenli Yaylası", subtitle: "Düzce")),
+                        GestureDetector(onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => InformationPage(selectedPlace: Mekan("Fakıllı Mağrası", "asd", "asdf")),)), child: _HorizontalBar(title: "Fakıllı Mağrası", subtitle: "Akçakoca")),
+                        GestureDetector(onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => InformationPage(selectedPlace: Mekan("Kardüz Yaylası", "asd", "asdf")),)), child: _HorizontalBar(title: "Kardüz Yaylası", subtitle: "Düzce")),
                         _HorizontalBar(title: "Kardüz Yaylası", subtitle: "Düzce"),
                         _HorizontalBar(title: "Mavi Bayraklı Plajı", subtitle: "Akçakoca"),
                         _HorizontalBar(title: "Melensu Park", subtitle: "Düzce"),
@@ -130,7 +132,7 @@ class main_page extends StatelessWidget {
                     Padding(
                       padding:EdgeInsets.only(top: 20),
                       child: Container(
-                        height:500,
+                        height:528,
 
                         child:GridView.count(
                           crossAxisCount: 2,
