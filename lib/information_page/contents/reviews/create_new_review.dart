@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:travella_01/data/strings.dart';
 import 'package:travella_01/information_page/contents/reviews/reviewUI.dart';
 import 'package:travella_01/information_page/information_page.dart';
@@ -41,6 +42,7 @@ class _CreateNewReviewUIState extends State<CreateNewReviewUI> {
 
 //------------------------------------------------------------------------------
   void postTheReview(Mekan selectedPlace) {
+    //final User user = Provider.of<UserProvider>(context).getUser;
     final now = DateTime.now();
     final String time = DateFormat("dd-MM-yyyy - kk:mm").format(now);
     final user = FirebaseAuth.instance.currentUser!;

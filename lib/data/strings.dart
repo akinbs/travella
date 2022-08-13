@@ -38,45 +38,8 @@ class Strings {
     "Kardüz Yaylası",
     "Odayeri Yaylası",
     "Pürenli Yaylası",
-    "Torkul Yaylası"
-  ];
-  static const List<String> dogatarihrotasi1 = [
-    "Aydınpınar_Şelalesi",
-    "Efteni_Gölü",
-    "Güzeldere_Şelalesi",
-    "Gölyaka_Kültür_Parkı",    //!
-    "Konuralp_Müzesi",   //!
-    "Prusias_Hypium_Antik_Kenti", //!
-    "Roma Köprüsü",
-  ];
-  static const List<String> dogatarihrotasi2 = [
-    "Fakıllı Mağrası",
-    "Mehmet_Akif_Bey_Köşkü",
-    "Ceneviz Kalesi",
-    "Kurugöl Tabiat Parkı",
-    "Aktaş Şelalesi",
-    "Harmankaya Şelalesi",
-  ];
-  static const List<String> dogatarihrotasi3 = [
-  "Samandere Şelalesi",
-  "Prusias_Hypium_Antik_Kenti", //!
-  "Konuralp_Müzesi",   //!
-  "Roma Köprüsü",
-  "Yoğunpelit Mengen Şelalesi",
-  "Saklıkent Şelalesi",
-  "Sarıkaya Mağrası",
-  ];
-  static const List<String> dogayaylarotasi1 = [
-    "Güzeldere_Şelalesi",
-    "Karduz_Yaylası",
-    "Efteni Gölü",
-    "Gölyaka_Kültür_Parkı",    //!
-    "Aydınpınar_Şelalesi",
-    "Derebalık Yaylası",
-  ];
- 
-  static const List<String> dogayaylarotasi2 = [
     "Torkul Yaylası",
+
     "Samandere Şelalesi",
     "Sarıkaya Mağrası",
     "Saklıkent Şelalesi",
@@ -262,6 +225,18 @@ static const List<String> yaylainancrotasi3 = [
    "Samandere_Şelalesi",
    "Ceneviz_Kalesi_Plajı",  //!
 
+
+    //yeni eklendi
+    "Ceneviz Kalesi Plajı", 
+    "Kalkın Plajı",
+    "Melenağzı Plajı",
+    "Livadi  Hotel & Restaurant",
+    "Turkuaz Beach Otel",
+    "Kuzine Restaurant",
+    "Boğaziçi Restaurant",
+    "Kamelya Restaurant",
+    "Bahrinin Yeri ",
+
   ];
 
 
@@ -302,6 +277,9 @@ static const List<String> yaylainancrotasi3 = [
     "Pürenli_Yaylası",
     "Torkul_Yaylası",
   ];
+
+
+
   static const List<String> BuyukResim = [
     "Kurugöl_Kanyonu",
     "Efteni_Gölü",
@@ -388,7 +366,20 @@ static const List<String> yaylainancrotasi3 = [
     "KarDoğa Turizmiuz Yaylası": "Doğa Turizmi",
     "ODoğa Turizmiayeri Yaylası": "Doğa Turizmi",
     "Pürenli Yaylası": "Doğa Turizmi",
-    "Torkul Yaylası": "Doğa Turizmi"
+    "Torkul Yaylası": "Doğa Turizmi",
+    //yeni eklemeler
+    "Ceneviz Kalesi Plajı":"Doğa Turizmi",
+    "Kalkın Plajı":"Doğa Turizmi",
+    "Melenağzı Plajı":"Doğa Turizmi",
+    "Livadi  Hotel & Restaurant":"Tatil Turizmi",
+    "Turkuaz Beach Otel":"Tatil Turizmi",
+    "Kuzine Restaurant":"Tatil Turizmi",
+    "Boğaziçi Restaurant":"Tatil Turizmi",
+    "Kamelya Restaurant":"Tatil Turizmi",
+    "Bahrinin Yeri ": "Tatil Turizmi",
+    "Ahmet Dede Türbesi" : "İnanç Turizmi",
+    "Hasan Dede Türbesi" : "İnanç Turizmi",
+    "Yabal Dede Türbesi" : "İnanç Turizmi",
   };
 
   static const Map<String, double> rateValues = {
@@ -428,6 +419,16 @@ static const List<String> yaylainancrotasi3 = [
     "Odayeri Yaylası": 5,
     "Pürenli Yaylası": 5,
     "Torkul Yaylası": 5,
+    //Yeni eklemeler
+    "Ceneviz Kalesi Plajı":5,
+    "Kalkın Plajı":5,
+    "Melenağzı Plajı":5,
+    "Livadi  Hotel & Restaurant":5,
+    "Turkuaz Beach Otel":5,
+    "Kuzine Restaurant":5,
+    "Boğaziçi Restaurant":5,
+    "Kamelya Restaurant":5,
+    "Bahrinin Yeri ":5,
   };
 
   static const Map<String, String> googleMapsUrls = {
@@ -466,6 +467,17 @@ static const List<String> yaylainancrotasi3 = [
     "Odayeri Yaylası": "https://goo.gl/maps/ZKT4gPJ1VHYGHymP9",
     "Pürenli Yaylası": "https://goo.gl/maps/Pxm9AMPCNrw82GYB9",
     "Torkul Yaylası": "https://goo.gl/maps/pDNGwvZf38SN1EwX9",
+    //yeni eklemeler
+    "Ceneviz Kalesi Plajı":"https://goo.gl/maps/pVbTEpEzsyVfbkXN6",
+    "Kalkın Plajı":"https://goo.gl/maps/jsPGhqQX1gZUj9UX9",
+    "Melenağzı Plajı":"https://goo.gl/maps/rYRuoCQSbdoe1B7x6",
+    "Livadi  Hotel & Restaurant":"https://goo.gl/maps/R2nbLxmnGmm61rXV7",
+    "Turkuaz Beach Otel":"https://goo.gl/maps/FEPpgvo1m7nij1m49",
+    "Kuzine Restaurant":"https://g.page/Kuzineakcakoca?share",
+    "Boğaziçi Restaurant": "https://g.page/bogaziciakcakocarestaurant?share",
+    "Kamelya Restaurant":"https://goo.gl/maps/xBBRkPGQ7wxP1cPG7",
+    "Bahrinin Yeri ":"https://g.page/BahrininYeri?share",
+
   };
 
   static Map<String, String> informationTexts = {
@@ -555,7 +567,39 @@ Derebalık Yaylası, şehir merkezine 36 km mesafededir. 1400 m rakımı olan ya
         "Düzce İli Gölyaka İlçesine bağlı olan Pürenli Yaylası, Düzce’ye 28 km mesafede olup rakımı 1.400 m’dir. Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli Yaylası, doğanın coşkusunun renk cümbüşüyle kaynaştığı, su seslerinin kuş sesleriyle karıştığı bir yaylalar bütünüdür. Mudurnu ile sınır olan yayladan Abant’a, Odayeri Yaylası’na, Samandere Şelalesi’ne ve Kardüz Yaylası’na ulaşmak mümkündür.",
     "Torkul Yaylası":
         "Düzce Merkez Uğur köyü sınırları içinde bulunan Torkul Göleti ve Yaylası İl merkezine 34 km mesafededir. Torkul Göleti, 1.250 m yükseklikte bulunan Torkul Yaylası içerisinde volkanik çöküntüden oluşmuş 5.000 m² alana sahip tabii bir gölettir. Alanın tamamı ise 78.801 m²'dir. Gölet çevresinde bulunan, kayın, köknar, gürgen, kestane, akçaağaç ve karaçam gibi ağaçların panoramik görüntüsü eşliğinde, piknik, olta balıkçılığı, foto-safari, çadır kampı vb. aktiviteler yapılırken, Torkul ve Odayeri Yaylaları arasındaki 6 km’lik mesafede trekking turları gerçekleştirebilirsiniz.",
+     //yeni eklenenler
+        "Ceneviz Kalesi Plajı":
+          "Ceneviz Kalesi ve çevresi, Ankara Kültür ve Tabiat Varlıklarını Koruma Kurulu’nun kararı ile 1996 yılında Arkeolojik ve doğal sit alanı olarak tescillenmiştir. Moloz taşlarla inşa edilmiş olan kalenin, kara tarafından giriş kapısı ve yanında da yüksek bir kulesi bulunmaktadır. Kale avlusu içerisinde günümüzde dilek kuyusu olarak bilinen su sarnıcı bulunmaktadır. ",
+
+        "Kalkın Plajı":
+          "Kalkın Plajı, Akçakoca’ya bağlı Kalkın Köyü sınırları içerisinde yer almaktadır. İlçe merkezine yaklaşık olarak 9 km uzaklıktadır. Özel aracınız ile Karasu Şile Yolu/D010 üzerinden ulaşım sağlayabilirsiniz.",
+
+          "Melenağzı Plajı":     
+            "Melenağzı Plajı, Akçakoca’ya bağlı Melenağzı Köyü’nde yer almaktadır. İlçe merkezine yaklaşık olarak 15 km uzaklıktadır. Özel aracınız ile Karasu Şile Yolu/D010 üzerinden ulaşım mümkündür.",
+
+          "Livadi  Hotel & Restaurant":
+          "Livadi Hotel & Restaurant Düzce/ Akçakoca'da bulunmaktadır.Ulaşım mesafesi olarak İstanbul ve Ankara İllerine 230-250 km uzaklıktadır. Denize sıfır konumda yer almakla birlikte, Şehir Merkezine 5 dk yürüme mesafesindedir.",
+
+          "Turkuaz Beach Otel":
+            "Misafirler için özel plajı vardır. Ayrıca açık havuz ve kiralık bisiklet mevcuttur.Otelde misafirler için ayrıca ücretsiz kablosuz İnternet, danışma (concierge) hizmetleri ve ortak alanda televizyon vardır.",
+
+            "Kuzine Restaurant":
+              " Hoş dizaynı olan çeşitli meze,tatlı,alkollü içeceklerin ve balıkların bulunduğu gayet samimi bir aile işletmesidir.Denizi komple görebilmesi büyük bir avantajıdır. Sabah kahvaltı yapmak için gidilebilecek en güzel mekanlardan biridir. ",
+
+              "Boğaziçi Restaurant":
+              "Akçakoca’nın sahilinde bulunan ahşaptan yapılma bir restorandır.Menüsünde çok çeşitli mezeler,arasıcak olarak çeşitli balıklar,salatalar ,alkollü ve alkolsüz içecekler,meyve ve tatlılar bulunmaktadır.Konumu olarak Ayazlı Mahallesi Ereğli Cadddesi  No:35/1 Akçakoca Otel Yanı Akçakoca/Düzce.",
+
+              "Kamelya Restaurant":
+              "Sizleri Kamelya Restaurantta , güler yüzlü hizmet, balık ürünleri başta olmak üzere zengin bir menü, temiz, nezih, açık mutfak, geniş ve ferah bir mekan bekliyor.Açılır kapanır cam sistemi ile açık ve kapalı alanlarımızla denizin keyfini çıkartacağınız restaurantta, isterseniz kapalı alanımızda şömine keyfi de çıkartarak kendinizi özel hissedeceksiniz.",
+
+              "Bahrinin Yeri ":
+                "3 Kuşaktır süregelen bir o kadar profesyonel bir o kadar da samimi bir esnaf olan Bahri amcamızın hikayesi 1942 den beri süregelmektedir."
+
+              
+
+           
   };
+
 
   static Map<String, String> detailedInformationTexts = {
     "Saklıkent Şelalesi":
@@ -714,6 +758,45 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Torkul Yaylası":
         """Düzce Merkez Uğur köyü sınırları içinde bulunan Torkul Göleti ve Yaylası İl merkezine 34 km mesafededir. Torkul Göleti, 1.250 m yükseklikte bulunan Torkul Yaylası içerisinde volkanik çöküntüden oluşmuş 5.000 m² alana sahip tabii bir gölettir. Alanın tamamı ise 78.801 m²'dir. Gölet çevresinde bulunan, kayın, köknar, gürgen, kestane, akçaağaç ve karaçam gibi ağaçların panoramik görüntüsü eşliğinde, piknik, olta balıkçılığı, foto-safari, çadır kampı vb. aktiviteler yapılırken, Torkul ve Odayeri Yaylaları arasındaki 6 km’lik mesafede trekking turları gerçekleştirebilirsiniz.
 """,
+//yeni eklenenler
+
+       "Ceneviz Kalesi Plajı":
+         "Ceneviz Kalesi ve çevresi, Ankara Kültür ve Tabiat Varlıklarını Koruma Kurulu’nun kararı ile 1996 yılında Arkeolojik ve doğal sit alanı olarak tescillenmiştir. Moloz taşlarla inşa edilmiş olan kalenin, kara tarafından giriş kapısı ve yanında da yüksek bir kulesi bulunmaktadır. Kale avlusu içerisinde günümüzde dilek kuyusu olarak bilinen su sarnıcı bulunmaktadır.11 ve 15'nci yüzyıllar arasında Akdeniz, Karadeniz, Atlantik Okyanusu ve Kuzey Avrupa’da ticaret kolonileri kuran Cenevizlilerden kalan ve Akçakoca’nın simgesi haline gelen Ceneviz Kalesi; 2013 yılında ‘‘Ceneviz Ticaret Yolunda Akdeniz’den Karadeniz’e Kadar Kale ve Surlu Yerleşimleri’’ adıyla UNESCO Dünya Miras Geçici listesine adını yazdırmıştır. Tarihi Ceneviz Kalesi batısında ve doğusunda bulunan plajları mavi bayraklıdır. Yalıyarlar olarak isimlendirilen bu plajlardan biri kıyı boyunca yer alan mağaralar barındırması sebebiyle de fok kayalıkları olarak anılmaktadır. Ceneviz Kalesi plajları ve tarihi dokusunun yanında, Akçakoca’nın en fazla tercih edilen piknik ve mesire alanı olma özelliği taşır.",
+
+        "Kalkın Plajı":
+          "Kalkın Plajı, Akçakoca’ya bağlı Kalkın Köyü sınırları içerisinde yer almaktadır. İlçe merkezine yaklaşık olarak 9 km uzaklıktadır. Özel aracınız ile Karasu Şile Yolu/D010 üzerinden ulaşım sağlayabilirsiniz.Kalkın Plajı, yeşille mavinin buluştuğu eşsiz bir doğa manzarasına sahiptir. İlçenin en sakin plajlarından biridir. Denizi temiz ve berraktır. Plaj bölümü ve denizin dibi tamamen ince kumdan oluşmaktadır. Denizi sığ olduğundan özellikle çocuklar ve acemi yüzücüler için oldukça uygundur.Plaj içerisinde yiyecek içecek ihtiyaçlarınızı karşılayabileceğiniz kafeteryalar mevcuttur. Ayrıca plaj içerisinde soyunma kabini, duş, wc gibi hizmetler de yer almaktadır. Dilerseniz, belirli bir ücret karşılığı şezlong ve şemsiye kiralayabilirsiniz. Deniz, kum ve güneş üçlüsünün keyfini çıkarabileceğiniz plajlar arasındadır.Kalkın Plajı, halk plajı olarak hizmet verdiğinden giriş ücreti yoktur.",
+
+          "Melenağzı Plajı":
+          "Melenağzı Plajı, Akçakoca’ya bağlı Melenağzı Köyü’nde yer almaktadır. İlçe merkezine yaklaşık olarak 15 km uzaklıktadır. Özel aracınız ile Karasu Şile Yolu/D010 üzerinden ulaşım mümkündür.Melenağzı Plajı, bölge halkının sıklıkla tercih ettiği plajlar arasında yer almaktadır. Denizi temiz ve oldukça berraktır. Plaj bölümü tamamen ince kum ile kaplıdır. Denizin dibi de kumludur. Denizi sığ olduğundan özellikle küçük çocuklar ve yüzme bilmeyenler için oldukça elverişlidir.Plaj çevresinde yeme içme ihtiyaçlarınızı karşılayabileceğiniz balık restoranları bulunmaktadır. Ayrıca plaj çevresi kamp aktivitesi için oldukça uygundur. Dilerseniz, sevdikleriniz ile birlikte kamp yaparak, deniz manzarasına karşı keyifli bir konaklama deneyimi yaşayabilirsiniz.Melenağzı Plajı’na girişler ücretsizdir.",
+
+          "Livadi  Hotel & Restaurant":
+          "Livadi Hotel & Restaurant Düzce/ Akçakoca'da bulunmaktadır.Ulaşım mesafesi olarak İstanbul ve Ankara İllerine 230-250 km uzaklıktadır. Denize sıfır konumda yer almakla birlikte, Şehir Merkezine 5 dk yürüme mesafesindedir.Misafirler güneşin doğuşunu ve batışını izleyebilmenin ayrıcalığını yaşatmaktadır.Açık havuzu ve özel plajı bulunmaktadır.Otel bünyesinde bulunan ve deniz manzarasına hakim olan Livadi Alacart Restaurant’ta birbirinden güzel taze ve yöresel lezzetleri sunması yanında taze balık seçebilme ayrıcalığı ile alkollü ve alkolsüz menü seçeneği ile hizmet vermektedir.",
+
+          "Turkuaz Beach Otel":
+            "Misafirler için özel plajı vardır. Ayrıca açık havuz ve kiralık bisiklet mevcuttur.Otelde misafirler için ayrıca ücretsiz kablosuz İnternet, danışma (concierge) hizmetleri ve ortak alanda televizyon vardır.Misafirlere yemek servisi için Turkuaz Beach Otel ideal; otelin denize sıfır restoranı misafirlere havuz manzarasına nazır yemek servisi yapıyor. Misafirler için her gün ücretsiz resepsiyon mevcuttur. Barda/oturma salonunda misafirlerimize içecek servisi yapılmaktadır. Misafirlere her gün 7.30 ve 10.30 arasında ücretsiz açık büfe kahvaltı servisi yapılmaktadır.Misafirler için lobide ücretsiz gazete servisi, kuru temizleme/çamaşır yıkama servisi ve 24 saat açık resepsiyon mevcuttur. Ücretsiz vale otopark vardır.Misafirlere konforu ve rahatı için 44 klimalı oda buzdolabı ve LCD televizyon bulunmaktadır. Misafirler için ücretsiz kablosuz İnternet sunulmaktadır. Misafirlerimizin iyi vakit geçirebilmesi için uydu kanalları vardır. Özel banyo, küvet veya duş, ücretsiz banyo/kozmetik ürünleri ve saç kurutma makinesi vardır.Günlük olarak oda/kat hizmeti verilmektedir.Sahillere ve plajlara yakınlığı ile dikkat çekmektedir.",
+
+            "Kuzine Restaurant":
+              " Hoş dizaynı olan çeşitli meze,tatlı,alkollü içeceklerin ve balıkların bulunduğu gayet samimi bir aile işletmesidir.Denizi komple görebilmesi büyük bir avantajıdır. Sabah kahvaltı yapmak için gidilebilecek en güzel mekanlardan biridir. ",
+
+              "Boğaziçi Restaurant":
+                "Akçakoca’nın sahilinde bulunan ahşaptan yapılma bir restorandır.Menüsünde çok çeşitli mezeler,arasıcak olarak çeşitli balıklar,salatalar ,alkollü ve alkolsüz içecekler,meyve ve tatlılar bulunmaktadır.Konumu olarak Ayazlı Mahallesi Ereğli Cadddesi  No:35/1 Akçakoca Otel Yanı Akçakoca/Düzce.",
+
+                "Kamelya Restaurant":
+              "Sizleri Kamelya Restaurantta , güler yüzlü hizmet, balık ürünleri başta olmak üzere zengin bir menü, temiz, nezih, açık mutfak, geniş ve ferah bir mekan bekliyor.Açılır kapanır cam sistemi ile açık ve kapalı alanlarımızla denizin keyfini çıkartacağınız restaurantta, isterseniz kapalı alanımızda şömine keyfi de çıkartarak kendinizi özel hissedeceksiniz. Temizlik ve hijyene verdiğimiz önemi, açık mutfağımızla, çeşitli ve lezzetli ürünlerimizle sizlerin izlenimlerine sunuyoruz. Personelimiz ve sunduğumuz hizmetle sizlerin dostluğunu kazanmayı hedefliyor. Restaurantımıza ulaşmak  Akçakoca’ya ulaşmak kadar kolay.. 25 yılın vermiş olduğu özgüven ve tecrübemizle sizleri bekliyoruz.",
+
+              "Bahrinin Yeri ":
+                "3 Kuşaktır süregelen bir o kadar profesyonel bir o kadar da samimi bir esnaf olan Bahri amcamızın hikayesi 1942 den beri süregelmektedir. Küçük oğlu Bahri Erdem babasından öğrendiği ustalık ile kendi adına 1982 yılında Düzce Merkez Büyük Cami bahçesindeki Bahri’nin Yerini açar. O günden bugünlere kadar sağlıklı ve güvenilir et ürünlerinin sunulduğu bir esnaf lokantası olarak siz değerli müşterilerine hizmet vermeye devam etmektdir.",
+
+
+ 
+
+
+             
+           
+
+
+
+        
   };
 
   static Map<String, String> appBarBackgroundImages = {
@@ -754,6 +837,17 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Odayeri Yaylası": "assets/images/Odayeri_Yaylası.png",
     "Pürenli Yaylası": "assets/images/Purenli_Yaylasi_1.jpg",
     "Torkul Yaylası": "assets/images/Torkul_Yaylasi_ve_Goleti_1.jpg",
+    //yeni eklenenler
+    "Ceneviz Kalesi Plajı":"assets/images/ceneviz_kalesi_plaj3.jpeg",
+    "Kalkın Plajı":"assets/images/Kalkn_Plaj.jpeg",
+    "Melenağzı Plajı":"assets/images/melenağzı1.png",
+    "Livadi  Hotel & Restaurant":"assets/images/livadihotel2.jpg",
+    "Turkuaz Beach Otel":"assets/images/turkuaz1.jpg",
+    "Kuzine Restaurant":"assets/images/kuzine2.png",
+    "Boğaziçi Restaurant":"assets/images/bogazici2.jpg",
+    "Kamelya Restaurant":"assets/images/kamelya3.jpg",
+    "Bahrinin Yeri ":"assets/images/bahri2.png"
+    
   };
 
   static Map<String, List<String>> informationPictures = {
@@ -942,6 +1036,55 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       "assets/images/Torkul_Yaylasi_2.png",
       "assets/images/Torkul_Yaylasi_3.png"
     ],
+    //yeni eklenenler
+    "Ceneviz Kalesi Plajı":[
+      "assets/images/ceneviz_kalesi_plaj.jpeg",
+      "assets/images/ceneviz_kalesi_plaj3.jpeg",
+      "assets/images/Kadnlar_Plaj.jpg",
+      
+    ],
+     "Kalkın Plajı":[
+      "assets/images/Kalkn_Plaj3.jpeg",
+      "assets/images/Kalkn_Plaj2.jpeg",
+      "assets/images/Kalkn_Plaj.jpeg",
+      ],
+      "Melenağzı Plajı":[
+        //görseller googleden
+        "assets/images/melenağzı.png",
+        "assets/images/melenağzı1.jpg",
+        "assets/images/melenağzı3.jpg",
+        ],
+        "Livadi  Hotel & Restaurant":[
+          "assets/images/livadihotel1.jpg",
+          "assets/images/livadihotel2.jpg",
+          "assets/images/livadihotel3.jpg",
+          ],
+          "Turkuaz Beach Otel":[
+            "assets/images/turkuaz2.jpg",
+            "assets/images/turkuaz1.jpg",
+            "assets/images/turkuaz3.jpg",
+            ],
+            "Kuzine Restaurant":[
+              "assets/images/kuzine3.png",
+              "assets/images/kuzine2.png",
+              "assets/images/kuzine1.png",
+            ],
+            "Boğaziçi Restaurant":[
+              "assets/images/bogazici3.jpg",
+              "assets/images/bogazici2.jpg",
+              "assets/images/bogazici1.jpg",
+            ],
+            "Kamelya Restaurant":[
+            
+              "assets/images/kamelya1.jpg",
+              "assets/images/kamelya3.jpg",
+              "assets/images/kamelya2.jpg",
+              ],
+              "Bahrinin Yeri ":[
+                "assets/images/bahri3.png",
+                "assets/images/bahri1.png",
+                "assets/images/bahri2.png",
+              ],
   };
 
   static Map<String, List<double>> latitudesLongitudes = {
@@ -969,18 +1112,12 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Güzeldere Şelalesi": [40.723412, 31.0498806],
     "Harmankaya Şelalesi": [40.9498311, 30.9260569],
     "Saklıkent Şelalesi": [40.9407589, 31.4908345],
-    "Samandere Şelalesi": [
-      40.691294,
-      31.2612781,
-    ],
+    "Samandere Şelalesi": [40.691294, 31.2612781,],
     "Yoğunpelit Mengen Şelalesi": [40.9751981, 31.6060877],
     "Konuralp Antik Tiyatro": [40.9054525, 31.1481106],
     "Mehmet Akif Bey Köşkü": [41.0887006, 31.1233363],
     "Roma Köprüsü": [40.9063545, 31.1420666],
-    "Balıklı Yaylası": [
-      40.6558711,
-      31.033864,
-    ],
+    "Balıklı Yaylası": [40.6558711, 31.033864,],
     "Derebalık Yaylası": [40.6777826, 31.0918441],
     "Kardüz Yaylası": [
       40.6737315,
@@ -995,6 +1132,27 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
       40.679501,
       31.1734988,
     ],
+
+    //yeni eklenenler
+    
+    
+    
+    "Livadi  Hotel & Restaurant":[41.0910511,31.1468289],
+    "Turkuaz Beach Otel":[41.0900344,31.1399421],
+    "Kuzine Restaurant":[41.0899411,31.1362045],
+    "Boğaziçi Restaurant":[41.0895672,31.1452079],
+    "Kamelya Restaurant":[41.0899732,31.1363268,21],
+    "Bahrinin Yeri ":[40.8387174,31.158955 ],
+
+    "Gölyaka Kültür Parkı" : [40.7824661,31.0212372],
+    "Konuralp Müzesi" : [40.9036901,31.1536507],
+    "Kemos Aile Plajı" : [41.0940839,31.1869675],
+    "Eş Şeyh Aliyyü-l Müslahiddin Hazretleri" : [40.8854354,31.0029278],
+    "Kalkın Plajı" : [41.0760322,31.0439879],
+    "Paşalar Plajı" : [41.0757825,31.025341],
+    "Melenağzı Plajı" : [41.0730036,30.9701503],
+    "Ceneviz Kalesi Plajı" : [41.085687,31.0931108],
+
   };
 
   static Map<String, List<ReviewUI>> reviews = {
@@ -1033,6 +1191,16 @@ Düzce, Efteni Gölü veya Güzeldere Şelalesi yolundan ulaşılabilen Pürenli
     "Odayeri Yaylası": [],
     "Pürenli Yaylası": [],
     "Torkul Yaylası": [],
+    //yeni eklenenler 
+    "Ceneviz Kalesi Plajı":[],
+    "Kalkın Plajı":[],
+    "Melenağzı Plajı":[],
+    "Livadi  Hotel & Restaurant":[],
+    "Turkuaz Beach Otel":[],
+    "Kuzine Restaurant":[],
+    "Boğaziçi Restaurant":[],
+    "Kamelya Restaurant":[],
+    "Bahrinin Yeri ":[],
   };
 
 /*

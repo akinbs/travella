@@ -23,13 +23,22 @@ class _AnaSayfaState extends State<AnaSayfa> {
   int index = 2;
   int currentPage = 0;
 
+
   final ScreenName = ["Keşfet", "Harita", "Anasayfa", "Rotalar", "Profil"];
+
+  
+
 
   final screens = [
     Discover(),
     GoogleMapsPage(),
+
     HomeScreen(),
-    route_page(),
+   
+
+    
+    RoutePage(),
+
     ProfilPage(),
 
 
