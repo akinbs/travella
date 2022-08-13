@@ -240,8 +240,8 @@ static const List<String> yaylainancrotasi3 = [
     "Saklıkent_Şelalesi",
     "Sarıkaya_Mağrası",
     "Fakıllı_Mağrası",
-    "Kemos_aile_plajı",   //!
-    "Çuhallı Plajı",
+    "Kemos_Aile_Plajı",   //!
+    "Cuhallı_Plajı",
 
   ];
 
