@@ -180,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 margin: EdgeInsets.only(top: 33.6), 
                 height: 45.6,
                 child: ListView.builder(
-                  itemCount: 4,
+                  itemCount: onermeler.length,
                   scrollDirection: Axis.horizontal,
                   physics: BouncingScrollPhysics(),
                   padding: EdgeInsets.only(left:28.8,right:9.6),

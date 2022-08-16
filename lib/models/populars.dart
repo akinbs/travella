@@ -40,5 +40,29 @@ List<Map> popular_data = [
       
     },),
   },
+  { 
+    "name":"Deniz",
+    "ikon": IconButton(icon: Icon(Icons.water_rounded),
+    color: Colors.lime.shade400,
+    onPressed: () {
+      
+    },),
+  },
+  { 
+    "name":"otel",
+    "ikon": IconButton(icon: Icon(Icons.room_service_rounded),
+    color: Color.fromARGB(255, 200, 155, 33),
+    onPressed: () {
+      
+    },),
+  },
+  { 
+    "name":"Doğa",
+    "ikon": IconButton(icon: Icon(Icons.forest_rounded),
+    color: Color.fromARGB(255, 131, 98, 7),
+    onPressed: () {
+      
+    },),
+  },
   
 ];
