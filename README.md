@@ -1,16 +1,4 @@
-# travella_01
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://github.com/akinbs/travella/assets/79157033/d8cbd0c1-b117-43c7-ab28-4419bc852037)
+![image](https://github.com/akinbs/travella/assets/79157033/4be9df08-087e-4778-9fd7-fd49ff04ca34)
+![image](https://github.com/akinbs/travella/assets/79157033/cf6e7f71-33fc-4a6c-8af7-2c421e744c84)
+![image](https://github.com/akinbs/travella/assets/79157033/8d1b3fa7-f391-4d85-909b-fe596e21ab72)
